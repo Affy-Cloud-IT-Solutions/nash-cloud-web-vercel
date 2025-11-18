@@ -35,7 +35,6 @@ const LandingPage = () => (
 
     <section id="contact"><ContactUs /></section>
 
-    <Footer />
   </>
 );
 
@@ -55,6 +54,9 @@ const App = () => {
         <Route path="/it-solutions" element={<ITSolutionsPage />} />
 
       </Routes>
+
+
+      <Footer />
     </Router>
   );
 };
