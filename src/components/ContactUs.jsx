@@ -132,7 +132,7 @@ const ContactUs = () => {
                                         href="mailto:Masterakbarkhan@outlook.com"
                                         className="text-gray-200 hover:underline"
                                     >
-                                        Masterakbarkhan@outlook.com
+                                        info@nashclouditsolutions.com
                                     </a>
                                 </p>
                             </div>
@@ -144,7 +144,7 @@ const ContactUs = () => {
                                         href="tel:+447776839310"
                                         className="text-gray-200 hover:underline"
                                     >
-                                        +44 7776 839310
+                                        +44 - 7984563072
                                     </a>
                                 </p>
                             </div>

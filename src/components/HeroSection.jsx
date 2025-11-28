@@ -43,7 +43,7 @@ const slides = [
         link: "/opportunities",
     },
 ];
-
+// stop stop stop stop stpo stop stop stpo stpo 
 const HeroSection = () => {
     const [current, setCurrent] = useState(0);
 
@@ -59,7 +59,15 @@ const HeroSection = () => {
         setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
     return (
-        <section className="relative flex flex-col items-center justify-start min-h-screen overflow-hidden text-white pt-20 md:pt-32">
+        <section
+            className="
+        relative flex flex-col items-center justify-start 
+        h-[65vh] sm:h-[85vh] md:h-screen 
+        overflow-hidden text-white 
+        pt-10 sm:pt-16 md:pt-24 lg:pt-32
+    "
+        >
+
             {/* === BACKGROUND === */}
             <div
                 className="absolute inset-0 bg-cover bg-center opacity-80"
@@ -75,7 +83,7 @@ const HeroSection = () => {
             <div className="absolute bottom-[10%] left-[10%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#0D47A1]/30 blur-[240px] rounded-full"></div>
 
             {/* Header */}
-            <div className="text-center mb-8 z-10 max-w-3xl md:max-w-5xl mx-auto px-4 sm:px-6">
+            {/* <div className="text-center mb-8 z-10 max-w-3xl md:max-w-5xl mx-auto px-4 sm:px-6">
                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-[#fff] mb-4 drop-shadow-[0_0_15px_rgba(0,180,255,0.4)]">
                     Our Expertise
                 </h1>
@@ -97,7 +105,7 @@ const HeroSection = () => {
                     accelerate digital transformation, and ensure long-term business
                     value.
                 </p>
-            </div>
+            </div> */}
 
             {/* === Wider Responsive Carousel === */}
             <div className="relative flex justify-center items-center w-[90%] max-w-[1600px] perspective-[1600px] h-[420px] sm:h-[480px] md:h-[520px] lg:h-[560px] z-10 mt-6 md:mt-10">
@@ -125,7 +133,7 @@ const HeroSection = () => {
                         <Link
                             to={slide.link}
                             key={slide.id}
-                            className="absolute w-[240px] sm:w-[300px] md:w-[360px] lg:w-[400px] h-[280px] sm:h-[340px] md:h-[380px] lg:h-[420px]
+                            className="absolute w-[240px] sm:w-[300px] md:w-[360px] lg:w-[350px] h-[280px] sm:h-[340px] md:h-[380px] lg:h-[350px]
   rounded-3xl overflow-hidden text-center transition-all duration-700 ease-in-out transform-gpu group hover:scale-[1.05]"
                             style={{
                                 transform,
@@ -150,10 +158,10 @@ const HeroSection = () => {
 
                             {/* === Text Section === */}
                             <div className="relative h-[45%] px-5 py-5 flex flex-col items-center justify-center text-center">
-                                <h2 className="text-xl sm:text-2xl font-semibold text-[#00B4FF] mb-2 drop-shadow-[0_0_10px_rgba(0,180,255,0.6)] group-hover:text-white transition-all duration-300">
+                                <h2 className="text-[15px] sm:text-xl font-semibold text-[#fff] mb-2 drop-shadow-[0_0_10px_rgba(0,180,255,0.6)] group-hover:text-white transition-all duration-300">
                                     {slide.title}
                                 </h2>
-                                <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-sm group-hover:text-gray-100 transition-colors duration-300">
+                                <p className="text-gray-300 text-sm sm:text-base text-[12px] sm:text-[15px] leading-relaxed max-w-sm group-hover:text-gray-100 transition-colors duration-300">
                                     {slide.subtitle}
                                 </p>
                             </div>

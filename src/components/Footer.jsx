@@ -46,8 +46,8 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">Contact</h4>
                         <ul className="space-y-2 text-gray-300">
                             <li>United Kingdom</li>
-                            <li>contact@nashcloudit.com</li>
-                            <li>+44 7776 839310</li>
+                            <li>info@nashclouditsolutions.com</li>
+                            <li>+44 - 7984563072</li>
                         </ul>
                     </div>
                 </div>
