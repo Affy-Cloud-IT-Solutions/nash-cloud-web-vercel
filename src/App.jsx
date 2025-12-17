@@ -18,10 +18,14 @@ import InternalProductPage from "./pages/InternalProductPage";
 import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
 // Pages
 import About from "./pages/About";
+import WhoWeAreAndOffer from "./components/WhoWeAreAndOffer";
+import Home from "./components/Home";
 
 const LandingPage = () => (
   <>
-    <section id="home"><HeroSection /></section>
+    <section id="home"><Home /></section>
+
+    <section id="whoweareandoffer"><WhoWeAreAndOffer /></section>
 
     <section id="sap"><SapServices /></section>
 

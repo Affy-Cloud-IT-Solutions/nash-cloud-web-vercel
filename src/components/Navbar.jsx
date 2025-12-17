@@ -47,9 +47,9 @@ const Navbar = () => {
                 <ul className="hidden md:flex items-center space-x-10 text-gray-200 font-medium">
                     {[
                         { label: "Home", id: "home" },
-                        { label: "Testimonials", id: "testimonials" },
-                        { label: "Opportunities & Training", id: "opportunities" },
-                        { label: "Contact Us", id: "contact" },
+                        { label: "Services", id: "testimonials" },
+                        { label: "Interns Programme", id: "opportunities" },
+                        { label: "Resourcing", id: "contact" },
                     ].map((item) => (
                         <li
                             key={item.id}

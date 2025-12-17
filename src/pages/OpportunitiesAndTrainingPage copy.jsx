@@ -1,27 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-    GraduationCap,
-    CheckCircle,
-    Target,
-    BookOpen,
-    Users,
-    Zap,
-    TrendingUp,
-    Sparkles,
-    ArrowRight,
-    Briefcase,
-    Code,
-    Cloud,
-    Cpu,
-    Database,
-    Shield,
-    Terminal,
-    Server,
-    Workflow,
-    Network,
-    Brain,
-} from "lucide-react";
+import { GraduationCap, CheckCircle, Target, BookOpen, Users, Zap, TrendingUp, Sparkles, ArrowRight, Briefcase, Code, Cloud } from "lucide-react";
 
 const OpportunitiesAndTrainingPage = () => {
     const features = [
@@ -169,45 +148,30 @@ const OpportunitiesAndTrainingPage = () => {
                                 whileHover={{ y: -5 }}
                                 className="group relative h-64 rounded-xl overflow-hidden cursor-pointer"
                             >
-                                {/* Gradient Background */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#0D47A1]/10 to-[#00B4FF]/10 group-hover:from-[#0D47A1]/20 group-hover:to-[#00B4FF]/20 transition-all duration-300">
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                                {/* Background Image */}
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                    style={{ backgroundImage: `url(${card.bg})` }}
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
                                 </div>
 
-                                {/* Border effect */}
-                                <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-[#00B4FF]/30 transition-colors"></div>
-
                                 {/* Content */}
-                                <div className="relative h-full p-6 flex flex-col justify-between">
-                                    {/* Top section with icon */}
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="p-3 rounded-lg bg-gradient-to-r from-[#00B4FF]/10 to-[#0D47A1]/10 group-hover:from-[#00B4FF]/20 group-hover:to-[#0D47A1]/20 transition-all">
-                                            <div className="text-[#00B4FF]">
-                                                {card.icon}
-                                            </div>
+                                <div className="relative h-full p-6 flex flex-col justify-end">
+                                    <div className="flex items-center gap-3 mb-3">
+                                        <div className="p-2 rounded-lg bg-white/20 backdrop-blur-sm">
+                                            {card.icon}
                                         </div>
                                         <h3 className="text-xl font-semibold text-white">{card.title}</h3>
                                     </div>
 
-                                    {/* Items list */}
-                                    <div className="space-y-2">
+                                    <div className="flex flex-wrap gap-2">
                                         {card.items.map((item, i) => (
-                                            <div key={i} className="flex items-center gap-2">
-                                                <div className="w-2 h-2 rounded-full bg-[#00B4FF]"></div>
-                                                <span className="text-sm text-white/80">{item}</span>
-                                            </div>
+                                            <span key={i} className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-sm text-white">
+                                                {item}
+                                            </span>
                                         ))}
                                     </div>
-
-                                    {/* Bottom indicator */}
-                                    {/* <div className="pt-4 mt-4 border-t border-white/10 group-hover:border-[#00B4FF]/30 transition-colors">
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-xs text-white/60">Learn more</span>
-                                            <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#00B4FF]/10 to-[#0D47A1]/10 flex items-center justify-center">
-                                                <ArrowRight className="w-3 h-3 text-[#00B4FF]" />
-                                            </div>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </motion.div>
                         ))}
@@ -218,65 +182,22 @@ const OpportunitiesAndTrainingPage = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] rounded-2xl p-8 border border-white/10"
+                        className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
                     >
-                        <div className="flex items-center justify-center gap-3 mb-8">
-                            <Cpu className="w-6 h-6 text-[#00B4FF]" />
-                            <h3 className="text-2xl font-bold text-white">Tech Stack Mastery</h3>
-                            <Code className="w-6 h-6 text-[#00B4FF]" />
-                        </div>
-
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                            {technologies.map((tech, index) => {
-                                const icons = [
-                                    <Cpu className="w-6 h-6" />,
-                                    <Code className="w-6 h-6" />,
-                                    <Cloud className="w-6 h-6" />,
-                                    <Server className="w-6 h-6" />,
-                                    <Database className="w-6 h-6" />,
-                                    <Shield className="w-6 h-6" />,
-                                    <Terminal className="w-6 h-6" />,
-                                    <Workflow className="w-6 h-6" />,
-                                    <Network className="w-6 h-6" />,
-                                    <Brain className="w-6 h-6" />
-                                ];
-
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.05 }}
-                                        whileHover={{ scale: 1.05 }}
-                                        className="group relative"
-                                    >
-                                        <div className="bg-gradient-to-br from-[#0D47A1]/10 to-[#00B4FF]/10 rounded-xl p-6 border border-white/10 group-hover:border-[#00B4FF]/30 transition-all duration-300">
-                                            <motion.div
-                                                animate={{
-                                                    rotate: [0, 5, -5, 0],
-                                                    scale: [1, 1.1, 1]
-                                                }}
-                                                transition={{
-                                                    duration: 2,
-                                                    repeat: Infinity,
-                                                    delay: index * 0.2
-                                                }}
-                                                className="flex justify-center mb-4"
-                                            >
-                                                <div className="p-3 rounded-lg bg-gradient-to-r from-[#00B4FF]/20 to-[#0D47A1]/20">
-                                                    {icons[index % icons.length]}
-                                                </div>
-                                            </motion.div>
-
-                                            <div className="text-center">
-                                                <div className="text-white font-semibold mb-2">{tech}</div>
-                                                <div className="text-xs text-[#94A3B8]">Expert Level</div>
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                );
-                            })}
+                        <h3 className="text-2xl font-bold mb-6 text-center">Technologies You'll Master</h3>
+                        <div className="flex flex-wrap justify-center gap-3">
+                            {technologies.map((tech, index) => (
+                                <motion.span
+                                    key={index}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.05 }}
+                                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-[#0D47A1]/20 to-[#00B4FF]/20 border border-white/10 text-white"
+                                >
+                                    {tech}
+                                </motion.span>
+                            ))}
                         </div>
                     </motion.div>
                 </div>

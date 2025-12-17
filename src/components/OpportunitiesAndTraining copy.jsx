@@ -1,11 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, ArrowRight, Sparkles, Users, BookOpen, Target, Zap, ChevronRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const OpportunitiesAndTraining = () => {
-    const navigate = useNavigate();
-
     const features = [
         { icon: <Target className="w-5 h-5" />, text: "Industry-focused curriculum" },
         { icon: <BookOpen className="w-5 h-5" />, text: "Hands-on project experience" },
@@ -223,7 +220,6 @@ const OpportunitiesAndTraining = () => {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         className="group px-8 py-3 rounded-lg bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold flex items-center gap-3 shadow-lg hover:shadow-xl hover:shadow-[#00B4FF]/20 transition-all"
-                                        onClick={() => navigate("/opportunities")}
                                     >
                                         <span>Learn More</span>
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
