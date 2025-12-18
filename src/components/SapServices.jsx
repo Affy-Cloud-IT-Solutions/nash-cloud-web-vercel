@@ -12,7 +12,8 @@ import {
     Shield,
     Cpu,
     TrendingUp,
-    Sparkles
+    Sparkles,
+    Boxes
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +32,7 @@ const services = [
             "Modernize legacy systems with cloud, AI, and automation for scalable, agile, and measurable business outcomes.",
         icon: <TrendingUp className="w-6 h-6" />,
         features: ["Cloud Solutions", "AI Integration", "Automation", "Modernization"],
-        link: "/sap-services"
+        link: "/digital-transformation"
     },
     {
         title: "QA Engineering",
@@ -39,7 +40,7 @@ const services = [
             "Ensure reliability, performance, and security across applications with comprehensive testing and quality assurance.",
         icon: <Shield className="w-6 h-6" />,
         features: ["Test Automation", "Performance", "Security", "Continuous QA"],
-        link: "/sap-services"
+        link: "/qa-engineering"
     },
     {
         title: "Resourcing",
@@ -55,8 +56,22 @@ const services = [
             "Develop future-ready talent across SAP, AI, cloud, and QA to bridge the digital skills gap.",
         icon: <GraduationCap className="w-6 h-6" />,
         features: ["Training", "Mentorship", "Projects", "Placement"],
-        link: "/sap-services"
+        link: "/opportunities"
     },
+    {
+        title: "Bespoke Products",
+        description:
+            "Innovative in-house digital products designed to streamline operations, enhance productivity, and support scalable business growth.",
+        icon: <Boxes className="w-5 h-5" />,
+        features: [
+            "Workflow Automation",
+            "SaaS Platforms",
+            "Analytics Dashboards",
+            "Scalable Architecture"
+        ],
+        link: "/internal-product"
+    }
+
 ];
 
 const SapServices = () => {
@@ -117,7 +132,7 @@ const SapServices = () => {
                 </motion.div>
 
                 {/* Simplified Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -131,7 +146,7 @@ const SapServices = () => {
                             className="group relative"
                         >
                             {/* Card */}
-                            <div className="relative bg-white rounded-xl p-6 border border-[#E2E8F0] hover:border-[#0D47A1]/30 transition-all duration-300 hover:shadow-lg">
+                            <div className="relative bg-white rounded-xl p-6 border border-[#E2E8F0] hover:border-[#0D47A1]/30 transition-all duration-300 hover:shadow-lg text-center flex flex-col items-center">
                                 {/* Top accent line */}
                                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D47A1] via-[#00B4FF] to-[#0D47A1] rounded-t-xl" />
 
@@ -221,3 +236,5 @@ const SapServices = () => {
 };
 
 export default SapServices;
+// stop stopst stop stop stop sto psto stop stop stop
+// stop sto sto pstop sto stop stop stop sto ptso

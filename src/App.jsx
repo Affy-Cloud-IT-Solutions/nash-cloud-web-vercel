@@ -20,6 +20,9 @@ import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
 import About from "./pages/About";
 import WhoWeAreAndOffer from "./components/WhoWeAreAndOffer";
 import Home from "./components/Home";
+import DigitalTransformationServicesPage from "./pages/DigitalTransformationServicesPage";
+import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
+import ResourcingAndConsultingSection from "./components/ResourcingAndConsultingSection";
 
 const LandingPage = () => (
   <>
@@ -29,11 +32,15 @@ const LandingPage = () => (
 
     <section id="sap"><SapServices /></section>
 
-    <section id="it-solutions"><ITSolutions /></section>
+    <section id="opportunities"><OpportunitiesAndTraining /></section>
 
     <section id="products"><InternalProducts /></section>
 
-    <section id="opportunities"><OpportunitiesAndTraining /></section>
+    <section id="resource"><ResourcingAndConsultingSection /></section>
+
+    {/* <section id="it-solutions"><ITSolutions /></section> */}
+
+
 
     <section id="testimonials"><Testimonials /></section>
 
@@ -56,7 +63,8 @@ const App = () => {
         <Route path="/opportunities" element={<OpportunitiesAndTrainingPage />} />
         <Route path="/resourcing" element={<ResourceAndConsultingPage />} />
         <Route path="/it-solutions" element={<ITSolutionsPage />} />
-
+        <Route path="/digital-transformation" element={<DigitalTransformationServicesPage />} />
+        <Route path="/qa-engineering" element={<QAEngineeringServicesPage />} />
       </Routes>
 
 
