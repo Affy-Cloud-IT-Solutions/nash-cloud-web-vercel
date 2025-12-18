@@ -65,12 +65,16 @@ const Navbar = () => {
                     <li>
                         <Link
                             to="/about"
-                            className="ml-6 px-5 py-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] 
-              text-white font-semibold shadow-[0_0_20px_rgba(0,180,255,0.4)] hover:shadow-[0_0_30px_rgba(0,180,255,0.6)] 
-              hover:scale-105 transition-all duration-300"
+                            className="ml-6 px-5 py-2 rounded-full 
+    bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] 
+    text-white font-semibold whitespace-nowrap
+    shadow-[0_0_20px_rgba(0,180,255,0.4)] 
+    hover:shadow-[0_0_30px_rgba(0,180,255,0.6)] 
+    hover:scale-105 transition-all duration-300"
                         >
                             About Us
                         </Link>
+
                     </li>
                 </ul>
 
@@ -102,9 +106,9 @@ const Navbar = () => {
                 >
                     {[
                         { label: "Home", id: "home" },
-                        { label: "Testimonials", id: "testimonials" },
-                        { label: "Opportunities & Training", id: "opportunities" },
-                        { label: "Contact Us", id: "contact" },
+                        { label: "Services", id: "sap" },
+                        { label: "Interns Programme", id: "opportunities" },
+                        { label: "Resourcing", id: "resource" },
                     ].map((item) => (
                         <span
                             key={item.id}
@@ -135,3 +139,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+// stop sto pstop sto pstop stop stop 

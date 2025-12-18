@@ -40,8 +40,6 @@ const LandingPage = () => (
 
     {/* <section id="it-solutions"><ITSolutions /></section> */}
 
-
-
     <section id="testimonials"><Testimonials /></section>
 
     <section id="contact"><ContactUs /></section>
