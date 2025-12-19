@@ -157,7 +157,7 @@ const ResourcingAndConsultingSection = () => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                onClick={() => navigate("/resourcing-consulting")}
+                                onClick={() => navigate("/resourcing")}
                                 className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 
                                          text-white font-semibold overflow-hidden shadow-2xl
                                          hover:shadow-cyan-500/25 transition-all duration-300"
@@ -203,7 +203,7 @@ const ResourcingAndConsultingSection = () => {
                                 className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] 
                                          backdrop-blur-sm border border-white/10
                                          hover:border-cyan-500/30 hover:bg-white/10 
-                                         transition-all duration-300 cursor-pointer"
+                                         transition-all duration-300 cursor-pointer flex flex-col items-center"
                             >
                                 {/* Card Glow Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 
@@ -223,9 +223,10 @@ const ResourcingAndConsultingSection = () => {
                                 <h3 className="relative text-lg font-semibold text-white mb-2">
                                     {feature.title}
                                 </h3>
-                                <p className="relative text-sm text-gray-400 leading-relaxed">
+                                <p className="relative text-sm text-gray-400 leading-relaxed text-center">
                                     {feature.description}
                                 </p>
+
 
                                 {/* Arrow Indicator */}
                                 <div className="relative mt-4 text-cyan-400 opacity-0 
@@ -238,7 +239,7 @@ const ResourcingAndConsultingSection = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -251,7 +252,7 @@ const ResourcingAndConsultingSection = () => {
                                 Ready to transform your talent strategy?
                             </p>
                             <button
-                                onClick={() => navigate("/get-started")}
+                                onClick={() => navigate("/resourcing")}
                                 className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-2 
                                          hover:gap-3 transition-all"
                             >
@@ -260,7 +261,7 @@ const ResourcingAndConsultingSection = () => {
                             </button>
                         </div>
                     </div>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     );

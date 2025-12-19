@@ -38,11 +38,31 @@ const services = [
 const DigitalTransformationServicesPage = () => {
     return (
         <section className="relative min-h-screen overflow-hidden text-white bg-[linear-gradient(180deg,_rgba(7,12,28,0.96),_rgba(6,25,67,0.98))]">
+
+            {/* 🔹 Background Images */}
+            <div
+                className="absolute inset-0 bg-no-repeat bg-top bg-cover opacity-25 mix-blend-lighten"
+                style={{
+                    backgroundImage:
+                        "url('https://images.unsplash.com/photo-1667984390533-2b3c7d6d1c93?auto=format&fit=crop&w=1600&q=80')",
+                }}
+            />
+
+
+            <div
+                className="absolute bottom-0 left-0 w-full h-[60%] bg-no-repeat bg-bottom bg-cover opacity-15 mix-blend-lighten"
+                style={{
+                    backgroundImage:
+                        "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80')",
+                }}
+            />
+
             {/* Ambient Glows */}
             <div className="absolute top-[10%] left-[10%] w-[450px] h-[450px] bg-[#00B4FF]/20 blur-[180px] rounded-full"></div>
             <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] bg-[#0D47A1]/30 blur-[220px] rounded-full"></div>
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-28">
+
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -78,9 +98,9 @@ const DigitalTransformationServicesPage = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -6 }}
                             className="relative group p-10 rounded-2xl border border-[#00B4FF]/30 bg-white/5 backdrop-blur-xl
-                         shadow-[0_0_30px_rgba(0,180,255,0.15)]
-                         hover:shadow-[0_0_50px_rgba(0,180,255,0.35)]
-                         transition-all duration-500"
+                            shadow-[0_0_30px_rgba(0,180,255,0.15)]
+                            hover:shadow-[0_0_50px_rgba(0,180,255,0.35)]
+                            transition-all duration-500"
                         >
                             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0D47A1]/25 to-[#00B4FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 

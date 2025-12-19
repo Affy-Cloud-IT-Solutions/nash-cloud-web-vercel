@@ -23,6 +23,7 @@ import Home from "./components/Home";
 import DigitalTransformationServicesPage from "./pages/DigitalTransformationServicesPage";
 import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
 import ResourcingAndConsultingSection from "./components/ResourcingAndConsultingSection";
+import ScrollToTop from "./components/ScrollToTop";
 
 const LandingPage = () => (
   <>
@@ -50,6 +51,8 @@ const LandingPage = () => (
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
+
       <Navbar />
 
 
