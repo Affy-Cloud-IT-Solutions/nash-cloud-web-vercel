@@ -48,10 +48,11 @@ const WhoWeAreAndOffer = () => {
                     <div className="lg:order-2 relative">
                         <div className="absolute inset-0 bg-gradient-to-tr from-[#0D47A1]/40 to-transparent blur-2xl rounded-2xl"></div>
                         <img
-                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+                            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
                             alt="What We Offer"
                             className="relative z-10 w-full h-[360px] object-cover rounded-2xl shadow-2xl"
                         />
+
                     </div>
 
                     {/* Content */}
@@ -61,28 +62,29 @@ const WhoWeAreAndOffer = () => {
                         </h2>
 
                         <p className="text-[#94A3B8] leading-relaxed">
-                            We provide end-to-end digital transformation services, including
-                            SAP SuccessFactors and HR solutions, AI and automation, cloud
-                            engineering, and quality engineering and testing. Our capabilities
-                            also include cybersecurity awareness, Agile and DevOps, and
-                            business analysis and technology consulting.
+                            <span className="font-medium text-[#E2E8F0]">Services:</span>{" "}
+                            We deliver end-to-end digital transformation, combining deep expertise in
+                            SAP SuccessFactors and HR technologies with bespoke product solutions,
+                            along with comprehensive Quality Engineering and Testing services.
                         </p>
 
                         <p className="text-[#94A3B8] leading-relaxed mt-4">
-                            Alongside our software services, we deliver industry-focused
-                            internship and training programmes and flexible resourcing,
-                            supplying skilled consultants, engineers, and analysts who
-                            integrate seamlessly into your teams.
+                            <span className="font-medium text-[#E2E8F0]">Resourcing:</span>{" "}
+                            We provide top talent and skilled resources, including experienced
+                            consultants who integrate seamlessly into your teams and deliver
+                            immediate, measurable impact.
                         </p>
 
                         <p className="text-[#94A3B8] leading-relaxed mt-4">
-                            Together, we help organisations scale digital initiatives,
-                            strengthen capability, and build a sustainable, high-performing
-                            workforce.
+                            <span className="font-medium text-[#E2E8F0]">Internship & Training:</span>{" "}
+                            We also offer hands-on internship and training programmes designed to
+                            bridge the digital skills gap and develop the next generation of
+                            industry-ready professionals.
                         </p>
 
                         <div className="mt-8 w-20 h-1 bg-[#00B4FF] rounded-full"></div>
                     </div>
+
                 </div>
 
             </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -34,14 +35,22 @@ const Navbar = () => {
             <div className="h-[3px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
 
             {/* Navbar Content */}
-            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
+            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-2 flex justify-between items-center">
                 {/* Logo */}
                 <div
                     onClick={() => navigate("/")}
-                    className="text-xl md:text-2xl font-bold text-white cursor-pointer tracking-wide hover:text-[#00B4FF] transition-all"
+                    className="flex items-center cursor-pointer"
                 >
-                    <span className="text-[#00B4FF]">Nash</span> Cloud IT Solutions
+                    <img
+                        src={logo}
+                        alt="Nash Cloud IT Solutions"
+                        className="h-8 md:h-12 w-auto object-contain"
+                    />
+                    {/* <span className="hidden lg:block text-white font-semibold tracking-wide">
+                        Nash Cloud IT Solutions
+                    </span> */}
                 </div>
+
 
                 {/* Desktop Navigation */}
                 <ul className="hidden md:flex items-center space-x-10 text-gray-200 font-medium">

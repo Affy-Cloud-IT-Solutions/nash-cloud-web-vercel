@@ -37,7 +37,7 @@ const Home = () => {
                         transition={{ duration: 1.5, ease: "easeOut" }}
                         className="max-w-4xl"
                     >
-                        <div className={`${selectedFont} text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-white`}>
+                        <div className={`${selectedFont} text-[2.45rem] md:text-[4.25rem] lg:text-[5.5rem] leading-[1.5] md:leading-[0.95] lg:leading-[0.95] text-white`}>
                             <div className="mb-6">Your Partner in</div>
                             <div className="space-y-2">
                                 <motion.div

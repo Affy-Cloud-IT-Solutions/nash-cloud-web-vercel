@@ -237,31 +237,6 @@ const ResourcingAndConsultingSection = () => {
                         ))}
                     </motion.div>
                 </div>
-
-                {/* Bottom CTA */}
-                {/* <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    className="mt-20 text-center"
-                >
-                    <div className="inline-block px-1 py-1 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20">
-                        <div className="px-8 py-4 rounded-xl bg-gray-900/80 backdrop-blur-sm border border-white/5">
-                            <p className="text-gray-300 mb-2">
-                                Ready to transform your talent strategy?
-                            </p>
-                            <button
-                                onClick={() => navigate("/resourcing")}
-                                className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-2 
-                                         hover:gap-3 transition-all"
-                            >
-                                Start Your Journey Today
-                                <ArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    </div>
-                </motion.div> */}
             </div>
         </section>
     );
