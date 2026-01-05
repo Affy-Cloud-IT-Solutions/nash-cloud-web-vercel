@@ -23,7 +23,7 @@ const WhoWeAreAndOffer = () => {
                             Who We Are
                         </h2>
 
-                        <p className="text-[#94A3B8] leading-relaxed">
+                        <p className="text-[#94A3B8] leading-relaxed text-justify">
                             We are a specialist technology and consulting partner delivering
                             SAP services, AI solutions, and digital transformation support
                             across public and private sectors. With over 10 years of industry
@@ -32,7 +32,7 @@ const WhoWeAreAndOffer = () => {
                             journey and build long-term capability.
                         </p>
 
-                        <p className="text-[#94A3B8] leading-relaxed mt-4">
+                        <p className="text-[#94A3B8] leading-relaxed mt-4 text-justify">
                             We are also committed to developing future-ready professionals
                             through our training and internship programmes, bridging the
                             digital skills gap and preparing talent for an AI-driven world.
@@ -61,21 +61,21 @@ const WhoWeAreAndOffer = () => {
                             What We Offer
                         </h2>
 
-                        <p className="text-[#94A3B8] leading-relaxed">
+                        <p className="text-[#94A3B8] leading-relaxed text-justify">
                             <span className="font-medium text-[#E2E8F0]">Services:</span>{" "}
                             We deliver end-to-end digital transformation, combining deep expertise in
                             SAP SuccessFactors and HR technologies with bespoke product solutions,
                             along with comprehensive Quality Engineering and Testing services.
                         </p>
 
-                        <p className="text-[#94A3B8] leading-relaxed mt-4">
+                        <p className="text-[#94A3B8] leading-relaxed mt-4 text-justify">
                             <span className="font-medium text-[#E2E8F0]">Resourcing:</span>{" "}
                             We provide top talent and skilled resources, including experienced
                             consultants who integrate seamlessly into your teams and deliver
                             immediate, measurable impact.
                         </p>
 
-                        <p className="text-[#94A3B8] leading-relaxed mt-4">
+                        <p className="text-[#94A3B8] leading-relaxed mt-4 text-justify">
                             <span className="font-medium text-[#E2E8F0]">Internship & Training:</span>{" "}
                             We also offer hands-on internship and training programmes designed to
                             bridge the digital skills gap and develop the next generation of

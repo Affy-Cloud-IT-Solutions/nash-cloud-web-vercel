@@ -118,11 +118,20 @@ const OpportunitiesAndTrainingPage = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-4 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-3 mx-auto"
+                            onClick={() =>
+                                window.open(
+                                    "https://docs.google.com/forms/d/e/1FAIpQLSciXvmJv264cS16pb9Bv59INzCcddjXZly78SUfYxFqSJp-Gw/viewform",
+                                    "_blank"
+                                )
+                            }
+                            className="px-8 py-4 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] 
+  text-white font-semibold shadow-lg hover:shadow-xl 
+  transition-all flex items-center gap-3 mx-auto"
                         >
                             Start Your Journey
                             <ArrowRight className="w-5 h-5" />
                         </motion.button>
+
                     </motion.div>
                 </div>
             </section>
@@ -373,11 +382,20 @@ const OpportunitiesAndTrainingPage = () => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="px-10 py-4 rounded-full bg-white text-[#0D47A1] font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-3"
+                                onClick={() =>
+                                    window.open(
+                                        "https://docs.google.com/forms/d/e/1FAIpQLSciXvmJv264cS16pb9Bv59INzCcddjXZly78SUfYxFqSJp-Gw/viewform",
+                                        "_blank"
+                                    )
+                                }
+                                className="px-10 py-4 rounded-full bg-white text-[#0D47A1] 
+  font-semibold shadow-lg hover:shadow-xl 
+  transition-all flex items-center gap-3"
                             >
                                 Apply Now
                                 <ArrowRight className="w-5 h-5" />
                             </motion.button>
+
 
                             <button className="px-10 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all">
                                 Download Brochure

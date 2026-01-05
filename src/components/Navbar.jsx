@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 
 /* ================= SERVICES LIST ================= */
 const servicesList = [
-    { label: "SAP", path: "/sap-services" },
+    { label: "SAP SuccessFactors", path: "/sap-services" },
     { label: "Digital Transformation", path: "/digital-transformation" },
     { label: "QA Engineering", path: "/qa-engineering" },
     { label: "Bespoke Products", path: "/internal-product" },
