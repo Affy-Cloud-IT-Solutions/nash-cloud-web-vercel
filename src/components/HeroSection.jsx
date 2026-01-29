@@ -98,7 +98,7 @@ const HeroSection = () => {
                 <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed">
                     At{" "}
                     <span className="text-[#00B4FF] font-medium">
-                        Nash Cloud IT Solutions
+                        Nash Tech Consulting
                     </span>
                     , we bring together technology expertise, strategic insight, and
                     modern design thinking to build solutions that enhance productivity,

@@ -60,7 +60,6 @@ const DigitalTransformationServicesPage = () => {
             {/* Ambient Glows */}
             <div className="absolute top-[10%] left-[10%] w-[450px] h-[450px] bg-[#00B4FF]/20 blur-[180px] rounded-full"></div>
             <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] bg-[#0D47A1]/30 blur-[220px] rounded-full"></div>
-
             <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-28">
 
                 {/* Header */}

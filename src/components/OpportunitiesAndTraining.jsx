@@ -126,7 +126,7 @@ const OpportunitiesAndTraining = () => {
                                     </h3>
 
                                     <p className="text-[#94A3B8] mb-8 leading-relaxed">
-                                        At Nash Cloud IT Solutions, we're passionate about building professionals
+                                        At Nash Tech Consulting, we're passionate about building professionals
                                         who thrive in an AI-driven world. Our programme bridges the digital skills
                                         gap and creates sustainable capability pipelines across public and private sectors.
                                     </p>
@@ -194,7 +194,7 @@ const OpportunitiesAndTraining = () => {
                                             </div>
                                             <div>
                                                 <div className="text-white font-medium">Program Director</div>
-                                                <div className="text-sm text-[#94A3B8]">Nash Cloud IT Solutions</div>
+                                                <div className="text-sm text-[#94A3B8]">Nash Tech Consulting</div>
                                             </div>
                                         </div>
                                     </motion.div>

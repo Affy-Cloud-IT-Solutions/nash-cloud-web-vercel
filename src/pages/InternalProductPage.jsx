@@ -60,7 +60,7 @@ const InternalProduct = () => {
                     Internal Products
                 </h1>
                 <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-                    At <span className="text-[#00B4FF] font-semibold">Nash Cloud IT Solutions</span>, we design
+                    At <span className="text-[#00B4FF] font-semibold">Nash Tech Consulting</span>, we design
                     innovative digital products that redefine business processes and empower users with
                     intelligent, scalable, and seamless experiences.
                 </p>
