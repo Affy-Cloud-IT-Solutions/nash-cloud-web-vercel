@@ -47,8 +47,8 @@ const Navbar = () => {
                 <div onClick={() => navigate("/")} className="cursor-pointer">
                     <img
                         src={logo}
-                        alt="Nash Cloud IT Solutions"
-                        className="h-8 md:h-12 w-auto object-contain"
+                        alt="Tech Trade IT Solutions"
+                        className="h-10 md:h-14 w-auto object-contain"
                     />
                 </div>
 

@@ -38,7 +38,7 @@ const About = () => {
                 </h1>
 
                 <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6 max-w-3xl mx-auto">
-                    Nash Tech Consulting is a leading technology consulting company
+                    Tech Trade Consulting is a leading technology consulting company
                     specializing in{" "}
                     <span className="text-[#00B4FF] font-semibold">IT</span>,{" "}
                     <span className="text-[#00B4FF] font-semibold">SAP</span>, and{" "}
