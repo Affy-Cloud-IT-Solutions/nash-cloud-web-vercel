@@ -45,9 +45,9 @@ const Footer = () => {
                             <li>
                                 <button onClick={() => handleScroll("sap")} className="hover:text-[#0D47A1] text-left cursor-pointer">Services</button>
                             </li>
-                            <li>
+                            {/* <li>
                                 <button onClick={() => handleScroll("opportunities")} className="hover:text-[#0D47A1] text-left cursor-pointer">Interns Programme</button>
-                            </li>
+                            </li> */}
                             <li>
                                 <button onClick={() => handleScroll("resource")} className="hover:text-[#0D47A1] text-left cursor-pointer">Resourcing</button>
                             </li>
