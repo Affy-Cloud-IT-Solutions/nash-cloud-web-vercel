@@ -20,7 +20,7 @@ const ContactUs = () => {
     return (
         <section
             id="contact"
-            className="min-h-screen pt-24 pb-20 px-6 md:px-16 text-white bg-[linear-gradient(180deg,_rgb(7,12,28),_rgb(6,25,67))] relative overflow-hidden"
+            className="min-h-screen pt-24 pb-16 px-6 md:px-16 text-white bg-[linear-gradient(180deg,_rgb(7,12,28),_rgb(6,25,67))] relative overflow-hidden"
         >
             {/* Ambient Glows */}
             <div className="absolute top-[10%] left-[5%] w-[400px] h-[400px] bg-[#00B4FF]/20 blur-[160px] rounded-full"></div>
@@ -157,6 +157,24 @@ const ContactUs = () => {
                 </div>
 
 
+            </div>
+            {/* Collaboration Line */}
+
+            <div className="mt-13 flex flex-col items-center justify-center text-center justify-center">
+                <p className="text-xs md:text-sm text-gray-400 tracking-wide">
+                    A strategic collaboration with{" "}
+                    <a
+                        href="https://www.affyclouditsolutions.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#01b2b7] font-semibold hover:underline"
+                    >
+                        Affy Cloud Solution
+                    </a>
+                </p>
+
+                {/* Centered Divider */}
+                <div className="mt-3 h-[1px] w-40 bg-gradient-to-r from-transparent via-[#00B4FF]/50 to-transparent"></div>
             </div>
         </section>
     );

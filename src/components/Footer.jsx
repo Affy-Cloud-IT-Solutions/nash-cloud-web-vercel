@@ -1,6 +1,10 @@
+
+
+
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+
 const Footer = () => {
     const navigate = useNavigate();
 
@@ -18,7 +22,6 @@ const Footer = () => {
                     {/* Brand */}
                     <div>
                         <div className="text-2xl font-extrabold">
-                            {/* <span className="text-[#00B4FF]">Nash</span> Cloud IT Solutions */}
                             <img
                                 src={logo}
                                 alt="Tech Trade IT Solutions"
@@ -36,46 +39,24 @@ const Footer = () => {
                             Quick Links
                         </h4>
                         <ul className="space-y-2 text-gray-600">
-                            <li className="">
-                                <button
-                                    onClick={() => handleScroll("home")}
-                                    className="hover:text-[#0D47A1] text-left cursor-pointer"
-                                >
-                                    Home
-                                </button>
+                            <li>
+                                <button onClick={() => handleScroll("home")} className="hover:text-[#0D47A1] text-left cursor-pointer">Home</button>
                             </li>
                             <li>
-                                <button
-                                    onClick={() => handleScroll("sap")}
-                                    className="hover:text-[#0D47A1] text-left cursor-pointer"
-                                >
-                                    Services
-                                </button>
+                                <button onClick={() => handleScroll("sap")} className="hover:text-[#0D47A1] text-left cursor-pointer">Services</button>
                             </li>
                             <li>
-                                <button
-                                    onClick={() => handleScroll("opportunities")}
-                                    className="hover:text-[#0D47A1] text-left cursor-pointer"
-                                >
-                                    Interns Programme
-                                </button>
+                                <button onClick={() => handleScroll("opportunities")} className="hover:text-[#0D47A1] text-left cursor-pointer">Interns Programme</button>
                             </li>
                             <li>
-                                <button
-                                    onClick={() => handleScroll("resource")}
-                                    className="hover:text-[#0D47A1] text-left cursor-pointer"
-                                >
-                                    Resourcing
-                                </button>
+                                <button onClick={() => handleScroll("resource")} className="hover:text-[#0D47A1] text-left cursor-pointer">Resourcing</button>
                             </li>
                         </ul>
                     </div>
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">
-                            Services
-                        </h4>
+                        <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">Services</h4>
                         <ul className="space-y-2 text-gray-600">
                             <li>SAP Solutions</li>
                             <li>IT & Automation</li>
@@ -86,9 +67,7 @@ const Footer = () => {
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">
-                            Contact
-                        </h4>
+                        <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">Contact</h4>
                         <ul className="space-y-2 text-gray-600">
                             <li>United Kingdom</li>
                             <li>info@techtradeitsolutions.com</li>
@@ -98,25 +77,47 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="border-t border-white/10">
+                <div className="border-t border-gray-200">
                     <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex flex-col sm:flex-row items-center justify-between text-gray-700 text-sm">
-                        <div>
-                            © {new Date().getFullYear()} Tech Trade IT Solutions. All rights
-                            reserved.
+                        {/* <div>
+                            © {new Date().getFullYear()} Tech Trade IT Solutions. All rights reserved.
+                        </div> */}
+                        <div className="flex gap-4 mt-2 sm:mt-0 text-[14px]">
+                            <Link to="/privacy-policy" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">Privacy Policy</Link>
+                            <span className="text-gray-300">|</span>
+                            <Link to="/cookies-policy" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">Cookies Policy</Link>
+                            <span className="text-gray-300">|</span>
+                            <Link to="/terms-and-conditions" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">Terms & Conditions</Link>
                         </div>
+                    </div>
+                </div>
 
-                        <div className="flex gap-4 mt-2 sm:mt-0">
-                            <span className="hover:text-[#0D47A1] cursor-pointer">Privacy</span>
-                            <span className="hover:text-[#0D47A1] cursor-pointer">Terms</span>
+
+                {/* Legal / Registration Strip */}
+                <div className="border-t border-gray-200 bg-[#EBF5FF]/60">
+                    <div className="max-w-7xl mx-auto px-6 md:px-10 py-4.5 flex flex-col md:flex-row items-center justify-between gap-2.5 text-center md:text-left">
+
+                        {/* Company name + reg details */}
+                        <p className="text-[#0D47A1] font-semibold text-[15px] tracking-wide">
+                            TechTradeUK Limited
+                        </p>
+
+                        <div className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-1.5 text-gray-600 text-[14px]">
+                            <span>Registered in England &amp; Wales</span>
+                            <span className="hidden md:inline text-gray-300">|</span>
+                            <span>
+                                Company No: <span className="font-medium text-gray-700">10940432</span>
+                            </span>
+                            <span className="hidden md:inline text-gray-300">|</span>
+                            <span>
+                                VAT No: <span className="font-medium text-gray-700">288183364</span>
+                            </span>
                         </div>
                     </div>
 
-                    {/* Powered by */}
-                    <div className="text-center py-3 text-gray-700 text-xs border-t border-white/10">
-                        Powered by{" "}
-                        <span className="text-[#00B4FF] font-semibold">
-                            Affy Cloud IT Solutions
-                        </span>
+                    {/* Copyright + Registered Office */}
+                    <div className="border-t border-gray-200/70 py-3.5 px-6 md:px-10 text-center text-gray-600 text-[14px]">
+                        Copyright © {new Date().getFullYear()} Registered Office: 16 Burman Road, Birmingham, England, B90 2BD
                     </div>
                 </div>
             </div>

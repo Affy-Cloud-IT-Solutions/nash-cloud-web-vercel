@@ -16,6 +16,9 @@ import DigitalTransformationServicesPage from "./pages/DigitalTransformationServ
 import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
 
 import LandingPage from "./pages/LandingPage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 const App = () => {
   return (
@@ -33,6 +36,9 @@ const App = () => {
         <Route path="/it-solutions" element={<ITSolutionsPage />} />
         <Route path="/digital-transformation" element={<DigitalTransformationServicesPage />} />
         <Route path="/qa-engineering" element={<QAEngineeringServicesPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
 
       <Footer />
