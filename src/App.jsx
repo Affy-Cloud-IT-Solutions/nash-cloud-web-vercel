@@ -11,7 +11,7 @@ import SapServicesPage from "./pages/SapServicesPage";
 import ITSolutionsPage from "./pages/ITSolutionsPage";
 import ResourceAndConsultingPage from "./pages/ResourceAndConsultingPage";
 import InternalProductPage from "./pages/InternalProductPage";
-import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
+// import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
 import DigitalTransformationServicesPage from "./pages/DigitalTransformationServicesPage";
 import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
 
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/sap-services" element={<SapServicesPage />} />
         <Route path="/internal-product" element={<InternalProductPage />} />
-        <Route path="/opportunities" element={<OpportunitiesAndTrainingPage />} />
+        {/* <Route path="/opportunities" element={<OpportunitiesAndTrainingPage />} /> */}
         <Route path="/resourcing" element={<ResourceAndConsultingPage />} />
         <Route path="/it-solutions" element={<ITSolutionsPage />} />
         <Route path="/digital-transformation" element={<DigitalTransformationServicesPage />} />

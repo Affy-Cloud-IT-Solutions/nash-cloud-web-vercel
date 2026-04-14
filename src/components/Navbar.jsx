@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 
 /* ================= SERVICES LIST ================= */
 const servicesList = [
-    { label: "SAP SuccessFactors", path: "/sap-services" },
+    // { label: "SAP SuccessFactors", path: "/sap-services" },
     { label: "Digital Transformation", path: "/digital-transformation" },
     { label: "QA Engineering", path: "/qa-engineering" },
     { label: "Bespoke Products", path: "/internal-product" },
@@ -84,12 +84,22 @@ const Navbar = () => {
                         </div>
                     </li>
 
-                    <li
+                    {/* <li
                         onClick={() => handleScroll("opportunities")}
                         className="cursor-pointer hover:text-[#00B4FF]"
                     >
                         Interns Programme
+                    </li> */}
+
+                    <li>
+                        <Link
+                            to="/sap-services"
+                            className="cursor-pointer hover:text-[#00B4FF]"
+                        >
+                            SAP SuccessFactors
+                        </Link>
                     </li>
+
 
                     <li
                         onClick={() => handleScroll("resource")}
@@ -176,11 +186,24 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    <span
+                    {/* <span
                         onClick={() => handleScroll("opportunities")}
                         className="text-lg text-gray-800 cursor-pointer"
                     >
                         Interns Programme
+                    </span> */}
+
+                    <span>
+                        <Link
+                            to="/sap-services"
+                            onClick={() => {
+                                setMenuOpen(false);
+                                setServicesOpen(false);
+                            }}
+                            className="text-lg text-gray-800 cursor-pointer"
+                        >
+                            SAP SuccessFactors
+                        </Link>
                     </span>
 
                     <span
