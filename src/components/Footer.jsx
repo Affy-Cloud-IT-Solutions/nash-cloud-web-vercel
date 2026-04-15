@@ -99,7 +99,7 @@ const Footer = () => {
 
                         {/* Company name + reg details */}
                         <p className="text-[#0D47A1] font-semibold text-[15px] tracking-wide">
-                            TechTradeUK Limited
+                            TechTradeUK Limited is trading as TechTrade IT Solutions
                         </p>
 
                         <div className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-1.5 text-gray-600 text-[14px]">
@@ -108,10 +108,10 @@ const Footer = () => {
                             <span>
                                 Company No: <span className="font-medium text-gray-700">10940432</span>
                             </span>
-                            <span className="hidden md:inline text-gray-300">|</span>
+                            {/* <span className="hidden md:inline text-gray-300">|</span>
                             <span>
                                 VAT No: <span className="font-medium text-gray-700">288183364</span>
-                            </span>
+                            </span> */}
                         </div>
                     </div>
 
