@@ -102,8 +102,26 @@ const CompliancePage = () => {
 
                         <hr className="border-gray-200" />
 
-                        {/* ── Section 4: Our Commitment ── */}
+
+                        {/* ── Section 4: Contact for Verification ── */}
                         <section>
+                            <h2 className="text-xl font-semibold text-[#00B4FF] mb-3 flex items-center gap-2">
+                                <CheckCircle className="w-5 h-5 text-[#00B4FF]" />
+                                Contact for Verification
+                            </h2>
+
+                            <p>
+                                For verification of our compliance, insurance, or data protection details,
+                                please contact us:
+                            </p>
+
+                            <ul className="mt-2 space-y-1">
+                                <li><strong>Email:</strong> info@techtradeitsolutions.com</li>
+                                <li><strong>Phone:</strong> +44 7776 839310</li>
+                            </ul>
+                        </section>
+                        {/* ── Section 4: Our Commitment ── */}
+                        {/* <section>
                             <h2 className="text-xl font-semibold text-[#00B4FF] mb-3 flex items-center gap-2">
                                 <CheckCircle className="w-5 h-5 text-[#00B4FF]" />
                                 Our Commitment
@@ -119,7 +137,7 @@ const CompliancePage = () => {
                             </p>
 
 
-                        </section>
+                        </section> */}
 
                         {/* ── Logos ── */}
                         <hr className="border-gray-200 mt-6" />
