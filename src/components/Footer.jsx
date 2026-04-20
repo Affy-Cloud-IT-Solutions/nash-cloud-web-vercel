@@ -51,6 +51,9 @@ const Footer = () => {
                             <li>
                                 <button onClick={() => handleScroll("resource")} className="hover:text-[#0D47A1] text-left cursor-pointer">Resourcing</button>
                             </li>
+                            <li>
+                                <Link to="/compliance" className="hover:text-[#0D47A1] text-left cursor-pointer transition-colors duration-200">Compliance</Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -88,6 +91,16 @@ const Footer = () => {
                             <Link to="/cookies-policy" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">Cookies Policy</Link>
                             <span className="text-gray-300">|</span>
                             <Link to="/terms-and-conditions" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">Terms & Conditions</Link>
+                            <span className="text-gray-300">|</span>
+
+                        </div>
+
+                        <div className="mt-3 text-sm text-gray-600 text-center">
+                            <span>Fully Insured </span>
+                            <span className="mx-2">|</span>
+                            <span>  ICO Registered (CSN0277762) </span>
+                            <span className="mx-2">|</span>
+                            <span>GDPR Compliant</span>
                         </div>
                     </div>
                 </div>
