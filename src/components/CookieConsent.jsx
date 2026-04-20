@@ -25,6 +25,15 @@ const CookieConsent = () => {
     setShowPopup(false);
   };
 
+  const handleReject = () => {
+    // Set cookie to expire in 1 year
+    const expiryDate = new Date();
+    expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+
+    document.cookie = `techtrade_cookie_consent=false; expires=${expiryDate.toUTCString()}; path=/; SameSite=Lax`;
+    setShowPopup(false);
+  };
+
   if (!showPopup) return null;
 
   return (
@@ -32,16 +41,23 @@ const CookieConsent = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="text-sm text-gray-700 font-medium text-center md:text-left">
           <p>
-            We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Read our <Link to="/cookies-policy" className="text-blue-600 hover:text-blue-800 transition-colors underline">Cookie Policy</Link> for more details.
+            We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Read our <Link to="/cookies-policy" className="text-blue-600 hover:text-blue-800 transition-colors underline cursor-pointer">Cookie Policy</Link> for more details.
           </p>
         </div>
-        <div className="flex shrink-0 gap-3 w-full md:w-auto justify-center">
-          <Link to="/cookies-policy" className="text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200">
+        <div className="flex flex-wrap shrink-0 gap-3 w-full md:w-auto justify-center">
+          <Link to="/cookies-policy" className="text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center cursor-pointer">
             Learn More
           </Link>
           <button
+            onClick={handleReject}
+            className="bg-transparent border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 shadow-sm cursor-pointer"
+          >
+            Reject All
+          </button>
+
+          <button
             onClick={handleAccept}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 shadow-sm"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-200 shadow-sm cursor-pointer"
           >
             Accept All
           </button>
