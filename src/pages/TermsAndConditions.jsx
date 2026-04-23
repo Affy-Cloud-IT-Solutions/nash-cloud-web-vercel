@@ -64,7 +64,7 @@ const TermsAndConditions = () => {
             </p>
             <p className="mt-2">
               <strong>Email:</strong> info@techtradeitsolutions.com<br />
-              <strong>Registered Office:</strong> 16 Burman Road, Birmingham, UK
+              <strong>Registered Office:</strong> Birmingham, UK
             </p>
           </section>
         </div>

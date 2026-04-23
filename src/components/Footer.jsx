@@ -130,7 +130,7 @@ const Footer = () => {
 
                     {/* Copyright + Registered Office */}
                     <div className="border-t border-gray-200/70 py-3.5 px-6 md:px-10 text-center text-gray-600 text-[14px]">
-                        Copyright © {new Date().getFullYear()} Registered Office: 16 Burman Road, Birmingham, UK
+                        Copyright © {new Date().getFullYear()} Registered Office: Birmingham, UK
                     </div>
                 </div>
             </div>
