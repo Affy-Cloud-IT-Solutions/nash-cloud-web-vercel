@@ -4,7 +4,7 @@ import React from "react";
 import { Shield, Lock, CheckCircle, FileText } from "lucide-react";
 import simpleBusiness from "../assets/sb.jpg";
 import ico from "../assets/ico.png";
-import barclay from "../assets/barclay.png";
+// import barclay from "../assets/barclay.png";
 
 const CompliancePage = () => {
     return (
@@ -142,7 +142,7 @@ const CompliancePage = () => {
                         {/* ── Logos ── */}
                         <hr className="border-gray-200 mt-6" />
                         <div className="flex flex-wrap gap-6 pt-6">
-                            <img src={barclay} alt="Insurance Logo" className="h-12 object-contain" />
+                            {/* <img src={barclay} alt="Insurance Logo" className="h-12 object-contain" /> */}
                             <img src={simpleBusiness} alt="Simple Business Logo" className="h-12 object-contain" />
                             <img src={ico} alt="ICO Logo" className="h-12 object-contain" />
                         </div>

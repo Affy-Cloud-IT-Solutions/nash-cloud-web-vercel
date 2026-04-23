@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
               Welcome to <strong>TechTradeUK Limited</strong> ("we", "our", or "us"). We are committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
             <p className="mt-2">
-              Our registered office is: 16 Burman Road, Birmingham, England, B90 2BD. Company No: 10940432.
+              Our registered office is: 16 Burman Road, Birmingham, UK. Company No: 10940432.
             </p>
           </section>
 
@@ -77,7 +77,7 @@ const PrivacyPolicy = () => {
             </p>
             <p className="mt-2">
               <strong>TechTradeUK Limited</strong><br />
-              16 Burman Road, Birmingham, England, B90 2BD<br />
+              16 Burman Road, Birmingham, UK<br />
               Email: info@techtradeitsolutions.com<br />
               Phone: +44 7776 839310
             </p>

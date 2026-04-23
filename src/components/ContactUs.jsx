@@ -221,7 +221,7 @@ const ContactUs = () => {
                         <div className="space-y-6 text-gray-300">
                             <div>
                                 <h4 className="text-lg font-semibold text-white mb-1">Office</h4>
-                                <p>Birmingham, United Kingdom</p>
+                                <p>Birmingham, UK</p>
                             </div>
                             <div>
                                 <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
