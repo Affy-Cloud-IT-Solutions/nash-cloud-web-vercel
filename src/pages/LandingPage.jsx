@@ -8,6 +8,7 @@ import SapServices from "../components/SapServices";
 // import OpportunitiesAndTraining from "../components/OpportunitiesAndTraining";
 import InternalProducts from "../components/InternalProducts";
 import ResourcingAndConsultingSection from "../components/ResourcingAndConsultingSection";
+import OurApps from "./OurApps";
 import Testimonials from "../components/Testimonials";
 import ContactUs from "../components/ContactUs";
 
@@ -28,6 +29,7 @@ const LandingPage = () => {
             <section id="sap"><SapServices /></section>
             {/* <section id="opportunities"><OpportunitiesAndTraining /></section> */}
             <section id="products"><InternalProducts /></section>
+            <section id="ourapps"><OurApps /></section>
             <section id="resource"><ResourcingAndConsultingSection /></section>
             <section id="testimonials"><Testimonials /></section>
             <section id="contact"><ContactUs /></section>

@@ -15,7 +15,7 @@ import InternalProductPage from "./pages/InternalProductPage";
 // import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
 import DigitalTransformationServicesPage from "./pages/DigitalTransformationServicesPage";
 import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
-
+import OurApps from "./pages/OurApps";
 import LandingPage from "./pages/LandingPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiesPolicy from "./pages/CookiesPolicy";
@@ -38,6 +38,7 @@ const App = () => {
         <Route path="/it-solutions" element={<ITSolutionsPage />} />
         <Route path="/digital-transformation" element={<DigitalTransformationServicesPage />} />
         <Route path="/qa-engineering" element={<QAEngineeringServicesPage />} />
+        <Route path="/our-apps" element={<OurApps />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
