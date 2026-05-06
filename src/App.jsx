@@ -15,12 +15,16 @@ import InternalProductPage from "./pages/InternalProductPage";
 // import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
 import DigitalTransformationServicesPage from "./pages/DigitalTransformationServicesPage";
 import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
-import OurApps from "./pages/OurApps";
+import OurApps from "./components/OurApps";
 import LandingPage from "./pages/LandingPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiesPolicy from "./pages/CookiesPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CompliancePage from "./pages/CompliancePage";
+import OdooLandingPage from "./pages/OdooLandingPage";
+import ZohoLandingPage from "./pages/ZohoLandingPage";
+import FocusLandingPage from "./pages/FocusLandingPage";
+import SapLandingPage from "./pages/SapLandingPage";
 
 const App = () => {
   return (
@@ -38,7 +42,11 @@ const App = () => {
         <Route path="/it-solutions" element={<ITSolutionsPage />} />
         <Route path="/digital-transformation" element={<DigitalTransformationServicesPage />} />
         <Route path="/qa-engineering" element={<QAEngineeringServicesPage />} />
-        <Route path="/our-apps" element={<OurApps />} />
+        {/* <Route path="/our-apps" element={<OurApps />} /> */}
+        <Route path="/odoo-services" element={<OdooLandingPage />} />
+        <Route path="/zoho-services" element={<ZohoLandingPage />} />
+        <Route path="/focus-services" element={<FocusLandingPage />} />
+        <Route path="/sap-landing" element={<SapLandingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
