@@ -154,6 +154,7 @@ import about3 from "../assets/about3.png";
 import about4 from "../assets/about4.png";
 import about5 from "../assets/about5.png";
 import about6 from "../assets/about6.png";
+import WhoWeAreAndOffer from "../components/WhoWeAreAndOffer";
 
 const About = () => {
   const location = useLocation();
@@ -282,24 +283,24 @@ const About = () => {
             <img
               src={about1}
               alt="TechTrade team"
-              className="h-64 w-full rounded-[2rem] object-cover border border-[#00B4FF]/10 shadow-xl"
+              className="h-64 w-full rounded-[1rem] object-cover border border-[#00B4FF]/10 shadow-xl"
             />
             <img
               src={about2}
               alt="TechTrade workspace"
-              className="h-64 w-full rounded-[2rem] object-cover border border-[#00B4FF]/10 shadow-xl"
+              className="h-64 w-full rounded-[1rem] object-cover border border-[#00B4FF]/10 shadow-xl"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
               src={about3}
               alt="TechTrade collaboration"
-              className="h-44 w-full rounded-[2rem] object-cover border border-[#00B4FF]/10 shadow-xl"
+              className="h-44 w-full rounded-[1rem] object-cover border border-[#00B4FF]/10 shadow-xl"
             />
             <img
               src={about4}
               alt="TechTrade innovation"
-              className="h-44 w-full rounded-[2rem] object-cover border border-[#00B4FF]/10 shadow-xl"
+              className="h-44 w-full rounded-[rem] object-cover border border-[#00B4FF]/10 shadow-xl"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -448,7 +449,7 @@ const About = () => {
           </div>
         </div>
       </div>
-
+      {/* Why TechTrade Section */}
       <div className="relative z-10 mt-16 max-w-7xl mx-auto">
         <div id="why-techtrade" className="rounded-[2rem] border border-[#00B4FF]/15 bg-[#07122e]/90 p-8 shadow-[0_0_45px_rgba(0,180,255,0.14)]">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -470,7 +471,7 @@ const About = () => {
               Start the conversation
             </a> */}
           </div>
-
+          <WhoWeAreAndOffer />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
@@ -513,6 +514,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
+
 
       {/* Decorative Divider */}
       <div className="relative z-10 mt-20 max-w-7xl mx-auto h-[2px] bg-gradient-to-r from-transparent via-[#00B4FF]/40 to-transparent" />

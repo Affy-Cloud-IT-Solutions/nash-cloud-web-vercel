@@ -170,7 +170,7 @@ const ResourcingAndConsultingSection = () => {
                                 </span>
                             </motion.button>
 
-                            <motion.button
+                            {/* <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => navigate("/contact")}
@@ -180,7 +180,7 @@ const ResourcingAndConsultingSection = () => {
                                          transition-all duration-300"
                             >
                                 Schedule Consultation
-                            </motion.button>
+                            </motion.button> */}
                         </motion.div>
                     </motion.div>
 

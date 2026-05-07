@@ -13,8 +13,7 @@ const partners = [
   {
     name: "SAP",
     logo: sapLogo,
-    desc: "Enterprise-grade ERP solutions enabling scalable digital transformation and operational excellence.",
-    color: "#008FD3",
+    desc: "Scalable ERP solutions for digital transformation and operational efficiency.", color: "#008FD3",
     link: "/sap-landing",
     badge: "Enterprise",
     features: ["ERP Suite", "Cloud Solutions", "Analytics"]
@@ -118,10 +117,10 @@ const OfficialPartners = () => {
         >
           {/* Animated Badge */}
           <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 border-2 border-blue-200/50 mb-8 shadow-sm"
           >
             <Sparkles className="text-[#0D47A1] w-4 h-4" />
@@ -188,8 +187,7 @@ const OfficialPartners = () => {
               key={partner.name}
               variants={cardVariants}
               onClick={() => partner.link && navigate(partner.link)}
-              className="group relative bg-white w-full rounded-2xl p-8 border border-slate-200 hover:border-[#0D47A1]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100/50 flex flex-col cursor-pointer"
-            >
+              className="group relative bg-white w-full rounded-2xl p-8 border border-slate-200 hover:border-[#0D47A1]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-100/50 flex flex-col cursor-pointer"            >
               {/* Color Indicator */}
               <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1.5 rounded-b-full"
@@ -207,7 +205,7 @@ const OfficialPartners = () => {
               </div>
 
               {/* Logo Container */}
-              <div className="relative h-36 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+              <div className="relative h-36 flex items-center justify-center mb-8">
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img
                   src={partner.logo}

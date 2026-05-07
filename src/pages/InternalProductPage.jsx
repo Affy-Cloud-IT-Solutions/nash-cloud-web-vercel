@@ -20,7 +20,7 @@ import TutorioImage from '/images/TutorioImage.jpeg'
 
 const products = [
     {
-        title: "EaseUp",
+        title: "Worklynx",
         description:
             "A smart productivity platform built to streamline organizational workflows, automate manual processes, and enhance team collaboration with intuitive task management and performance insights.",
         icon: <Cpu className="w-10 h-10 text-[#00B4FF]" />,

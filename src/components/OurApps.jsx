@@ -206,20 +206,20 @@ const OurApps = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Enhanced Heading Section */}
+        {/* Heading Section - Centered */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
           {/* Animated Badge */}
           <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 border-2 border-blue-200/50 mb-8 shadow-sm"
           >
             <Sparkles className="text-[#0D47A1] w-4 h-4" />
@@ -228,55 +228,53 @@ const OurApps = () => {
             </span>
           </motion.div>
 
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
-                Our Products &{" "}
-                <span className="relative inline-block">
-                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#0D47A1] to-[#00B4FF]">
-                    Platforms
-                  </span>
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
-                    className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-[#0D47A1]/20 to-[#00B4FF]/20 rounded-full -mb-1"
-                  />
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+              Our Products &{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#0D47A1] to-[#00B4FF]">
+                  Platforms
                 </span>
-              </h2>
-              <p className="text-slate-600 mt-6 text-lg leading-relaxed">
-                Built to solve real-world business problems — from startups to
-                enterprises.
-              </p>
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="flex items-center gap-3">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => scroll("left")}
-                className="w-12 h-12 rounded-xl bg-white border-2 border-slate-200 hover:border-[#0D47A1] hover:bg-blue-50 text-slate-600 hover:text-[#0D47A1] flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft size={24} />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => scroll("right")}
-                className="w-12 h-12 rounded-xl bg-[#0D47A1] hover:bg-[#0B3D8B] text-white flex items-center justify-center shadow-lg hover:shadow-xl shadow-blue-200/50 transition-all duration-300"
-                aria-label="Scroll right"
-              >
-                <ChevronRight size={24} />
-              </motion.button>
-            </div>
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  className="absolute bottom-0 left-0 h-2 bg-gradient-to-r from-[#0D47A1]/20 to-[#00B4FF]/20 rounded-full -mb-1"
+                />
+              </span>
+            </h2>
+            <p className="text-slate-600 mt-6 text-lg leading-relaxed">
+              Built to solve real-world business problems — from startups to
+              enterprises.
+            </p>
           </div>
         </motion.div>
 
-        {/* Carousel Container */}
+        {/* Carousel Container with Side Arrows */}
         <div className="relative">
+          {/* Left Arrow - positioned on left side of carousel */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-xl bg-white border-2 border-slate-200 hover:border-[#0D47A1] hover:bg-blue-50 text-slate-600 hover:text-[#0D47A1] flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 -ml-6 lg:-ml-8"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={24} />
+          </motion.button>
+
+          {/* Right Arrow - positioned on right side of carousel */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-xl bg-[#0D47A1] hover:bg-[#0B3D8B] text-white flex items-center justify-center shadow-lg hover:shadow-xl shadow-blue-200/50 transition-all duration-300 -mr-6 lg:-mr-8"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={24} />
+          </motion.button>
+
           {/* Gradient Fade Indicators */}
           <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-50/80 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-blue-50/30 to-transparent z-10 pointer-events-none" />
@@ -364,48 +362,12 @@ const OurApps = () => {
                     ))}
                   </div>
 
-                  {/* Action Button */}
-                  {/* <motion.button
-                    whileHover={{ x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl font-bold text-sm transition-all duration-300 bg-gradient-to-r from-[#0D47A1] to-[#0D47A1] text-white hover:from-[#0B3D8B] hover:to-[#0B3D8B] hover:shadow-lg hover:shadow-blue-200/50 group/btn mt-auto"
-                  >
-                    Explore {app.name}
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                  </motion.button> */}
+                  {/* Action Button - commented out as in original */}
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-
-        {/* Bottom Stats */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {[
-            { number: "10+", label: "Products" },
-            { number: "50K+", label: "Active Users" },
-            { number: "99.9%", label: "Uptime" },
-            { number: "24/7", label: "Support" },
-          ].map((stat, index) => (
-            <div
-              key={stat.label}
-              className="text-center p-6 rounded-2xl bg-white border border-slate-200 hover:border-blue-100 hover:shadow-lg transition-all duration-300"
-            >
-              <div className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] mb-2">
-                {stat.number}
-              </div>
-              <div className="text-sm font-semibold text-slate-600">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div> */}
       </div>
     </section>
   );

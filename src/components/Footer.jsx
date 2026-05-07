@@ -3,7 +3,7 @@
 
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/TechTradeLogo.png";
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Footer = () => {
                             <img
                                 src={logo}
                                 alt="Tech Trade IT Solutions"
-                                className="h-10 md:h-14 w-auto object-contain"
+                                className="h-15 md:h-20 w-auto object-contain"
                             />
                         </div>
                         <p className="text-gray-600 mt-3">

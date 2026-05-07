@@ -117,7 +117,7 @@ const SapServices = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0D47A1]/5 text-[#0D47A1] text-sm font-medium mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 mb-5 rounded-full bg-white/80 border border-blue-200 text-blue-700 text-sm font-medium shadow">
                         <Zap className="w-4 h-4" />
                         OUR EXPERTISE
                     </div>
@@ -132,23 +132,24 @@ const SapServices = () => {
                 </motion.div>
 
                 {/* Simplified Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ y: -5 }}
+                            transition={{ duration: 0.2 }}
+                            // whileHover={{ scale: 1.02 }}
+                            // transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             onHoverStart={() => setHoveredIndex(index)}
                             onHoverEnd={() => setHoveredIndex(null)}
-                            className="group relative"
+                            className="group relative h-full flex"
                         >
                             {/* Card */}
                             <div
                                 onClick={() => navigate(service.link)}
-                                className="relative bg-white rounded-xl p-6 border border-[#E2E8F0] hover:border-[#0D47A1]/30 transition-all duration-300 hover:shadow-lg text-center flex flex-col items-center cursor-pointer"
+                                className="relative flex-1 bg-white rounded-xl p-6 border border-[#E2E8F0] hover:border-[#0D47A1]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-100/50 text-center flex flex-col items-center cursor-pointer h-full"
                             >
                                 {/* Top accent line */}
                                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D47A1] via-[#00B4FF] to-[#0D47A1] rounded-t-xl" />
@@ -162,17 +163,17 @@ const SapServices = () => {
                                     </div>
                                 </div>
 
-                                {/* Content */}
-                                <h3 className="text-xl font-semibold text-[#061943] mb-3 group-hover:text-[#0D47A1] transition-colors">
+                                {/* Content - NO hover animation on title */}
+                                <h3 className="text-xl font-semibold text-[#061943] mb-3">
                                     {service.title}
                                 </h3>
 
-                                <p className="text-[#475569] mb-6 leading-relaxed">
+                                <p className="text-[#475569] mb-6 leading-relaxed flex-grow">
                                     {service.description}
                                 </p>
 
                                 {/* Features */}
-                                <div className="flex flex-wrap gap-2 mb-6">
+                                <div className="flex flex-wrap gap-2 mt-auto justify-center">
                                     {service.features.map((feature, i) => (
                                         <span
                                             key={i}
@@ -182,57 +183,10 @@ const SapServices = () => {
                                         </span>
                                     ))}
                                 </div>
-
-                                {/* 
-                                <motion.button
-                                    whileHover={{ x: 5 }}
-                                    onClick={() => {
-                                        navigate(service.link);
-                                    }}
-                                    className="flex items-center gap-2 text-[#0D47A1] font-semibold text-sm group/btn"
-                                >
-                                    Learn More
-                                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                                </motion.button> */}
-
                             </div>
                         </motion.div>
                     ))}
                 </div>
-
-                {/* CTA Section */}
-                {/* <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="mt-20 text-center"
-                >
-                    <div className="bg-gradient-to-r from-[#0D47A1]/5 to-[#00B4FF]/5 rounded-2xl p-8 md:p-12 border border-[#0D47A1]/10">
-                        <h3 className="text-2xl md:text-3xl font-bold text-[#061943] mb-4">
-                            Ready to Transform Your Business?
-                        </h3>
-                        <p className="text-[#475569] max-w-xl mx-auto mb-8">
-                            Connect with our experts to discuss how our services can drive your digital success.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="px-8 py-3 rounded-lg bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold shadow-md hover:shadow-lg transition-shadow"
-                            >
-                                Get Started
-                            </motion.button>
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="px-8 py-3 rounded-lg border border-[#0D47A1] text-[#0D47A1] font-semibold hover:bg-[#0D47A1]/5 transition-colors"
-                            >
-                                View Case Studies
-                            </motion.button>
-                        </div>
-                    </div>
-                </motion.div> */}
             </div>
         </section>
     );

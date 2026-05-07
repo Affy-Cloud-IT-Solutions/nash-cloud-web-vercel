@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../assets/TechTradeLogo.png";
 
 /* ================= SERVICES LIST ================= */
 const servicesList = [
@@ -44,21 +44,21 @@ const Navbar = () => {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
-                ? "bg-white/95 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
-                : "bg-white"
+                ? "bg-white/50 backdrop-blur-[40px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+                : "bg-white/50 backdrop-blur-[40px]"
                 }`}
         >
             {/* Top Accent Line */}
-            <div className="h-[3px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
+            <div className="h-[2px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
 
             {/* ================= NAVBAR ================= */}
-            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-3 flex justify-between items-center">
+            <nav className="max-w-7xl mx-auto px-6 md:px-10 py-2 flex justify-between items-center">
                 {/* Logo */}
                 <div onClick={() => navigate("/")} className="cursor-pointer">
                     <img
                         src={logo}
                         alt="Tech Trade IT Solutions"
-                        className="h-10 md:h-14 w-auto object-contain"
+                        className="h-14 md:h-20 w-auto object-contain"
                     />
                 </div>
 
@@ -66,14 +66,14 @@ const Navbar = () => {
                 <ul className="hidden md:flex items-center space-x-10 text-gray-800 font-medium">
                     <li
                         onClick={() => handleScroll("home")}
-                        className="cursor-pointer hover:text-[#00B4FF]"
+                        className="cursor-pointer hover:text-[#00B4FF] transition-colors duration-300"
                     >
                         Home
                     </li>
 
                     {/* SERVICES */}
                     <li className="relative group cursor-pointer">
-                        <span className="flex items-center gap-1 hover:text-[#00B4FF] transition">
+                        <span className="flex items-center gap-1 hover:text-[#00B4FF] transition-colors duration-300">
                             Services
                             <ChevronDown
                                 size={16}
@@ -81,7 +81,7 @@ const Navbar = () => {
                             />
                         </span>
 
-                        <div className="absolute top-full left-0 mt-4 w-60 bg-white rounded-xl border border-gray-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <div className="absolute top-full left-0 mt-4 w-60 bg-white/80 backdrop-blur-2xl rounded-xl border border-white/20 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                             {servicesList.map((service) => (
                                 <Link
                                     key={service.path}
@@ -97,31 +97,30 @@ const Navbar = () => {
                     <li>
                         <Link
                             to="/sap-services"
-                            className="cursor-pointer hover:text-[#00B4FF]"
+                            className="cursor-pointer hover:text-[#00B4FF] transition-colors duration-300"
                         >
                             SAP SuccessFactors
                         </Link>
                     </li>
 
-
                     <li
                         onClick={() => handleScroll("resource")}
-                        className="cursor-pointer hover:text-[#00B4FF]"
+                        className="cursor-pointer hover:text-[#00B4FF] transition-colors duration-300"
                     >
                         Resourcing
                     </li>
 
                     {/* ABOUT US DROPDOWN */}
                     <li className="relative group cursor-pointer">
-                        <div 
+                        <div
                             onClick={() => navigate("/about")}
-                            className="ml-6 px-5 py-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                            className="ml-6 px-5 py-1.5 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2"
                         >
                             About Us
                             <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
                         </div>
 
-                        <div className="absolute top-full right-0 mt-4 w-60 bg-white rounded-xl border border-gray-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <div className="absolute top-full right-0 mt-4 w-60 bg-white/80 backdrop-blur-2xl rounded-xl border border-white/20 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                             {aboutList.map((item) => (
                                 <div
                                     key={item.id}
@@ -164,7 +163,7 @@ const Navbar = () => {
 
             {/* ================= MOBILE MENU ================= */}
             {menuOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-gray-200 py-6 flex flex-col items-center space-y-6 shadow-lg">
+                <div className="md:hidden absolute top-full left-0 w-full bg-white/90 backdrop-blur-2xl border-t border-white/20 py-6 flex flex-col items-center space-y-6 shadow-lg">
                     <span
                         onClick={() => handleScroll("home")}
                         className="text-lg text-gray-800 cursor-pointer"
@@ -188,7 +187,7 @@ const Navbar = () => {
                         </span>
 
                         {servicesOpen && (
-                            <div className="mt-4 w-[85%] bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                            <div className="mt-4 w-[85%] bg-gray-50/90 backdrop-blur-xl rounded-xl border border-white/20 overflow-hidden">
                                 {servicesList.map((service) => (
                                     <Link
                                         key={service.path}
@@ -205,13 +204,6 @@ const Navbar = () => {
                             </div>
                         )}
                     </div>
-
-                    {/* <span
-                        onClick={() => handleScroll("opportunities")}
-                        className="text-lg text-gray-800 cursor-pointer"
-                    >
-                        Interns Programme
-                    </span> */}
 
                     <span>
                         <Link
@@ -249,7 +241,7 @@ const Navbar = () => {
                         </span>
 
                         {aboutOpen && (
-                            <div className="mt-4 w-[85%] bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                            <div className="mt-4 w-[85%] bg-gray-50/90 backdrop-blur-xl rounded-xl border border-white/20 overflow-hidden">
                                 {aboutList.map((item) => (
                                     <div
                                         key={item.id}
