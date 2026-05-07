@@ -61,10 +61,18 @@ const Footer = () => {
                     <div>
                         <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">Services</h4>
                         <ul className="space-y-2 text-gray-600">
-                            <li>SAP Solutions</li>
-                            <li>IT & Automation</li>
-                            <li>Resourcing / Consulting</li>
-                            <li>Product Services</li>
+                            <li>
+                                <Link to="/sap-services" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">SAP Solutions</Link>
+                            </li>
+                            <li>
+                                <Link to="/it-solutions" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">IT & Automation</Link>
+                            </li>
+                            <li>
+                                <Link to="/resourcing" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">Resourcing / Consulting</Link>
+                            </li>
+                            <li>
+                                <Link to="/internal-product" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">Product Services</Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -73,8 +81,12 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold mb-3 text-[#00B4FF]">Contact</h4>
                         <ul className="space-y-2 text-gray-600">
                             <li>United Kingdom</li>
-                            <li>info@techtradeitsolutions.com</li>
-                            <li>+44 7776 839310</li>
+                            <li>
+                                <a href="mailto:info@techtradeitsolutions.com" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">info@techtradeitsolutions.com</a>
+                            </li>
+                            <li>
+                                <a href="tel:+447776839310" className="hover:text-[#0D47A1] cursor-pointer transition-colors duration-200">+44 7776 839310</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

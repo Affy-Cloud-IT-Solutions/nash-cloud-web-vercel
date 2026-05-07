@@ -5,23 +5,33 @@ import logo from "../assets/logo.png";
 
 /* ================= SERVICES LIST ================= */
 const servicesList = [
-    // { label: "SAP SuccessFactors", path: "/sap-services" },
     { label: "Digital Transformation", path: "/digital-transformation" },
     { label: "QA Engineering", path: "/qa-engineering" },
     { label: "Bespoke Products", path: "/internal-product" },
 ];
 
+/* ================= ABOUT LIST ================= */
+const aboutList = [
+    { label: "About TechTrade", id: "about-techtrade" },
+    { label: "Vision and Values", id: "vision-values" },
+    { label: "Leadership Team", id: "leadership" },
+    { label: "Life at TechTrade", id: "culture" },
+    { label: "Why TechTrade!", id: "why-techtrade" },
+];
+
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [aboutOpen, setAboutOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const navigate = useNavigate();
 
     /* ================= LANDING PAGE NAVIGATION ================= */
-    const handleScroll = (id) => {
-        navigate("/", { state: { scrollTo: id } });
+    const handleScroll = (id, path = "/") => {
+        navigate(path, { state: { scrollTo: id } });
         setMenuOpen(false);
         setServicesOpen(false);
+        setAboutOpen(false);
     };
 
     /* ================= SCROLL EFFECT ================= */
@@ -84,13 +94,6 @@ const Navbar = () => {
                         </div>
                     </li>
 
-                    {/* <li
-                        onClick={() => handleScroll("opportunities")}
-                        className="cursor-pointer hover:text-[#00B4FF]"
-                    >
-                        Interns Programme
-                    </li> */}
-
                     <li>
                         <Link
                             to="/sap-services"
@@ -108,13 +111,30 @@ const Navbar = () => {
                         Resourcing
                     </li>
 
-                    <li>
-                        <Link
-                            to="/about"
-                            className="ml-6 px-5 py-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+                    {/* ABOUT US DROPDOWN */}
+                    <li className="relative group cursor-pointer">
+                        <div 
+                            onClick={() => navigate("/about")}
+                            className="ml-6 px-5 py-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2"
                         >
                             About Us
-                        </Link>
+                            <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
+                        </div>
+
+                        <div className="absolute top-full right-0 mt-4 w-60 bg-white rounded-xl border border-gray-200 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                            {aboutList.map((item) => (
+                                <div
+                                    key={item.id}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleScroll(item.id, "/about");
+                                    }}
+                                    className="block px-5 py-3 text-sm text-gray-700 hover:bg-[#00B4FF]/10 hover:text-[#00B4FF] transition cursor-pointer"
+                                >
+                                    {item.label}
+                                </div>
+                            ))}
+                        </div>
                     </li>
                 </ul>
 
@@ -213,13 +233,44 @@ const Navbar = () => {
                         Resourcing
                     </span>
 
-                    <Link
-                        to="/about"
-                        onClick={() => setMenuOpen(false)}
-                        className="px-8 py-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold"
-                    >
-                        About Us
-                    </Link>
+                    {/* MOBILE ABOUT US */}
+                    <div className="w-full flex flex-col items-center">
+                        <span
+                            onClick={() => setAboutOpen(!aboutOpen)}
+                            className={`flex items-center gap-2 text-lg cursor-pointer transition ${aboutOpen ? "text-[#00B4FF]" : "text-gray-800"
+                                }`}
+                        >
+                            About Us
+                            <ChevronDown
+                                size={18}
+                                className={`transition-transform duration-300 ${aboutOpen ? "rotate-180 text-[#00B4FF]" : ""
+                                    }`}
+                            />
+                        </span>
+
+                        {aboutOpen && (
+                            <div className="mt-4 w-[85%] bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                                {aboutList.map((item) => (
+                                    <div
+                                        key={item.id}
+                                        onClick={() => {
+                                            handleScroll(item.id, "/about");
+                                        }}
+                                        className="block w-full px-5 py-3 text-sm text-gray-700 border-b last:border-b-0 hover:bg-[#00B4FF]/10 hover:text-[#00B4FF] transition text-center cursor-pointer"
+                                    >
+                                        {item.label}
+                                    </div>
+                                ))}
+                                <Link
+                                    to="/about"
+                                    onClick={() => setMenuOpen(false)}
+                                    className="block w-full px-5 py-3 text-sm font-bold text-[#0D47A1] hover:bg-[#00B4FF]/10 transition text-center"
+                                >
+                                    View Full About Page
+                                </Link>
+                            </div>
+                        )}
+                    </div>
                 </div>
             )}
         </header>

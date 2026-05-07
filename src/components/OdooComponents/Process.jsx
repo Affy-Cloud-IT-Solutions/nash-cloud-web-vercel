@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Wrench, Link2, Rocket, Headphones, CheckCircle2 } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA  = "#00B4FF";
 
 const steps = [
   {
@@ -63,7 +63,7 @@ export default function Process() {
           className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ background: "rgba(113,75,103,0.08)", color: ODOO }}>
+            style={{ background: "rgba(13, 71, 161,0.08)", color: ODOO }}>
             Our Process
           </span>
           <h2 className="font-bold leading-tight mb-4" style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "#1e1b1b" }}>

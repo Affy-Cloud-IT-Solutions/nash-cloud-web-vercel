@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Award, Clock, ShieldCheck, Zap } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA  = "#00B4FF";
 
 const trustBadges = [
   { icon: Award,       label: "Certified Odoo Consultants", sub: "Official certification"  },
@@ -98,7 +98,7 @@ export default function TrustBar() {
               style={{ borderColor: "#ede8eb" }}
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(113,75,103,0.08)" }}>
+                style={{ background: "rgba(13, 71, 161,0.08)" }}>
                 <b.icon size={19} style={{ color: ODOO }} />
               </div>
               <div className="min-w-0">
@@ -135,7 +135,7 @@ export default function TrustBar() {
                   style={{ borderColor: "#ede8eb", color: "#9e97a3" }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = ODOO;
-                    e.currentTarget.style.borderColor = "rgba(113,75,103,0.3)";
+                    e.currentTarget.style.borderColor = "rgba(13, 71, 161,0.3)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = "#9e97a3";

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA  = "#00B4FF";
 
 const benefits = [
   "Free 45-min strategy session",
@@ -19,7 +19,7 @@ export default function CTASection() {
   return (
     <section className="py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden" style={{ background: "#f9f7f5" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border" style={{ borderColor: "rgba(113,75,103,0.15)" }}>
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border" style={{ borderColor: "rgba(13, 71, 161,0.15)" }}>
           {/* Solid bg — Odoo wine purple */}
           <div className="absolute inset-0" style={{ background: ODOO }} />
 

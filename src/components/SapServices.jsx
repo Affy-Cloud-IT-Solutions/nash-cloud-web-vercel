@@ -146,7 +146,10 @@ const SapServices = () => {
                             className="group relative"
                         >
                             {/* Card */}
-                            <div className="relative bg-white rounded-xl p-6 border border-[#E2E8F0] hover:border-[#0D47A1]/30 transition-all duration-300 hover:shadow-lg text-center flex flex-col items-center">
+                            <div
+                                onClick={() => navigate(service.link)}
+                                className="relative bg-white rounded-xl p-6 border border-[#E2E8F0] hover:border-[#0D47A1]/30 transition-all duration-300 hover:shadow-lg text-center flex flex-col items-center cursor-pointer"
+                            >
                                 {/* Top accent line */}
                                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0D47A1] via-[#00B4FF] to-[#0D47A1] rounded-t-xl" />
 
@@ -180,7 +183,7 @@ const SapServices = () => {
                                     ))}
                                 </div>
 
-                                {/* Learn More Button */}
+                                {/* 
                                 <motion.button
                                     whileHover={{ x: 5 }}
                                     onClick={() => {
@@ -190,7 +193,7 @@ const SapServices = () => {
                                 >
                                     Learn More
                                     <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                                </motion.button>
+                                </motion.button> */}
 
                             </div>
                         </motion.div>

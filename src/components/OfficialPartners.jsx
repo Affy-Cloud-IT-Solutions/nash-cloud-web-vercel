@@ -23,7 +23,7 @@ const partners = [
     name: "Odoo",
     logo: odooLogo,
     desc: "All-in-one business management platform designed for modern, agile organizations.",
-    color: "#714B67",
+    color: "#0D47A1",
     link: "/odoo-services",
     badge: "Popular",
     features: ["Open Source", "Modular Apps", "Community"]
@@ -187,7 +187,8 @@ const OfficialPartners = () => {
             <motion.div
               key={partner.name}
               variants={cardVariants}
-              className="group relative bg-white w-full rounded-2xl p-8 border border-slate-200 hover:border-[#0D47A1]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100/50 flex flex-col"
+              onClick={() => partner.link && navigate(partner.link)}
+              className="group relative bg-white w-full rounded-2xl p-8 border border-slate-200 hover:border-[#0D47A1]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100/50 flex flex-col cursor-pointer"
             >
               {/* Color Indicator */}
               <div
@@ -237,11 +238,10 @@ const OfficialPartners = () => {
                 </div>
 
                 {/* Action Button */}
-                <div className="mt-auto">
+                <div className="mt-auto pointer-events-none">
                   <motion.button
                     whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => partner.link && navigate(partner.link)}
                     className="w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl font-bold text-sm transition-all duration-300 bg-gradient-to-r from-[#0D47A1] to-[#0D47A1] text-white hover:from-[#0B3D8B] hover:to-[#0B3D8B] hover:shadow-lg hover:shadow-blue-200/50 group/btn"
                   >
                     Learn more

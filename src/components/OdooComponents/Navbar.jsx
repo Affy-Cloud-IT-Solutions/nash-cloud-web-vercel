@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA  = "#00B4FF";
 
 const navLinks = [
   { label: "Home",     href: "#home" },
@@ -65,7 +65,7 @@ export default function Navbar() {
             background: scrolled ? "rgba(255,255,255,0.97)" : "rgba(255,255,255,0.85)",
             backdropFilter: "blur(20px) saturate(150%)",
             borderBottom: scrolled ? "1px solid #ede8eb" : "1px solid rgba(237,232,235,0.5)",
-            boxShadow: scrolled ? "0 2px 12px rgba(113,75,103,0.08)" : "none",
+            boxShadow: scrolled ? "0 2px 12px rgba(13, 71, 161,0.08)" : "none",
           }}
         />
 
@@ -138,7 +138,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.9 }}
               onClick={() => setMenuOpen((v) => !v)}
               className="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center focus:outline-none flex-shrink-0"
-              style={{ background: "rgba(113,75,103,0.08)" }}
+              style={{ background: "rgba(13, 71, 161,0.08)" }}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -184,7 +184,7 @@ export default function Navbar() {
                 width: "min(320px, 85vw)",
                 background: "#fff",
                 borderLeft: "1px solid #ede8eb",
-                boxShadow: "-8px 0 32px rgba(113,75,103,0.12)",
+                boxShadow: "-8px 0 32px rgba(13, 71, 161,0.12)",
               }}
             >
               <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b" style={{ borderColor: "#ede8eb" }}>
@@ -196,7 +196,7 @@ export default function Navbar() {
                 <button
                   onClick={() => setMenuOpen(false)}
                   className="w-9 h-9 rounded-xl flex items-center justify-center focus:outline-none"
-                  style={{ background: "rgba(113,75,103,0.08)" }}
+                  style={{ background: "rgba(13, 71, 161,0.08)" }}
                 >
                   <X size={18} style={{ color: ODOO }} />
                 </button>
@@ -215,8 +215,8 @@ export default function Navbar() {
                       onClick={() => scrollTo(link.href)}
                       className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl mb-1.5 text-left transition-all duration-200 focus:outline-none"
                       style={{
-                        background: active ? "rgba(113,75,103,0.07)" : "transparent",
-                        border: `1px solid ${active ? "rgba(113,75,103,0.2)" : "#f0eaee"}`,
+                        background: active ? "rgba(13, 71, 161,0.07)" : "transparent",
+                        border: `1px solid ${active ? "rgba(13, 71, 161,0.2)" : "#f0eaee"}`,
                       }}
                     >
                       <span className="text-base font-medium" style={{ color: active ? ODOO : "#4a4450" }}>

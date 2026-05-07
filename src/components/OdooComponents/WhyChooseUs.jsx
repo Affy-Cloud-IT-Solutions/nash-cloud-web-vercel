@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Puzzle, Layers, Zap, LifeBuoy, CheckCircle2, XCircle, ChevronRight } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA = "#05adae";
+const ODOO = "#0D47A1";
+const CTA = "#00B4FF";
 
 const features = [
   {
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
           className="text-center max-w-2xl mx-auto mb-12 sm:mb-14 md:mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ background: "rgba(113,75,103,0.08)", color: ODOO }}>
+            style={{ background: "rgba(13, 71, 161,0.08)", color: ODOO }}>
             Why Affy Cloud
           </span>
           <h2 className="font-bold leading-tight mb-3" style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "#1e1b1b" }}>
@@ -84,12 +84,12 @@ export default function WhyChooseUs() {
                   whileHover={{ x: active ? 0 : 3 }}
                   className="flex items-start gap-3 sm:gap-4 p-4 rounded-xl border text-left transition-all duration-200 focus:outline-none w-full"
                   style={{
-                    background: active ? "rgba(113,75,103,0.06)" : "#fff",
-                    borderColor: active ? "rgba(113,75,103,0.25)" : "#ede8eb",
+                    background: active ? "rgba(13, 71, 161,0.06)" : "#fff",
+                    borderColor: active ? "rgba(13, 71, 161,0.25)" : "#ede8eb",
                   }}
                 >
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: active ? "rgba(113,75,103,0.12)" : "rgba(113,75,103,0.06)" }}>
+                    style={{ background: active ? "rgba(13, 71, 161,0.12)" : "rgba(13, 71, 161,0.06)" }}>
                     <f.icon size={18} style={{ color: active ? ODOO : "#c4b8c0" }} />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -120,10 +120,10 @@ export default function WhyChooseUs() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.28 }}
                 className="rounded-2xl p-6 sm:p-8 border mb-4"
-                style={{ background: "#faf8f9", borderColor: "rgba(113,75,103,0.18)" }}
+                style={{ background: "#faf8f9", borderColor: "rgba(13, 71, 161,0.18)" }}
               >
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-5"
-                  style={{ background: "rgba(113,75,103,0.1)" }}>
+                  style={{ background: "rgba(13, 71, 161,0.1)" }}>
                   <feat.icon size={26} style={{ color: ODOO }} />
                 </div>
                 <span className="text-3xl sm:text-4xl font-bold block mb-0.5" style={{ color: ODOO }}>
@@ -145,8 +145,8 @@ export default function WhyChooseUs() {
               onClick={() => setShowComparison((v) => !v)}
               className="w-full flex items-center justify-between px-5 py-3.5 rounded-xl border text-sm font-medium transition-all duration-200 focus:outline-none"
               style={{
-                background: showComparison ? "rgba(113,75,103,0.05)" : "#fff",
-                borderColor: showComparison ? "rgba(113,75,103,0.25)" : "#ede8eb",
+                background: showComparison ? "rgba(13, 71, 161,0.05)" : "#fff",
+                borderColor: showComparison ? "rgba(13, 71, 161,0.25)" : "#ede8eb",
                 color: showComparison ? ODOO : "#6b6073",
               }}
             >

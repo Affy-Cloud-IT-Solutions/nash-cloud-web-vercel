@@ -11,7 +11,7 @@ const testimonials = [
   },
   {
     name: "James Okonkwo", role: "CFO, RetailPlus Group", avatar: "JO",
-    industry: "Retail", color: "#714b67",
+    industry: "Retail", color: "#0D47A1",
     text: "The accounting and inventory modules work seamlessly together. Bank reconciliation that used to take 2 days now takes 20 minutes. Affy Cloud's team was professional, transparent, and genuinely cared about our success.",
     stars: 5, metric: { value: "6×", label: "Faster bank reconciliation" },
   },
@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     name: "Marcus Webb", role: "VP Operations, LogiTrack", avatar: "MW",
-    industry: "Logistics", color: "#714b67",
+    industry: "Logistics", color: "#0D47A1",
     text: "Implementing Odoo for our fleet management and warehouse operations was seamless with Affy Cloud. Real-time visibility across 8 warehouses has cut our operational costs by nearly a quarter.",
     stars: 5, metric: { value: "24%", label: "Reduction in operational costs" },
   },
@@ -64,13 +64,13 @@ export default function Testimonials() {
           className="text-center max-w-xl mx-auto mb-10 sm:mb-12 md:mb-14"
         >
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ background: "rgba(113,75,103,0.1)", color: "#714b67" }}>
+            style={{ background: "rgba(13, 71, 161,0.1)", color: "#0D47A1" }}>
             Client Stories
           </span>
           <h2 className="font-bold text-gray-900 mb-3"
             style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}>
             Real Results from{" "}
-            <span style={{ color: "#714b67" }}>Real Businesses</span>
+            <span style={{ color: "#0D47A1" }}>Real Businesses</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-500">
             Don't take our word for it — hear from businesses we've transformed.

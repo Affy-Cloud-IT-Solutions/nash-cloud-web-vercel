@@ -5,8 +5,8 @@ import {
   Megaphone, ShoppingCart, CheckCircle2, ArrowRight, X,
 } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA  = "#00B4FF";
 
 const CATS = ["All", "Sales", "Finance", "Operations", "People", "Marketing"];
 
@@ -158,7 +158,7 @@ export default function Services() {
         >
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4 sm:mb-5"
-            style={{ background: "rgba(113,75,103,0.08)", color: ODOO }}
+            style={{ background: "rgba(13, 71, 161,0.08)", color: ODOO }}
           >
             What We Implement
           </span>

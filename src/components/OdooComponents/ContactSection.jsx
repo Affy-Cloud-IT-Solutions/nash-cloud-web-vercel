@@ -5,8 +5,8 @@ import {
   Users, TrendingUp, Calculator, Package, UserCog, Factory, Megaphone, ShoppingCart,
 } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA  = "#00B4FF";
 
 const contactInfo = [
   { icon: Phone,  label: "India",       value: "+91 9131395883",                              href: "tel:+919131395883" },
@@ -40,7 +40,7 @@ export default function ContactSection() {
 
   const inputStyle = (name) => ({
     borderColor:  focused === name ? ODOO : "#ede8eb",
-    boxShadow:    focused === name ? "0 0 0 3px rgba(113,75,103,0.1)" : "none",
+    boxShadow:    focused === name ? "0 0 0 3px rgba(13, 71, 161,0.1)" : "none",
     outline:      "none",
     transition:   "border-color 0.2s, box-shadow 0.2s",
   });
@@ -57,7 +57,7 @@ export default function ContactSection() {
           className="text-center max-w-xl mx-auto mb-12 sm:mb-14"
         >
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ background: "rgba(113,75,103,0.08)", color: ODOO }}>
+            style={{ background: "rgba(13, 71, 161,0.08)", color: ODOO }}>
             Get In Touch
           </span>
           <h2 className="font-bold leading-tight mb-3" style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", color: "#1e1b1b" }}>

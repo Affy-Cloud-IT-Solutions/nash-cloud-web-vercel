@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Github, ArrowUpRight } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA  = "#00B4FF";
 
 const quickLinks  = [
   { label: "Home",      href: "#home" },

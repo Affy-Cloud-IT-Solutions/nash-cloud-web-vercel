@@ -1,5 +1,20 @@
 import React from "react";
-import { Cpu, Briefcase, BarChart3, BookOpen } from "lucide-react";
+import {
+    Cpu,
+    Briefcase,
+    BarChart3,
+    BookOpen,
+    BrainCircuit,
+    Utensils,
+    Shirt,
+    Building2,
+    Car,
+    GraduationCap,
+    Ticket,
+    Truck,
+    Store,
+    Kanban
+} from "lucide-react";
 import TrackImage from '/images/TrackImage.jpeg'
 import TutorioImage from '/images/TutorioImage.jpeg'
 
@@ -21,19 +36,83 @@ const products = [
         align: "right",
     },
     {
-        title: "T-Rack",
+        title: "Metamind",
         description:
-            "An advanced ticketing and issue-tracking tool that enables teams to efficiently manage support requests, monitor progress, and ensure accountability across departments in real-time.",
-        icon: <BarChart3 className="w-10 h-10 text-[#00B4FF]" />,
-        img: TrackImage,
+            "An AI-powered startup studio that transforms raw ideas into investable ventures. Provides deep market analysis, AI-generated roadmaps, and professional pitch deck construction.",
+        icon: <BrainCircuit className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
+        align: "left",
+    },
+    {
+        title: "Restro Management",
+        description:
+            "A comprehensive restaurant management ecosystem. Handle table bookings, kitchen displays, inventory control, and real-time financial reporting in one unified dashboard.",
+        icon: <Utensils className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80",
+        align: "right",
+    },
+    {
+        title: "Laundry Management",
+        description:
+            "Modernizing the laundry industry with full digital workflows. Features include garment tagging, wash cycle tracking, automated delivery scheduling, and multi-branch management.",
+        icon: <Shirt className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1600&q=80",
+        align: "left",
+    },
+    {
+        title: "CRM Construction",
+        description:
+            "Specialized CRM built for the construction industry. Track site progress, manage complex contracts, monitor lead pipelines, and provide clients with dedicated project portals.",
+        icon: <Building2 className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://plus.unsplash.com/premium_photo-1733306696471-807493ff845b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        align: "right",
+    },
+    {
+        title: "Byethecar",
+        description:
+            "An AI-driven marketplace for used vehicles. Empowers sellers with accurate price estimations and buyers with verified listings and secure, transparent transaction tools.",
+        icon: <Car className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=1600&q=80",
         align: "left",
     },
     {
         title: "Tutorio",
         description:
             "A personalized e-learning platform built to empower learners through interactive courses, live mentoring, and AI-driven progress tracking for enhanced learning outcomes.",
-        icon: <BookOpen className="w-10 h-10 text-[#00B4FF]" />,
+        icon: <GraduationCap className="w-10 h-10 text-[#00B4FF]" />,
         img: TutorioImage,
+        align: "right",
+    },
+    {
+        title: "T-Rack",
+        description:
+            "An advanced ticketing and issue-tracking tool that enables teams to efficiently manage support requests, monitor progress, and ensure accountability across departments in real-time.",
+        icon: <Ticket className="w-10 h-10 text-[#00B4FF]" />,
+        img: TrackImage,
+        align: "left",
+    },
+    {
+        title: "Fleet Management",
+        description:
+            "High-performance fleet tracking and analytics. Optimize routes in real-time, monitor driver behavior, and cut operational costs with detailed fuel and maintenance analytics.",
+        icon: <Truck className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
+        align: "right",
+    },
+    {
+        title: "Nexus",
+        description:
+            "A hyperlocal marketplace designed to connect city-based buyers and sellers. Features real-time in-app chat, secure payment processing, and verified local business listings.",
+        icon: <Store className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=1600&q=80",
+        align: "left",
+    },
+    {
+        title: "PMS",
+        description:
+            "A powerful Project Management System built for modern teams. Streamline task assignments, visualize project timelines, and foster seamless collaboration to deliver faster.",
+        icon: <Kanban className="w-10 h-10 text-[#00B4FF]" />,
+        img: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&w=1600&q=80",
         align: "right",
     },
 ];

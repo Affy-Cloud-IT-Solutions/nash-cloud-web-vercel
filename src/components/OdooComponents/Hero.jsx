@@ -5,8 +5,8 @@ import {
   Calculator, Package, UserCog, Factory, CheckCircle, Star,
 } from "lucide-react";
 
-const ODOO = "#714b67";
-const CTA  = "#05adae";
+const ODOO = "#0D47A1";
+const CTA = "#00B4FF";
 
 const industries = [
   "Manufacturing",
@@ -17,12 +17,12 @@ const industries = [
 ];
 
 const moduleData = [
-  { icon: Users,      label: "CRM",      value: "2,847", color: ODOO },
-  { icon: TrendingUp, label: "Sales",    value: "$94K",  color: CTA  },
-  { icon: Calculator, label: "Finance",  value: "98%",   color: ODOO },
-  { icon: Package,    label: "Inventory",value: "1,204", color: CTA  },
-  { icon: UserCog,    label: "HR",       value: "124",   color: ODOO },
-  { icon: Factory,    label: "MFG",      value: "48 WO", color: CTA  },
+  { icon: Users, label: "CRM", value: "2,847", color: ODOO },
+  { icon: TrendingUp, label: "Sales", value: "$94K", color: CTA },
+  { icon: Calculator, label: "Finance", value: "98%", color: ODOO },
+  { icon: Package, label: "Inventory", value: "1,204", color: CTA },
+  { icon: UserCog, label: "HR", value: "124", color: ODOO },
+  { icon: Factory, label: "MFG", value: "48 WO", color: CTA },
 ];
 
 const chartBars = [38, 52, 44, 68, 58, 82, 72, 94, 78, 100, 86, 94];
@@ -56,8 +56,8 @@ function AnimatedCounter({ target, suffix = "", duration = 1800 }) {
 }
 
 export default function Hero() {
-  const [idx,    setIdx]   = useState(0);
-  const [text,   setText]  = useState("");
+  const [idx, setIdx] = useState(0);
+  const [text, setText] = useState("");
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
@@ -91,7 +91,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full blur-[160px]"
-          style={{ background: "rgba(113,75,103,0.07)" }}
+          style={{ background: "rgba(13, 71, 161,0.07)" }}
         />
         <div
           className="absolute -bottom-40 right-0 w-[400px] h-[400px] rounded-full blur-[140px]"
@@ -111,7 +111,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55 }}
               className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border mb-6 sm:mb-7"
-              style={{ background: "rgba(113,75,103,0.07)", borderColor: "rgba(113,75,103,0.2)" }}
+              style={{ background: "rgba(13, 71, 161,0.07)", borderColor: "rgba(13, 71, 161,0.2)" }}
             >
               <span className="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style={{ background: ODOO }} />
               <span className="text-xs sm:text-sm font-medium" style={{ color: ODOO }}>
@@ -248,8 +248,8 @@ export default function Hero() {
                 className="rounded-2xl border overflow-hidden"
                 style={{
                   background: "#111118",
-                  borderColor: "rgba(113,75,103,0.25)",
-                  boxShadow: "0 24px 64px rgba(0,0,0,0.18), 0 0 0 1px rgba(113,75,103,0.12)",
+                  borderColor: "rgba(13, 71, 161,0.25)",
+                  boxShadow: "0 24px 64px rgba(0,0,0,0.18), 0 0 0 1px rgba(13, 71, 161,0.12)",
                 }}
               >
                 {/* Title bar */}
@@ -354,7 +354,7 @@ export default function Hero() {
                   boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
                 }}
               >
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(113,75,103,0.1)" }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(13, 71, 161,0.1)" }}>
                   <CheckCircle size={14} style={{ color: ODOO }} />
                 </div>
                 <div>
@@ -375,9 +375,9 @@ export default function Hero() {
         >
           {[
             { target: 20, suffix: "+", label: "Projects Delivered" },
-            { target: 20,  suffix: "+", label: "Happy Clients" },
-            { target: 8,   suffix: "+", label: "Years Experience" },
-            { target: 99,  suffix: "%", label: "Client Satisfaction" },
+            { target: 20, suffix: "+", label: "Happy Clients" },
+            { target: 8, suffix: "+", label: "Years Experience" },
+            { target: 99, suffix: "%", label: "Client Satisfaction" },
           ].map((s) => (
             <div key={s.label}>
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold tabular-nums" style={{ color: ODOO }}>

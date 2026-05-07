@@ -143,7 +143,8 @@
 
 // export default About;
 
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Globe2, Rocket, Gem } from "lucide-react";
 
 /* 🖼 About Images */
@@ -155,6 +156,19 @@ import about5 from "../assets/about5.png";
 import about6 from "../assets/about6.png";
 
 const About = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <section
       id="about"
@@ -200,7 +214,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="relative z-10 mt-12 max-w-7xl mx-auto grid gap-10 lg:grid-cols-[1.5fr_1fr]">
+      <div id="about-techtrade" className="relative z-10 mt-12 max-w-7xl mx-auto grid gap-10 lg:grid-cols-[1.5fr_1fr]">
         <div className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_45px_rgba(0,180,255,0.12)] backdrop-blur-xl">
           <span className="inline-flex items-center rounded-full border border-[#00B4FF]/30 bg-[#0B1F42]/80 px-4 py-2 text-sm font-semibold text-[#B3D7FF]">
             TechTrade IT Solutions
@@ -303,7 +317,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="relative z-10 mt-16 max-w-7xl mx-auto">
+      <div id="vision-values" className="relative z-10 mt-16 max-w-7xl mx-auto">
         <div className="mb-10 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Vision & Values
@@ -351,7 +365,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="relative z-10 mt-16 max-w-7xl mx-auto grid gap-8 xl:grid-cols-[1fr_0.95fr]">
+      <div id="leadership" className="relative z-10 mt-16 max-w-7xl mx-auto grid gap-8 xl:grid-cols-[1fr_0.95fr]">
         <div className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_35px_rgba(0,180,255,0.12)]">
           <div className="mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -395,14 +409,14 @@ const About = () => {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_35px_rgba(0,180,255,0.12)]">
+        <div id="culture" className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_35px_rgba(0,180,255,0.12)]">
           <div className="mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Culture & Impact
+              Life at TechTrade
             </h2>
             <p className="text-gray-300 max-w-3xl">
               A flexible, collaborative, and human-first culture where people
-              feel trusted, inspired, and empowered.
+              feel trusted, inspired, and empowered to build the future of technology.
             </p>
           </div>
 
@@ -436,7 +450,7 @@ const About = () => {
       </div>
 
       <div className="relative z-10 mt-16 max-w-7xl mx-auto">
-        <div className="rounded-[2rem] border border-[#00B4FF]/15 bg-[#07122e]/90 p-8 shadow-[0_0_45px_rgba(0,180,255,0.14)]">
+        <div id="why-techtrade" className="rounded-[2rem] border border-[#00B4FF]/15 bg-[#07122e]/90 p-8 shadow-[0_0_45px_rgba(0,180,255,0.14)]">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -447,14 +461,14 @@ const About = () => {
                 important decisions a business can make.
               </p>
             </div>
-            <a
+            {/* <a
               href="https://www.techtradeitsolutions.com"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] px-6 py-3 text-sm font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-0.5"
             >
               Start the conversation
-            </a>
+            </a> */}
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

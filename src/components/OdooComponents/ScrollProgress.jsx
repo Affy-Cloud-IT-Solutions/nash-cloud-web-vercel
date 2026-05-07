@@ -8,7 +8,7 @@ export default function ScrollProgress() {
       className="fixed top-0 left-0 right-0 h-[3px] z-[100] origin-left"
       style={{
         scaleX: scrollYProgress,
-        background: "linear-gradient(90deg, #714b67 0%, #714b67 100%)",
+        background: "linear-gradient(90deg, #0D47A1 0%, #0D47A1 100%)",
       }}
     />
   );
