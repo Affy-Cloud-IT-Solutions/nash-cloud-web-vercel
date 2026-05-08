@@ -227,12 +227,6 @@ const ResourcingAndConsultingSection = () => {
                                     {feature.description}
                                 </p>
 
-
-                                {/* Arrow Indicator */}
-                                <div className="relative mt-4 text-cyan-400 opacity-0 
-                                              group-hover:opacity-100 transition-opacity duration-300">
-                                    <ArrowRight className="w-4 h-4" />
-                                </div>
                             </motion.div>
                         ))}
                     </motion.div>

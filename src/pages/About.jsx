@@ -188,31 +188,10 @@ const About = () => {
           </span>
         </h1>
 
-        <p className="text-[#00B4FF] text-lg md:text-xl font-semibold leading-relaxed mb-4 max-w-3xl mx-auto">
+        <p className="text-[#00B4FF] text-2xl md:text-3xl font-semibold leading-relaxed mb-4 max-w-3xl mx-auto">
           Analyse. Automate. Accelerate.
         </p>
 
-        <div className="text-gray-300 text-base md:text-lg leading-relaxed space-y-6 max-w-3xl mx-auto mb-10">
-          <p>
-            At TechTrade IT Solutions, we don’t just implement technology — we
-            transform businesses and the people behind them. Founded over 9
-            years ago, we have grown into a trusted partner for organisations
-            across the UK and beyond, delivering expert SAP services, innovative
-            IT solutions, and industry-leading training and resourcing.
-          </p>
-          <p>
-            We exist to close the gap between technology and talent. Whether
-            you’re looking to streamline your SAP landscape, modernise your IT
-            infrastructure, or develop the digital skills of your workforce,
-            TechTrade brings the expertise, the energy, and the commitment to
-            make it happen.
-          </p>
-          <p>
-            Our clients range from ambitious SMEs to large enterprises — all
-            united by one thing: a desire to grow, adapt, and lead in a digital
-            world. And we’re right there with them, every step of the way.
-          </p>
-        </div>
       </div>
 
       <div id="about-techtrade" className="relative z-10 mt-12 max-w-7xl mx-auto grid gap-10 lg:grid-cols-[1.5fr_1fr]">

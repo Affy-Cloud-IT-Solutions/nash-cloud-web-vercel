@@ -78,16 +78,16 @@ const Navbar = () => {
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
-                    ? isLightBg
-                        ? "bg-white/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
-                        : "bg-black/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
-                    : isLightBg
-                        ? "bg-white/20 backdrop-blur-[20px]"
-                        : "bg-black/20 backdrop-blur-[20px]"
+                ? isLightBg
+                    ? "bg-white/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+                    : "bg-black/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
+                : isLightBg
+                    ? "bg-white/20 backdrop-blur-[20px]"
+                    : "bg-black/20 backdrop-blur-[20px]"
                 } border-b ${isLightBg ? "border-white/50" : "border-white/20"}`}
         >
             {/* Top Accent Line */}
-            <div className="h-[2px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
+            <div className="h-[0px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
 
             {/* ================= NAVBAR ================= */}
             <nav className="max-w-7xl mx-auto px-6 md:px-10 py-2 flex justify-between items-center">
@@ -96,8 +96,7 @@ const Navbar = () => {
                     <img
                         src={logo}
                         alt="Tech Trade IT Solutions"
-                        className={`h-14 md:h-20 w-auto object-contain transition-all duration-300 ${!isLightBg ? "brightness-0 invert" : ""
-                            }`}
+                        className={`h-14 md:h-20 w-full object-contain transition-all duration-300 ${!isLightBg ? "brightness-0 invert" : ""}`}
                     />
                 </div>
 
@@ -186,10 +185,10 @@ const Navbar = () => {
                 >
                     <span
                         className={`w-7 h-[2px] rounded-full transition ${menuOpen
-                                ? "rotate-45 translate-y-[7px] bg-[#00B4FF]"
-                                : isLightBg
-                                    ? "bg-gray-800"
-                                    : "bg-white"
+                            ? "rotate-45 translate-y-[7px] bg-[#00B4FF]"
+                            : isLightBg
+                                ? "bg-gray-800"
+                                : "bg-white"
                             }`}
                     />
                     <span
@@ -198,10 +197,10 @@ const Navbar = () => {
                     />
                     <span
                         className={`w-7 h-[2px] rounded-full transition ${menuOpen
-                                ? "-rotate-45 -translate-y-[7px] bg-[#00B4FF]"
-                                : isLightBg
-                                    ? "bg-gray-800"
-                                    : "bg-white"
+                            ? "-rotate-45 -translate-y-[7px] bg-[#00B4FF]"
+                            : isLightBg
+                                ? "bg-gray-800"
+                                : "bg-white"
                             }`}
                     />
                 </div>

@@ -172,47 +172,6 @@ const Home = () => {
                         ))}
                     </motion.div>
                 </div>
-
-                {/* Enterprise Partners Showcase */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <div className="text-center mb-10">
-                        <h2 className="text-2xl font-bold text-white mb-2">Trusted by Industry Leaders</h2>
-                        <p className="text-slate-400">Official implementation partners for world-class enterprise solutions</p>
-                    </div>
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {platforms.map((platform, index) => (
-                            <motion.div
-                                key={platform.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -8 }}
-                                className="group relative"
-                            >
-                                <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${platform.gradient} backdrop-blur-sm border ${platform.border} p-6 text-center cursor-pointer transition-all duration-300 hover:shadow-2xl`}>
-                                    <div className="relative z-10">
-                                        <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-xl p-3 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                            <img src={platform.logo} alt={platform.name} className="w-full h-full object-contain" />
-                                        </div>
-                                        <h3 className="text-lg font-bold text-white mb-2">{platform.name}</h3>
-                                        <div className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                                            <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                                            <span className="text-xs text-slate-300">Official Partner</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Hover Glow Effect */}
-                                    <div className={`absolute inset-0 bg-gradient-to-r ${platform.color.replace('from', 'from').replace('to', 'to')} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
             </div>
 
             {/* Floating Trust Badge - HIGHEST Z-INDEX */}

@@ -1,32 +1,171 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Cloud,
+  Database,
+  Shield,
+  Sparkles,
+  TrendingUp,
+  Users,
+  Zap,
+  Grid3x3,
+  ChevronRight,
+  Cpu,
+  BarChart3,
+  Building2
+} from "lucide-react";
 
 const Hero = () => {
+  const [currentFeature, setCurrentFeature] = useState(0);
+
+  const features = [
+    { icon: Cpu, text: "Intelligent Automation", color: "text-blue-500" },
+    { icon: BarChart3, text: "Real-Time Analytics", color: "text-cyan-500" },
+    { icon: Shield, text: "Enterprise Security", color: "text-indigo-500" },
+    { icon: Cloud, text: "Cloud-Ready Solutions", color: "text-blue-400" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeature((prev) => (prev + 1) % features.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const stats = [
+    { value: "25+", label: "Years of Innovation", icon: Building2 },
+    { value: "99.99%", label: "System Reliability", icon: Zap },
+    { value: "400K+", label: "Global Customers", icon: Users },
+  ];
+
   return (
-    <section className="relative pt-32 pb-20 px-6 md:px-12 bg-white overflow-hidden" id="home">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 via-white to-blue-50/30 opacity-60 pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto text-center relative z-10">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
+    <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-white pt-20" id="home">
+
+      {/* Background Elements - SAP Blue Theme */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+
+        {/* Simple Wave SVG Background */}
+        <div className="absolute inset-0 w-full h-full opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#2563eb" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+          </svg>
+        </div>
+
+        {/* Simple Circle Pattern SVG */}
+        <div className="absolute inset-0 w-full h-full opacity-10">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="circles" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="30" cy="30" r="2" fill="#2563eb" />
+                <circle cx="0" cy="0" r="1.5" fill="#2563eb" />
+                <circle cx="60" cy="60" r="1.5" fill="#2563eb" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circles)" />
+          </svg>
+        </div>
+
+        {/* Soft Gradient Shading - Blue Theme */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-50/30 via-transparent to-cyan-50/30" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-blue-100/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cyan-50/10 to-transparent" />
+
+        {/* Subtle Glow - Blue */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-gradient-to-r from-blue-100/10 via-transparent to-cyan-100/10 blur-3xl rounded-full" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Main Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight leading-tight mb-8"
+          className="text-center mb-8"
         >
-          Power Your Intelligent Enterprise with <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-            SAP Solutions
-          </span>
-        </motion.h1>
-        
-        <motion.p 
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-slate-900 tracking-tight leading-[1.2] mb-6">
+            Power Your Intelligent
+            <br />
+            Enterprise with
+            <span className="relative inline-block ml-4">
+              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500">
+                SAP Solutions
+              </span>
+              <motion.div
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-10">
+            Transform your business processes, enhance customer experiences, and drive sustainable
+            growth with the world's leading enterprise software suite.
+          </p>
+        </motion.div>
+
+        {/* Rotating Features Banner */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center mb-12"
         >
-          Transform your business processes, enhance customer experiences, and drive sustainable growth with the world's leading enterprise software suite.
-        </motion.p>
+          <div className="bg-gradient-to-r from-slate-50 to-white backdrop-blur-sm rounded-2xl px-6 py-3 border border-slate-200 shadow-lg">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Grid3x3 className="w-4 h-4 text-slate-400" />
+                <span className="text-sm font-medium text-slate-600">SAP Capabilities:</span>
+              </div>
+              <div className="relative w-48 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentFeature}
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -30, opacity: 0 }}
+                    transition={{ duration: 0.4, type: "spring" }}
+                    className="flex items-center gap-2"
+                  >
+                    {React.createElement(features[currentFeature].icon, {
+                      className: `w-4 h-4 ${features[currentFeature].color}`
+                    })}
+                    <span className="text-sm font-semibold text-slate-800">
+                      {features[currentFeature].text}
+                    </span>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Stats Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10"
+        >
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="bg-gradient-to-br from-white to-blue-50/30 backdrop-blur-sm rounded-xl p-6 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
+              <div className="flex justify-center mb-3">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100">
+                  <stat.icon className="w-6 h-6 text-blue-500" />
+                </div>
+              </div>
+              <div className="text-2xl font-bold text-slate-900 mb-1">{stat.value}</div>
+              <div className="text-sm text-slate-600">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

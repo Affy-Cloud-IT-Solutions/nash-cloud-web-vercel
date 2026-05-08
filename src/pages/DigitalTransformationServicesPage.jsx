@@ -37,20 +37,19 @@ const services = [
 
 const DigitalTransformationServicesPage = () => {
     return (
-        <section className="relative min-h-screen overflow-hidden text-white bg-[linear-gradient(180deg,_rgba(7,12,28,0.96),_rgba(6,25,67,0.98))]">
+        <section className="relative min-h-screen overflow-hidden text-white bg-[linear-gradient(135deg,_rgba(7,12,28,0.96),_rgba(6,25,67,0.98))]">
 
-            {/* 🔹 Background Images */}
+            {/* Background Images */}
             <div
-                className="absolute inset-0 bg-no-repeat bg-top bg-cover opacity-25 mix-blend-lighten"
+                className="absolute inset-0 bg-no-repeat bg-top bg-cover opacity-20 mix-blend-overlay"
                 style={{
                     backgroundImage:
                         "url('https://images.unsplash.com/photo-1667984390533-2b3c7d6d1c93?auto=format&fit=crop&w=1600&q=80')",
                 }}
             />
 
-
             <div
-                className="absolute bottom-0 left-0 w-full h-[60%] bg-no-repeat bg-bottom bg-cover opacity-15 mix-blend-lighten"
+                className="absolute bottom-0 left-0 w-full h-[50%] bg-no-repeat bg-bottom bg-cover opacity-10 mix-blend-overlay"
                 style={{
                     backgroundImage:
                         "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80')",
@@ -58,8 +57,9 @@ const DigitalTransformationServicesPage = () => {
             />
 
             {/* Ambient Glows */}
-            <div className="absolute top-[10%] left-[10%] w-[450px] h-[450px] bg-[#00B4FF]/20 blur-[180px] rounded-full"></div>
-            <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] bg-[#0D47A1]/30 blur-[220px] rounded-full"></div>
+            <div className="absolute top-[10%] left-[10%] w-[450px] h-[450px] bg-[#00B4FF]/15 blur-[180px] rounded-full"></div>
+            <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] bg-[#0D47A1]/20 blur-[220px] rounded-full"></div>
+
             <div className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-28">
 
                 {/* Header */}
@@ -69,13 +69,13 @@ const DigitalTransformationServicesPage = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-20"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00B4FF]/10 text-[#00B4FF] text-sm font-medium mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00B4FF]/10 text-[#00B4FF] text-sm font-medium mb-6 backdrop-blur-sm">
                         <Sparkles className="w-4 h-4" />
                         Digital Transformation
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent">
-                        Digital Transformation Services
+                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-[#00B4FF] via-[#2E8BC0] to-[#0D47A1] bg-clip-text text-transparent">
+                        Transform Digital Future
                     </h1>
 
                     <p className="text-lg md:text-xl text-[#CBD5E1] max-w-4xl mx-auto leading-relaxed">
@@ -87,7 +87,7 @@ const DigitalTransformationServicesPage = () => {
                 </motion.div>
 
                 {/* Services Grid */}
-                <div className="grid sm:grid-cols-2 gap-10 mb-20">
+                <div className="grid sm:grid-cols-2 gap-8 mb-20">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -95,23 +95,20 @@ const DigitalTransformationServicesPage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ y: -6 }}
-                            className="relative group p-10 rounded-2xl border border-[#00B4FF]/30 bg-white/5 backdrop-blur-xl
-                            shadow-[0_0_30px_rgba(0,180,255,0.15)]
-                            hover:shadow-[0_0_50px_rgba(0,180,255,0.35)]
-                            transition-all duration-500"
+                            whileHover={{ y: -4 }}
+                            className="relative group p-8 rounded-2xl border border-[#00B4FF]/20 bg-white/5 backdrop-blur-xl hover:border-[#00B4FF]/50 transition-all duration-500"
                         >
-                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0D47A1]/25 to-[#00B4FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0D47A1]/20 to-[#00B4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                             <div className="relative z-10 flex items-start gap-5">
-                                <div className="p-4 rounded-xl bg-[#00B4FF]/15 border border-[#00B4FF]/40">
+                                <div className="p-3 rounded-xl bg-[#00B4FF]/10 border border-[#00B4FF]/30 group-hover:scale-110 transition-transform duration-300">
                                     {service.icon}
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-semibold text-[#00B4FF] mb-3 group-hover:text-white transition-colors duration-300">
+                                    <h3 className="text-xl font-semibold text-[#00B4FF] mb-2 group-hover:text-white transition-colors duration-300">
                                         {service.title}
                                     </h3>
-                                    <p className="text-gray-300 leading-relaxed">
+                                    <p className="text-gray-300 leading-relaxed text-sm">
                                         {service.description}
                                     </p>
                                 </div>
@@ -125,10 +122,10 @@ const DigitalTransformationServicesPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center max-w-4xl mx-auto"
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-center max-w-4xl mx-auto pt-8 border-t border-[#00B4FF]/20"
                 >
-                    <p className="text-lg text-[#CBD5E1] leading-relaxed">
+                    <p className="text-base text-[#94A3B8] leading-relaxed">
                         With deep expertise across modern technologies, we help organisations
                         build secure, scalable, and future-ready digital capabilities that
                         support long-term growth and innovation.
@@ -137,7 +134,7 @@ const DigitalTransformationServicesPage = () => {
             </div>
 
             {/* Bottom Glow */}
-            <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#00B4FF]/10 blur-[200px] rounded-full"></div>
+            <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#00B4FF]/5 blur-[200px] rounded-full"></div>
         </section>
     );
 };
