@@ -28,11 +28,12 @@ const LandingPage = () => {
       <section id="home">
         <Home />
       </section>
-      <section id="whoweareandoffer">
-        <WhoWeAreAndOffer />
-      </section>
+
       <section id="sap">
         <SapServices />
+      </section>
+      <section id="resource">
+        <ResourcingAndConsultingSection />
       </section>
       {/* <section id="opportunities"><OpportunitiesAndTraining /></section> */}
       <section id="products">
@@ -41,12 +42,14 @@ const LandingPage = () => {
       <section id="partners">
         <OfficialPartners />
       </section>
+      <section id="whoweareandoffer">
+        <WhoWeAreAndOffer />
+      </section>
       <section id="ourapps">
         <OurApps />
       </section>
-      <section id="resource">
-        <ResourcingAndConsultingSection />
-      </section>
+
+
       {/* <section id="testimonials">
         <Testimonials />
       </section> */}

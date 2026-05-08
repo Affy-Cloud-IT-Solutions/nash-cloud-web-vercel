@@ -14,7 +14,7 @@ const InternalProducts = () => {
                     className="absolute inset-0 bg-cover bg-center md:bg-fixed"
                     style={{
                         backgroundImage:
-                            "url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop')",
+                            "url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop')",
                     }}
                 />
 

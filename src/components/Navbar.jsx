@@ -24,6 +24,7 @@ const Navbar = () => {
     const [servicesOpen, setServicesOpen] = useState(false);
     const [aboutOpen, setAboutOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isLightBg, setIsLightBg] = useState(true);
     const navigate = useNavigate();
 
     /* ================= LANDING PAGE NAVIGATION ================= */
@@ -34,46 +35,84 @@ const Navbar = () => {
         setAboutOpen(false);
     };
 
-    /* ================= SCROLL EFFECT ================= */
+    /* ================= SCROLL EFFECT & BACKGROUND DETECTION ================= */
     useEffect(() => {
-        const onScroll = () => setIsScrolled(window.scrollY > 20);
+        const onScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+
+            // Detect background color at navbar position
+            const navbarRect = document.querySelector('header')?.getBoundingClientRect();
+            if (navbarRect) {
+                const elementAtTop = document.elementsFromPoint(
+                    window.innerWidth / 2,
+                    navbarRect.bottom + 5
+                )[0];
+
+                if (elementAtTop) {
+                    const bgColor = window.getComputedStyle(elementAtTop).backgroundColor;
+                    // Extract RGB values
+                    const rgb = bgColor.match(/\d+/g);
+                    if (rgb) {
+                        // Calculate luminance to determine if background is light or dark
+                        const luminance = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255;
+                        setIsLightBg(luminance > 0.5);
+                    }
+                }
+            }
+        };
+
         window.addEventListener("scroll", onScroll);
+        onScroll(); // Initial check
+
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
+    // Dynamic text color based on background
+    const textColor = isLightBg ? "text-gray-800" : "text-white";
+    const hoverColor = "hover:text-[#00B4FF]";
+    const mobileTextColor = isLightBg ? "text-gray-800" : "text-white";
+    const mobileBgColor = isLightBg
+        ? "bg-white/70 backdrop-blur-2xl"
+        : "bg-black/50 backdrop-blur-2xl";
 
     return (
         <header
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
-                ? "bg-white/50 backdrop-blur-[40px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
-                : "bg-white/50 backdrop-blur-[40px]"
-                }`}
+                    ? isLightBg
+                        ? "bg-white/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+                        : "bg-black/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
+                    : isLightBg
+                        ? "bg-white/20 backdrop-blur-[20px]"
+                        : "bg-black/20 backdrop-blur-[20px]"
+                } border-b ${isLightBg ? "border-white/50" : "border-white/20"}`}
         >
             {/* Top Accent Line */}
             <div className="h-[2px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
 
             {/* ================= NAVBAR ================= */}
             <nav className="max-w-7xl mx-auto px-6 md:px-10 py-2 flex justify-between items-center">
-                {/* Logo */}
+                {/* Logo - with dynamic filter for dark mode */}
                 <div onClick={() => navigate("/")} className="cursor-pointer">
                     <img
                         src={logo}
                         alt="Tech Trade IT Solutions"
-                        className="h-14 md:h-20 w-auto object-contain"
+                        className={`h-14 md:h-20 w-auto object-contain transition-all duration-300 ${!isLightBg ? "brightness-0 invert" : ""
+                            }`}
                     />
                 </div>
 
                 {/* ================= DESKTOP MENU ================= */}
-                <ul className="hidden md:flex items-center space-x-10 text-gray-800 font-medium">
+                <ul className={`hidden md:flex items-center space-x-10 font-medium ${textColor}`}>
                     <li
                         onClick={() => handleScroll("home")}
-                        className="cursor-pointer hover:text-[#00B4FF] transition-colors duration-300"
+                        className={`cursor-pointer transition-colors duration-300 ${hoverColor}`}
                     >
                         Home
                     </li>
 
                     {/* SERVICES */}
                     <li className="relative group cursor-pointer">
-                        <span className="flex items-center gap-1 hover:text-[#00B4FF] transition-colors duration-300">
+                        <span className={`flex items-center gap-1 transition-colors duration-300 ${hoverColor}`}>
                             Services
                             <ChevronDown
                                 size={16}
@@ -81,7 +120,7 @@ const Navbar = () => {
                             />
                         </span>
 
-                        <div className="absolute top-full left-0 mt-4 w-60 bg-white/80 backdrop-blur-2xl rounded-xl border border-white/20 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <div className="absolute top-full left-0 mt-4 w-60 bg-white/80 backdrop-blur-2xl rounded-xl border border-white/30 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                             {servicesList.map((service) => (
                                 <Link
                                     key={service.path}
@@ -97,7 +136,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             to="/sap-services"
-                            className="cursor-pointer hover:text-[#00B4FF] transition-colors duration-300"
+                            className={`cursor-pointer transition-colors duration-300 ${hoverColor}`}
                         >
                             SAP SuccessFactors
                         </Link>
@@ -105,22 +144,25 @@ const Navbar = () => {
 
                     <li
                         onClick={() => handleScroll("resource")}
-                        className="cursor-pointer hover:text-[#00B4FF] transition-colors duration-300"
+                        className={`cursor-pointer transition-colors duration-300 ${hoverColor}`}
                     >
                         Resourcing
                     </li>
 
-                    {/* ABOUT US DROPDOWN */}
+                    {/* ABOUT US DROPDOWN - Now matches other menu items */}
                     <li className="relative group cursor-pointer">
-                        <div
+                        <span
                             onClick={() => navigate("/about")}
-                            className="ml-6 px-5 py-1.5 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                            className={`flex items-center gap-1 transition-colors duration-300 ${hoverColor}`}
                         >
                             About Us
-                            <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
-                        </div>
+                            <ChevronDown
+                                size={16}
+                                className="transition-transform duration-300 group-hover:rotate-180"
+                            />
+                        </span>
 
-                        <div className="absolute top-full right-0 mt-4 w-60 bg-white/80 backdrop-blur-2xl rounded-xl border border-white/20 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <div className="absolute top-full right-0 mt-4 w-60 bg-white/80 backdrop-blur-2xl rounded-xl border border-white/30 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                             {aboutList.map((item) => (
                                 <div
                                     key={item.id}
@@ -144,18 +186,22 @@ const Navbar = () => {
                 >
                     <span
                         className={`w-7 h-[2px] rounded-full transition ${menuOpen
-                            ? "rotate-45 translate-y-[7px] bg-[#00B4FF]"
-                            : "bg-gray-800"
+                                ? "rotate-45 translate-y-[7px] bg-[#00B4FF]"
+                                : isLightBg
+                                    ? "bg-gray-800"
+                                    : "bg-white"
                             }`}
                     />
                     <span
-                        className={`w-7 h-[2px] rounded-full transition ${menuOpen ? "opacity-0" : "bg-gray-800"
+                        className={`w-7 h-[2px] rounded-full transition ${menuOpen ? "opacity-0" : isLightBg ? "bg-gray-800" : "bg-white"
                             }`}
                     />
                     <span
                         className={`w-7 h-[2px] rounded-full transition ${menuOpen
-                            ? "-rotate-45 -translate-y-[7px] bg-[#00B4FF]"
-                            : "bg-gray-800"
+                                ? "-rotate-45 -translate-y-[7px] bg-[#00B4FF]"
+                                : isLightBg
+                                    ? "bg-gray-800"
+                                    : "bg-white"
                             }`}
                     />
                 </div>
@@ -163,10 +209,10 @@ const Navbar = () => {
 
             {/* ================= MOBILE MENU ================= */}
             {menuOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white/90 backdrop-blur-2xl border-t border-white/20 py-6 flex flex-col items-center space-y-6 shadow-lg">
+                <div className={`md:hidden absolute top-full left-0 w-full ${mobileBgColor} border-t border-white/20 py-6 flex flex-col items-center space-y-6 shadow-xl backdrop-blur-2xl`}>
                     <span
                         onClick={() => handleScroll("home")}
-                        className="text-lg text-gray-800 cursor-pointer"
+                        className={`text-lg cursor-pointer ${mobileTextColor}`}
                     >
                         Home
                     </span>
@@ -175,7 +221,7 @@ const Navbar = () => {
                     <div className="w-full flex flex-col items-center">
                         <span
                             onClick={() => setServicesOpen(!servicesOpen)}
-                            className={`flex items-center gap-2 text-lg cursor-pointer transition ${servicesOpen ? "text-[#00B4FF]" : "text-gray-800"
+                            className={`flex items-center gap-2 text-lg cursor-pointer transition ${servicesOpen ? "text-[#00B4FF]" : mobileTextColor
                                 }`}
                         >
                             Services
@@ -187,7 +233,7 @@ const Navbar = () => {
                         </span>
 
                         {servicesOpen && (
-                            <div className="mt-4 w-[85%] bg-gray-50/90 backdrop-blur-xl rounded-xl border border-white/20 overflow-hidden">
+                            <div className="mt-4 w-[85%] bg-white/90 backdrop-blur-xl rounded-xl border border-white/30 overflow-hidden">
                                 {servicesList.map((service) => (
                                     <Link
                                         key={service.path}
@@ -212,7 +258,7 @@ const Navbar = () => {
                                 setMenuOpen(false);
                                 setServicesOpen(false);
                             }}
-                            className="text-lg text-gray-800 cursor-pointer"
+                            className={`text-lg cursor-pointer ${mobileTextColor}`}
                         >
                             SAP SuccessFactors
                         </Link>
@@ -220,7 +266,7 @@ const Navbar = () => {
 
                     <span
                         onClick={() => handleScroll("resource")}
-                        className="text-lg text-gray-800 cursor-pointer"
+                        className={`text-lg cursor-pointer ${mobileTextColor}`}
                     >
                         Resourcing
                     </span>
@@ -229,7 +275,7 @@ const Navbar = () => {
                     <div className="w-full flex flex-col items-center">
                         <span
                             onClick={() => setAboutOpen(!aboutOpen)}
-                            className={`flex items-center gap-2 text-lg cursor-pointer transition ${aboutOpen ? "text-[#00B4FF]" : "text-gray-800"
+                            className={`flex items-center gap-2 text-lg cursor-pointer transition ${aboutOpen ? "text-[#00B4FF]" : mobileTextColor
                                 }`}
                         >
                             About Us
@@ -241,7 +287,7 @@ const Navbar = () => {
                         </span>
 
                         {aboutOpen && (
-                            <div className="mt-4 w-[85%] bg-gray-50/90 backdrop-blur-xl rounded-xl border border-white/20 overflow-hidden">
+                            <div className="mt-4 w-[85%] bg-white/90 backdrop-blur-xl rounded-xl border border-white/30 overflow-hidden">
                                 {aboutList.map((item) => (
                                     <div
                                         key={item.id}
