@@ -29,117 +29,161 @@ const apps = [
   {
     name: "Metamind",
     tagline: "From Idea to Launch — AI Does the Heavy Lifting",
-    desc: "An AI-powered startup studio that transforms raw ideas into investable ventures.",
+    desc: "An AI-powered startup studio designed to transform raw business concepts into scalable, investment-ready ventures with intelligent automation and strategic guidance.",
     features: [
       "Idea Viability & Market Analysis",
       "AI Roadmap Generator",
       "Pitch Deck Builder",
       "Startup Community",
+      "Investor Readiness",
+      "AI Business Validation",
     ],
     badge: "AI-Powered",
+    stats: ["10K+ Ideas", "95% Accuracy"],
   },
+
   {
     name: "Restro Management",
     tagline: "Run Your Restaurant Smarter",
-    desc: "All-in-one restaurant platform managing orders, kitchen, and finances.",
+    desc: "Complete restaurant management ecosystem handling operations, customer experiences, billing workflows, kitchen coordination, and real-time business analytics seamlessly.",
     features: [
       "Table Management",
       "Kitchen Display",
       "Inventory Control",
       "Billing System",
+      "QR Menu Ordering",
+      "Sales Analytics",
     ],
     badge: "Popular",
+    stats: ["5K+ Orders", "24/7 Support"],
   },
+
   {
     name: "Laundry Management",
     tagline: "Simplify Every Spin Cycle",
-    desc: "Digitise laundry workflows from intake to delivery.",
+    desc: "Modern laundry automation platform streamlining garment processing, customer handling, pickup scheduling, delivery workflows, and branch management efficiently.",
     features: [
       "Garment Tagging",
       "Wash Tracking",
       "Delivery Scheduling",
       "Multi-branch Support",
+      "Customer Notifications",
+      "Invoice Automation",
     ],
     badge: "New",
+    stats: ["99% Tracking", "Multi Branch"],
   },
+
   {
     name: "CRM Construction",
     tagline: "Built for Construction Workflows",
-    desc: "CRM tailored for construction projects and operations.",
+    desc: "Industry-focused CRM engineered to manage construction leads, project coordination, contract execution, workforce tracking, and client collaboration effectively.",
     features: [
       "Lead Pipeline",
       "Contract Management",
       "Site Tracking",
       "Client Portal",
+      "Project Estimation",
+      "Team Coordination",
     ],
     badge: "Industry",
+    stats: ["200+ Projects", "Live Tracking"],
   },
+
   {
     name: "Byethecar",
     tagline: "Sell Your Used Car Smartly",
-    desc: "AI-powered used car marketplace and seller toolkit.",
+    desc: "Intelligent automobile marketplace empowering sellers with pricing insights, buyer discovery, secure transactions, and AI-driven valuation assistance effortlessly.",
     features: [
       "Price Estimation",
       "Verified Listings",
       "Buyer Matching",
       "Secure Transactions",
+      "Vehicle Insights",
+      "AI Recommendations",
     ],
     badge: "AI-Powered",
+    stats: ["50K+ Listings", "Smart Pricing"],
   },
+
   {
     name: "Tutorio",
     tagline: "Learning Without Limits",
-    desc: "AI-powered LMS for enterprises and educators.",
+    desc: "Advanced AI-powered learning management system delivering engaging digital education, enterprise training, certification workflows, and learner performance analytics.",
     features: [
       "Course Builder",
       "Interactive Learning",
       "Analytics",
       "Certification Engine",
+      "Student Dashboard",
+      "Live Assessments",
     ],
     badge: "AI-Powered",
+    stats: ["100K+ Learners", "Interactive LMS"],
   },
+
   {
     name: "T-rack",
     tagline: "Manage Every Issue Effortlessly",
-    desc: "Smart ticketing and support system.",
+    desc: "Smart ticketing and customer support platform enabling rapid issue resolution, automated routing, SLA management, and omnichannel communication experiences.",
     features: [
       "Smart Routing",
       "SLA Tracking",
       "Multi-channel Support",
       "Automation",
+      "Priority Escalation",
+      "Support Analytics",
     ],
     badge: "Smart",
+    stats: ["1M+ Tickets", "Fast Response"],
   },
+
   {
     name: "Fleet Management",
     tagline: "Track Every Vehicle in Real Time",
-    desc: "Advanced fleet tracking and analytics platform.",
+    desc: "Comprehensive fleet intelligence platform offering real-time vehicle visibility, route optimization, fuel insights, and driver performance monitoring capabilities.",
     features: [
       "GPS Tracking",
       "Route Optimisation",
       "Driver Monitoring",
       "Fuel Analytics",
+      "Vehicle Reports",
+      "Trip History",
     ],
     badge: "Real-Time",
+    stats: ["Live GPS", "Fleet Insights"],
   },
+
   {
     name: "Nexus",
     tagline: "Buy & Sell Within Your City",
-    desc: "Hyperlocal marketplace connecting buyers & sellers.",
-    features: ["Local Listings", "In-app Chat", "Secure Payments", "Ratings"],
+    desc: "Hyperlocal commerce marketplace connecting local communities through secure buying, selling, messaging, and trusted digital transaction experiences.",
+    features: [
+      "Local Listings",
+      "In-app Chat",
+      "Secure Payments",
+      "Ratings",
+      "Seller Profiles",
+      "Location Discovery",
+    ],
     badge: "Local",
+    stats: ["City Based", "Secure Deals"],
   },
+
   {
     name: "PMS",
     tagline: "Plan, Assign, Deliver Faster",
-    desc: "Powerful project management system for teams.",
+    desc: "Modern project management workspace helping teams organize tasks, collaborate efficiently, track timelines, and improve operational productivity effortlessly.",
     features: [
       "Task Assignment",
       "Timeline Tracking",
       "Collaboration",
       "File Sharing",
+      "Progress Reports",
+      "Team Workspace",
     ],
     badge: "Essential",
+    stats: ["Agile Ready", "Team Driven"],
   },
 ];
 
@@ -336,7 +380,7 @@ const OurApps = () => {
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-1">
+                  <p className="text-sm text-slate-600 leading-relaxed flex-1">
                     {app.desc}
                   </p>
 
@@ -351,7 +395,7 @@ const OurApps = () => {
                         transition={{ delay: 0.3 + i * 0.1 }}
                         className="flex items-center gap-3 text-sm text-slate-600 group/feature"
                       >
-                        <div className="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center group-hover/feature:bg-[#0D47A1] group-hover/feature:text-white transition-all duration-300">
+                        <div className="w-6 h-6 rounded-lg bg-blue-50  flex items-center justify-center group-hover/feature:bg-[#0D47A1] group-hover/feature:text-white transition-all duration-300">
                           {(() => {
                             const Icon = featureIcons(f);
                             return <Icon size={14} className="transition-colors duration-300" />;

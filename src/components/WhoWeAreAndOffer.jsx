@@ -65,7 +65,10 @@ const WhoWeAreAndOffer = () => {
             title: "Services",
             description: "End-to-end digital transformation with deep expertise in SAP SuccessFactors and HR technologies",
             color: "from-blue-500 to-cyan-500",
-            path: "/sap-landing"
+            // path: "/sap-landing"
+            path: "/sap-services"
+
+
         },
         {
             icon: Users,

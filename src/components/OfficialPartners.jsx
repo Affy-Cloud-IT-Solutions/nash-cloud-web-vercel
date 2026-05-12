@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, CheckCircle2, Sparkles, Shield, Zap, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Zap, Star, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -154,7 +154,7 @@ const OfficialPartners = () => {
             </p>
             <div className="flex items-center gap-6">
               {[
-                { icon: Shield, text: "Certified" },
+                { icon: ShieldCheck, text: "Certified" },
                 { icon: Zap, text: "Scalable" },
                 { icon: Star, text: "Trusted" },
               ].map((item, i) => (

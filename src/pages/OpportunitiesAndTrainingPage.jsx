@@ -77,7 +77,7 @@ const OpportunitiesAndTrainingPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/90 via-[#0F172A]/80 to-[#1E293B]/90"></div>
                 </div>
 
-                <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+                <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full mt-16">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -353,7 +353,7 @@ const OpportunitiesAndTrainingPage = () => {
             </section>
 
             {/* CTA Section with Gradient Background */}
-            <section className="relative py-20">
+            {/* <section className="relative py-20">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
@@ -407,7 +407,7 @@ const OpportunitiesAndTrainingPage = () => {
                         </p>
                     </motion.div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Floating elements */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden">

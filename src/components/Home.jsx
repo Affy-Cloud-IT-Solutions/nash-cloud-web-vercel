@@ -28,6 +28,19 @@ const platforms = [
 
 const Home = () => {
     const [currentPlatform, setCurrentPlatform] = useState(0);
+    const [isCollapsed, setIsCollapsed] = useState(false);
+
+    useEffect(() => {
+        let timer;
+
+        if (!isCollapsed) {
+            timer = setTimeout(() => {
+                setIsCollapsed(true);
+            }, 5000);
+        }
+
+        return () => clearTimeout(timer);
+    }, [isCollapsed]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -179,28 +192,104 @@ const Home = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[9999] hidden lg:flex items-center gap-6 px-6 py-3 rounded-full bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur-xl border border-slate-700/50 shadow-2xl pointer-events-auto"
+                className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[9999] hidden lg:flex pointer-events-auto"
             >
-                <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-yellow-400" />
-                    <span className="text-sm text-slate-300">Enterprise-Grade Solutions</span>
-                </div>
-                <div className="w-px h-4 bg-slate-700" />
-                <div className="flex items-center gap-2">
-                    <Network className="w-4 h-4 text-blue-400" />
-                    <span className="text-sm text-slate-300">Seamless Integration</span>
-                </div>
-                <div className="w-px h-4 bg-slate-700" />
-                <div className="flex items-center gap-2">
-                    <div className="flex -space-x-2">
-                        {[sapLogo, odooLogo, zohoLogo, focusLogo].map((logo, i) => (
-                            <div key={i} className="w-8 h-8 bg-white rounded-full p-1 shadow-lg">
-                                <img src={logo} alt="" className="w-full h-full object-contain" />
-                            </div>
-                        ))}
-                    </div>
-                    <span className="text-sm font-semibold text-white">Official Partners</span>
-                </div>
+                <motion.div
+                    layout
+                    transition={{
+                        duration: 0.35,
+                        type: "spring",
+                        stiffness: 220,
+                        damping: 22,
+                    }}
+                    onClick={() => setIsCollapsed(false)}
+                    className="overflow-hidden cursor-pointer rounded-full bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur-xl border border-slate-700/50 shadow-2xl"
+                >
+                    <AnimatePresence mode="wait">
+
+                        {/* EXPANDED */}
+                        {!isCollapsed ? (
+                            <motion.div
+                                key="expanded"
+                                initial={{ opacity: 0, scale: 0.96 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.96 }}
+                                transition={{ duration: 0.25 }}
+                                className="flex items-center gap-6 px-6 py-3"
+                            >
+                                <div className="flex items-center gap-2">
+                                    <Zap className="w-4 h-4 text-yellow-400" />
+                                    <span className="text-sm text-slate-300">
+                                        Enterprise-Grade Solutions
+                                    </span>
+                                </div>
+
+                                <div className="w-px h-4 bg-slate-700" />
+
+                                <div className="flex items-center gap-2">
+                                    <Network className="w-4 h-4 text-blue-400" />
+                                    <span className="text-sm text-slate-300">
+                                        Seamless Integration
+                                    </span>
+                                </div>
+
+                                <div className="w-px h-4 bg-slate-700" />
+
+                                <div className="flex items-center gap-2">
+                                    <div className="flex -space-x-2">
+                                        {[sapLogo, odooLogo, zohoLogo, focusLogo].map((logo, i) => (
+                                            <motion.div
+                                                key={i}
+                                                whileHover={{ y: -2 }}
+                                                className="w-8 h-8 bg-white rounded-full p-1 shadow-lg"
+                                            >
+                                                <img
+                                                    src={logo}
+                                                    alt=""
+                                                    className="w-full h-full object-contain"
+                                                />
+                                            </motion.div>
+                                        ))}
+                                    </div>
+
+                                    <span className="text-sm font-semibold text-white">
+                                        Official Partners
+                                    </span>
+                                </div>
+                            </motion.div>
+                        ) : (
+
+                            /* COLLAPSED */
+                            <motion.div
+                                key="collapsed"
+                                initial={{ opacity: 0, width: 120 }}
+                                animate={{ opacity: 1, width: "auto" }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="flex items-center gap-3 px-4 py-2.5"
+                            >
+                                <div className="flex -space-x-2">
+                                    {[sapLogo, odooLogo, zohoLogo, focusLogo].map((logo, i) => (
+                                        <div
+                                            key={i}
+                                            className="w-7 h-7 bg-white rounded-full p-1 shadow-lg"
+                                        >
+                                            <img
+                                                src={logo}
+                                                alt=""
+                                                className="w-full h-full object-contain"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <span className="text-sm font-medium text-white whitespace-nowrap">
+                                    Official Partners
+                                </span>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
             </motion.div>
         </section>
     );
