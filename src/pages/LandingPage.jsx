@@ -12,6 +12,7 @@ import ResourcingAndConsultingSection from "../components/ResourcingAndConsultin
 import OurApps from "../components/OurApps";
 import Testimonials from "../components/Testimonials";
 import ContactUs from "../components/ContactUs";
+import EnhancedHome from "./EnhancedHome";
 
 const LandingPage = () => {
   const location = useLocation();
@@ -26,12 +27,12 @@ const LandingPage = () => {
   return (
     <>
       <section id="home">
-        <Home />
+        <EnhancedHome />
       </section>
 
-      <section id="sap">
+      {/* <section id="sap">
         <SapServices />
-      </section>
+      </section> */}
       <section id="resource">
         <ResourcingAndConsultingSection />
       </section>
@@ -42,12 +43,12 @@ const LandingPage = () => {
       <section id="partners">
         <OfficialPartners />
       </section>
-      <section id="whoweareandoffer">
+      {/* <section id="whoweareandoffer">
         <WhoWeAreAndOffer />
-      </section>
-      <section id="ourapps">
+      </section> */}
+      {/* <section id="ourapps">
         <OurApps />
-      </section>
+      </section> */}
 
 
       {/* <section id="testimonials">

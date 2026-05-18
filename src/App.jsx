@@ -8,6 +8,7 @@ import CookieConsent from "./components/CookieConsent";
 
 // Pages
 import About from "./pages/About";
+import AboutCopy from "./pages/AboutCopy";
 import SapServicesPage from "./pages/SapServicesPage";
 import ITSolutionsPage from "./pages/ITSolutionsPage";
 import ResourceAndConsultingPage from "./pages/ResourceAndConsultingPage";
@@ -34,7 +35,8 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutCopy />} />
+        {/* <Route path="/about" element={<About />} /> */}
         <Route path="/sap-services" element={<SapServicesPage />} />
         <Route path="/internal-product" element={<InternalProductPage />} />
         <Route path="/opportunities" element={<OpportunitiesAndTrainingPage />} />

@@ -217,31 +217,31 @@ const Home = () => {
                                 transition={{ duration: 0.25 }}
                                 className="flex items-center gap-6 px-6 py-3"
                             >
-                                <div className="flex items-center gap-2">
-                                    <Zap className="w-4 h-4 text-yellow-400" />
-                                    <span className="text-sm text-slate-300">
+                                <div className="flex items-center gap-2 shrink-0">
+                                    <Zap className="w-4 h-4 text-yellow-400 shrink-0" />
+                                    <span className="text-sm text-slate-300 whitespace-nowrap">
                                         Enterprise-Grade Solutions
                                     </span>
                                 </div>
 
-                                <div className="w-px h-4 bg-slate-700" />
+                                <div className="w-px h-4 bg-slate-700 shrink-0" />
 
-                                <div className="flex items-center gap-2">
-                                    <Network className="w-4 h-4 text-blue-400" />
-                                    <span className="text-sm text-slate-300">
+                                <div className="flex items-center gap-2 shrink-0">
+                                    <Network className="w-4 h-4 text-blue-400 shrink-0" />
+                                    <span className="text-sm text-slate-300 whitespace-nowrap">
                                         Seamless Integration
                                     </span>
                                 </div>
 
-                                <div className="w-px h-4 bg-slate-700" />
+                                <div className="w-px h-4 bg-slate-700 shrink-0" />
 
-                                <div className="flex items-center gap-2">
-                                    <div className="flex -space-x-2">
+                                <div className="flex items-center gap-2 shrink-0">
+                                    <div className="flex -space-x-2 shrink-0">
                                         {[sapLogo, odooLogo, zohoLogo, focusLogo].map((logo, i) => (
                                             <motion.div
                                                 key={i}
                                                 whileHover={{ y: -2 }}
-                                                className="w-8 h-8 bg-white rounded-full p-1 shadow-lg"
+                                                className="w-8 h-8 bg-white rounded-full p-1 shadow-lg shrink-0"
                                             >
                                                 <img
                                                     src={logo}
@@ -252,7 +252,7 @@ const Home = () => {
                                         ))}
                                     </div>
 
-                                    <span className="text-sm font-semibold text-white">
+                                    <span className="text-sm font-semibold text-white whitespace-nowrap">
                                         Official Partners
                                     </span>
                                 </div>

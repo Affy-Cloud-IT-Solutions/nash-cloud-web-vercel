@@ -1,160 +1,15 @@
-// import React from "react";
-// import { Globe2, Rocket, Gem } from "lucide-react";
-
-// /* 🖼 About Images */
-// import about1 from "../assets/about1.png";
-// import about2 from "../assets/about2.png";
-// import about3 from "../assets/about3.png";
-// import about4 from "../assets/about4.png";
-// import about5 from "../assets/about5.png";
-// import about6 from "../assets/about6.png";
-
-// const aboutImages = [
-//     about1,
-//     about2,
-//     about3,
-//     about4,
-//     about5,
-//     about6,
-// ];
-
-// const About = () => {
-//     return (
-//         <section
-//             id="about"
-//             className="relative min-h-screen pt-28 pb-16 px-6 md:px-16 overflow-hidden
-//       bg-[linear-gradient(180deg,_rgb(7,12,28),_rgb(6,25,67))] text-white"
-//         >
-//             {/* 🌌 Background Tech Glows */}
-//             <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-[#0D47A1]/30 blur-[150px] rounded-full" />
-//             <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[#00B4FF]/20 blur-[180px] rounded-full" />
-
-//             {/* 🔹 Header */}
-//             <div className="relative z-10 max-w-5xl mx-auto text-center">
-//                 <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-wide drop-shadow-[0_0_20px_rgba(0,180,255,0.3)]">
-//                     <span className="bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent">
-//                         About Us
-//                     </span>
-//                 </h1>
-
-//                 <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-6 max-w-3xl mx-auto">
-//                     Tech Trade Consulting is a leading technology consulting company
-//                     specializing in{" "}
-//                     <span className="text-[#00B4FF] font-semibold">IT</span>,{" "}
-//                     <span className="text-[#00B4FF] font-semibold">SAP</span>, and{" "}
-//                     <span className="text-[#00B4FF] font-semibold">
-//                         Digital Transformation
-//                     </span>{" "}
-//                     services. We help enterprises scale, innovate, and achieve excellence
-//                     in a digital-first world.
-//                 </p>
-
-//                 <p className="text-gray-400 text-md leading-relaxed max-w-2xl mx-auto">
-//                     We believe in building lasting partnerships through innovation,
-//                     reliability, and transparency — empowering clients to achieve global
-//                     success through technology.
-//                 </p>
-//             </div>
-
-//             {/* 🖼 IMAGE GALLERY */}
-//             <div className="relative z-10 mt-16 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6">
-//                 {aboutImages.map((img, index) => (
-//                     <div
-//                         key={index}
-//                         className="group relative overflow-hidden rounded-2xl
-//             border border-[#00B4FF]/20
-//             shadow-[0_0_25px_rgba(0,180,255,0.15)]
-//             hover:shadow-[0_0_40px_rgba(0,180,255,0.35)]
-//             transition-all duration-500"
-//                     >
-//                         <img
-//                             src={img}
-//                             alt={`About ${index + 1}`}
-//                             className="w-full h-56 object-cover
-//               transform group-hover:scale-110
-//               transition-transform duration-700"
-//                         />
-
-//                         {/* Overlay */}
-//                         <div className="absolute inset-0 bg-gradient-to-t from-[#061943]/60 via-transparent to-transparent
-//             opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-//                     </div>
-//                 ))}
-//             </div>
-
-//             {/* 💠 Cards Section */}
-//             <div className="relative z-10 mt-20 grid sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-//                 {[
-//                     {
-//                         title: "Our Vision",
-//                         text: "To become the trusted global partner for digital transformation — enabling businesses to innovate fearlessly.",
-//                         Icon: Globe2,
-//                     },
-//                     {
-//                         title: "Our Mission",
-//                         text: "Deliver top-tier IT and SAP solutions that fuel growth, agility, and sustainable success for our clients.",
-//                         Icon: Rocket,
-//                     },
-//                     {
-//                         title: "Our Values",
-//                         text: "Integrity, innovation, and customer-centric excellence — driving everything we create and deliver.",
-//                         Icon: Gem,
-//                     },
-//                 ].map(({ title, text, Icon }, index) => (
-//                     <div
-//                         key={index}
-//                         className="group relative p-10 rounded-2xl overflow-hidden
-//             border border-[#00B4FF]/20 backdrop-blur-lg bg-white/5
-//             shadow-[0_0_25px_rgba(0,180,255,0.15)]
-//             hover:shadow-[0_0_40px_rgba(0,180,255,0.35)]
-//             transition-all duration-500 transform hover:-translate-y-2"
-//                     >
-//                         {/* Glow Overlay */}
-//                         <div className="absolute inset-0 bg-gradient-to-br from-[#00B4FF]/10 via-transparent to-[#0D47A1]/20
-//             opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-//                         {/* Icon */}
-//                         <div className="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 rounded-full
-//             bg-gradient-to-br from-[#0D47A1]/40 to-[#00B4FF]/30
-//             border border-[#00B4FF]/30 group-hover:border-[#00B4FF]/50 transition-all duration-500">
-//                             <Icon className="w-8 h-8 text-[#00B4FF] group-hover:text-white transition-colors duration-500" />
-//                         </div>
-
-//                         {/* Title */}
-//                         <h3 className="relative z-10 text-2xl font-semibold text-[#00B4FF] mb-3 text-center
-//             group-hover:text-white transition-colors duration-500">
-//                             {title}
-//                         </h3>
-
-//                         {/* Text */}
-//                         <p className="relative z-10 text-gray-300 leading-relaxed text-center">
-//                             {text}
-//                         </p>
-//                     </div>
-//                 ))}
-//             </div>
-
-//             {/* Decorative Divider */}
-//             <div className="relative z-10 mt-20 max-w-6xl mx-auto h-[2px]
-//       bg-gradient-to-r from-transparent via-[#00B4FF]/40 to-transparent" />
-//         </section>
-//     );
-// };
-
-// export default About;
-
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Globe2, Rocket, Gem } from "lucide-react";
+import {
+  Globe2, Rocket, Gem,
+  ArrowRight, CheckCircle2,
+  Briefcase, Users, Award,
+  Sparkles, Zap, Shield,
+  TrendingUp, Code, Coffee,
+  Star, ChevronRight, PlayCircle
+} from "lucide-react";
 
-/* 🖼 About Images */
-import about1 from "../assets/about1.png";
-import about2 from "../assets/about2.png";
-import about3 from "../assets/about3.png";
-import about4 from "../assets/about4.png";
-import about5 from "../assets/about5.png";
-import about6 from "../assets/about6.png";
-import WhoWeAreAndOffer from "../components/WhoWeAreAndOffer";
+/* All image imports removed */
 
 const About = () => {
   const location = useLocation();
@@ -171,334 +26,485 @@ const About = () => {
   }, [location]);
 
   return (
-    <section
-      id="about"
-      className="relative min-h-screen pt-28 pb-16 px-6 md:px-16 overflow-hidden
-      bg-[linear-gradient(180deg,_rgb(7,12,28),_rgb(6,25,67))] text-white"
-    >
-      {/* 🌌 Background Tech Glows */}
-      <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-[#0D47A1]/30 blur-[150px] rounded-full" />
-      <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[#00B4FF]/20 blur-[180px] rounded-full" />
+    <>
+      <style>{`
+        @keyframes slide {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        @keyframes scroll {
+          0% { transform: translateY(0); opacity: 1; }
+          100% { transform: translateY(8px); opacity: 0; }
+        }
+        @keyframes gradient {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+          opacity: 0;
+        }
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-400 { animation-delay: 0.4s; }
+        .animation-delay-600 { animation-delay: 0.6s; }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+        .animate-scroll {
+          animation: scroll 1.5s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse 6s ease-in-out infinite;
+        }
+        .delay-1000 {
+          animation-delay: 1s;
+        }
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+      `}</style>
 
-      {/* 🔹 Header */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-wide drop-shadow-[0_0_20px_rgba(0,180,255,0.3)]">
-          <span className="bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] bg-clip-text text-transparent">
-            About Us
-          </span>
-        </h1>
+      {/* ========== HERO SECTION ========== */}
+      <section
+        id="hero"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        style={{
+          background: "radial-gradient(ellipse at 20% 40%, #0A0F2A 0%, #050814 100%)"
+        }}
+      >
+        {/* Animated Background Orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-[20%] left-[15%] w-[600px] h-[600px] bg-[#00B4FF]/15 rounded-full blur-[120px] animate-pulse-slow" />
+          <div className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] bg-[#7C3AED]/20 rounded-full blur-[140px] animate-pulse-slow delay-1000" />
+          <div className="absolute top-[60%] left-[40%] w-[400px] h-[400px] bg-[#0D47A1]/25 rounded-full blur-[100px] animate-pulse-slow delay-500" />
 
-        <p className="text-[#00B4FF] text-2xl md:text-3xl font-semibold leading-relaxed mb-4 max-w-3xl mx-auto">
-          Analyse. Automate. Accelerate.
-        </p>
-
-      </div>
-
-      <div id="about-techtrade" className="relative z-10 mt-12 max-w-7xl mx-auto grid gap-10 lg:grid-cols-[1.5fr_1fr]">
-        <div className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_45px_rgba(0,180,255,0.12)] backdrop-blur-xl">
-          <span className="inline-flex items-center rounded-full border border-[#00B4FF]/30 bg-[#0B1F42]/80 px-4 py-2 text-sm font-semibold text-[#B3D7FF]">
-            TechTrade IT Solutions
-          </span>
-
-          <h2 className="mt-6 text-3xl md:text-4xl font-bold text-white">
-            We transform businesses through technology, talent, and trust.
-          </h2>
-
-          <div className="mt-5 space-y-5 text-gray-300 leading-relaxed text-base md:text-lg">
-            <p>
-              At TechTrade IT Solutions, we don’t just implement technology — we
-              transform businesses and the people behind them. Founded over 9
-              years ago, we have grown into a trusted partner for organisations
-              across the UK and beyond, delivering expert SAP services,
-              innovative IT solutions, and industry-leading training and
-              resourcing.
-            </p>
-            <p>
-              We exist to close the gap between technology and talent. Whether
-              you’re looking to streamline your SAP landscape, modernise your IT
-              infrastructure, or develop the digital skills of your workforce,
-              TechTrade brings the expertise, the energy, and the commitment to
-              make it happen.
-            </p>
-            <p>
-              Our clients range from ambitious SMEs to large enterprises — all
-              united by one thing: a desire to grow, adapt, and lead in a
-              digital world. And we’re right there with them, every step of the
-              way.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              { value: "9+", label: "Years in Business" },
-              { value: "50+", label: "Clients Served" },
-              { value: "200+", label: "Professionals Trained" },
-              { value: "15+", label: "Industries Covered" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="rounded-3xl border border-[#00B4FF]/10 bg-[#07122e]/80 p-5 text-center"
-              >
-                <div className="text-4xl font-bold text-white mb-2">
-                  {stat.value}
-                </div>
-                <p className="text-sm text-gray-300">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-          {/* 
-                    <a
-                        href="https://www.techtradeitsolutions.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0D47A1]/20 transition duration-300 hover:-translate-y-0.5"
-                    >
-                        Visit TechTrade
-                    </a> */}
+          {/* Grid Pattern Overlay */}
+          <div className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 1px)`,
+              backgroundSize: '40px 40px'
+            }}
+          />
         </div>
 
-        <div className="grid gap-4">
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src={about1}
-              alt="TechTrade team"
-              className="h-64 w-full rounded-[1rem] object-cover border border-[#00B4FF]/10 shadow-xl"
-            />
-            <img
-              src={about2}
-              alt="TechTrade workspace"
-              className="h-64 w-full rounded-[1rem] object-cover border border-[#00B4FF]/10 shadow-xl"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src={about3}
-              alt="TechTrade collaboration"
-              className="h-44 w-full rounded-[1rem] object-cover border border-[#00B4FF]/10 shadow-xl"
-            />
-            <img
-              src={about4}
-              alt="TechTrade innovation"
-              className="h-44 w-full rounded-[rem] object-cover border border-[#00B4FF]/10 shadow-xl"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src={about5}
-              alt="TechTrade training"
-              className="h-44 w-full rounded-[2rem] object-cover border border-[#00B4FF]/10 shadow-xl"
-            />
-            <img
-              src={about6}
-              alt="TechTrade delivery"
-              className="h-44 w-full rounded-[2rem] object-cover border border-[#00B4FF]/10 shadow-xl"
-            />
-          </div>
+        {/* Animated Lines */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[30%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00B4FF]/20 to-transparent" style={{ animation: 'slide 8s linear infinite' }} />
+          <div className="absolute top-[70%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#7C3AED]/20 to-transparent" style={{ animation: 'slide 12s linear infinite' }} />
         </div>
-      </div>
 
-      <div id="vision-values" className="relative z-10 mt-16 max-w-7xl mx-auto">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Vision & Values
-          </h2>
-          <p className="text-gray-300 max-w-3xl mx-auto">
-            Our vision and values guide every engagement, every delivery, and
-            every relationship.
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 mb-8 animate-fade-in-up">
+            <Sparkles className="w-4 h-4 text-[#00B4FF]" />
+            <span className="text-sm text-gray-300">Trusted by industry leaders</span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-white via-[#00B4FF] to-[#7C3AED] bg-clip-text text-transparent animate-gradient">
+              Transform Your Business
+            </span>
+            <br />
+            <span className="text-white">With TechTrade</span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
+            Analyse. Automate. Accelerate. — We deliver expert SAP solutions,
+            innovative IT strategies, and industry-leading training that drives real results.
           </p>
-        </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          {[
-            {
-              title: "Our Vision",
-              text: "Empowering every business to thrive in a digital world. Technology should be an enabler, not a barrier.",
-              Icon: Globe2,
-            },
-            {
-              title: "Our Purpose",
-              text: "To simplify technology, grow talent, and drive transformation — one business at a time.",
-              Icon: Rocket,
-            },
-            {
-              title: "Our Values",
-              text: "We focus on client success, agility, inclusivity, continuous learning, excellence, and empowering people.",
-              Icon: Gem,
-            },
-          ].map((item, index) => {
-            const Icon = item.Icon;
-            return (
-              <div
-                key={index}
-                className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_35px_rgba(0,180,255,0.12)]"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0D47A1]/10 text-[#00B4FF] mb-5">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-semibold text-white mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">{item.text}</p>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-400">
+            <button
+              onClick={() => {
+                const el = document.getElementById('about-techtrade');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-white font-medium text-lg hover:bg-white/10 hover:border-[#00B4FF]/50 transition-all duration-300 hover:-translate-y-1"
+            >
+              Discover Our Story
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#00B4FF]/20 group-hover:bg-[#00B4FF]/40 transition-colors">
+                <ArrowRight className="w-4 h-4 text-[#00B4FF] group-hover:rotate-90 transition-transform duration-300" />
               </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div id="leadership" className="relative z-10 mt-16 max-w-7xl mx-auto grid gap-8 xl:grid-cols-[1fr_0.95fr]">
-        <div className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_35px_rgba(0,180,255,0.12)]">
-          <div className="mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Leadership Team
-            </h2>
-            <p className="text-gray-300 max-w-3xl">
-              Experienced leaders who combine SAP expertise, technology
-              strategy, and business transformation delivery.
-            </p>
+            </button>
           </div>
 
-          <div className="grid gap-6">
-            <div className="rounded-3xl border border-[#00B4FF]/10 bg-[#07122e]/80 p-8">
-              <h3 className="text-2xl font-semibold text-white mb-3">
-                Akbar Khan
-              </h3>
-              <p className="text-[#00B4FF] font-semibold mb-4">
-                Director of Technology
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Akbar leads TechTrade’s technology vision and SAP practice,
-                bringing deep technical expertise and a passion for building
-                solutions that genuinely work. He believes technology’s true
-                purpose is to make people’s lives easier — and that belief
-                drives everything the team does.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-[#00B4FF]/10 bg-[#07122e]/80 p-8">
-              <h3 className="text-2xl font-semibold text-white mb-3">
-                Amer Rashid
-              </h3>
-              <p className="text-[#00B4FF] font-semibold mb-4">Director</p>
-              <p className="text-gray-300 leading-relaxed">
-                Amer oversees TechTrade’s strategic direction, client
-                relationships, and business growth. He brings clarity to
-                complexity and connects the right talent to the right
-                opportunities while ensuring TechTrade always delivers on its
-                promises.
-              </p>
-            </div>
+          {/* Stats Row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-8 border-t border-white/10 animate-fade-in-up animation-delay-600">
+            {[
+              { value: "9+", label: "Years of Excellence", icon: Award },
+              { value: "50+", label: "Happy Clients", icon: Briefcase },
+              { value: "200+", label: "Professionals Trained", icon: Users },
+              { value: "100%", label: "Client Satisfaction", icon: Star },
+            ].map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="flex justify-center mb-2">
+                    <Icon className="w-6 h-6 text-[#00B4FF]" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <div id="culture" className="rounded-[2rem] border border-[#00B4FF]/15 bg-white/5 p-8 shadow-[0_0_35px_rgba(0,180,255,0.12)]">
-          <div className="mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Life at TechTrade
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-scroll" />
+          </div>
+        </div>
+      </section>
+
+      {/* ========== ABOUT SECTION (Former Hero Section) ========== */}
+      <section
+        id="about-techtrade"
+        className="relative py-28 px-6 md:px-16 overflow-hidden"
+        style={{
+          background: "linear-gradient(180deg, #050814 0%, #0A0F2A 50%, #050814 100%)"
+        }}
+      >
+        {/* Background Glows */}
+        <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-[#0D47A1]/20 blur-[150px] rounded-full" />
+        <div className="absolute bottom-[10%] right-[10%] w-[500px] h-[500px] bg-[#00B4FF]/15 blur-[180px] rounded-full" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#00B4FF] text-sm font-semibold mb-4">
+              Who We Are
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              About TechTrade
             </h2>
-            <p className="text-gray-300 max-w-3xl">
-              A flexible, collaborative, and human-first culture where people
-              feel trusted, inspired, and empowered to build the future of technology.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Analyse. Automate. Accelerate. — We don't just implement technology,
+              we transform businesses and the people behind them.
             </p>
           </div>
 
-          <div className="grid gap-4">
+          {/* Main Content Grid */}
+          <div className="grid gap-12 lg:grid-cols-2">
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              <div className="rounded-2xl border border-[#00B4FF]/20 bg-white/5 backdrop-blur-sm p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                  We transform businesses through technology, talent, and trust.
+                </h3>
+                <div className="space-y-4 text-gray-300 leading-relaxed">
+                  <p>
+                    Founded over 9 years ago, TechTrade IT Solutions has grown into a trusted
+                    partner for organisations across the UK and beyond, delivering expert SAP
+                    services, innovative IT solutions, and industry-leading training.
+                  </p>
+                  <p>
+                    We exist to close the gap between technology and talent. Whether you're
+                    looking to streamline your SAP landscape, modernise your IT infrastructure,
+                    or develop your workforce's digital skills — we bring the expertise, energy,
+                    and commitment to make it happen.
+                  </p>
+                </div>
+              </div>
+
+              {/* Stats Grid - Enhanced */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "9+", label: "Years in Business", color: "from-blue-500 to-cyan-500" },
+                  { value: "50+", label: "Clients Served", color: "from-purple-500 to-pink-500" },
+                  { value: "200+", label: "Professionals Trained", color: "from-emerald-500 to-teal-500" },
+                  { value: "15+", label: "Industries Covered", color: "from-orange-500 to-red-500" },
+                ].map((stat, index) => (
+                  <div
+                    key={index}
+                    className="relative group rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-6 text-center overflow-hidden hover:border-[#00B4FF]/30 transition-all duration-300"
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                    <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                    <p className="text-sm text-gray-300">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Features Grid (Replacing Images) */}
+            <div className="grid gap-6">
+              {[
+                {
+                  icon: Shield,
+                  title: "SAP Specialists",
+                  description: "Our consultants have lived it, implemented it, and optimised it across industries."
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Practical Training",
+                  description: "Our trainers work inside the systems they teach, delivering immediately useful learning."
+                },
+                {
+                  icon: Code,
+                  title: "End-to-End Support",
+                  description: "From strategy to go-live and beyond, we're with you at every stage."
+                },
+                {
+                  icon: Coffee,
+                  title: "People-First Approach",
+                  description: "Technology only works when people do. We never lose sight of the humans behind every system."
+                }
+              ].map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <div key={index} className="group flex gap-4 p-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[#00B4FF]/30 hover:bg-white/10 transition-all duration-300">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#00B4FF]/20 to-[#0D47A1]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon className="w-6 h-6 text-[#00B4FF]" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-1">{feature.title}</h4>
+                      <p className="text-gray-400 text-sm">{feature.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== VISION & VALUES SECTION ========== */}
+      <section id="vision-values" className="relative py-28 px-6 md:px-16 overflow-hidden bg-[#050814]">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" style={{
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2300B4FF\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+          backgroundRepeat: 'repeat'
+        }} />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#00B4FF] text-sm font-semibold mb-4">
+              Our Foundation
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Vision & Values
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our vision and values guide every engagement, every delivery, and every relationship.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                title: "Flexible & Comfortable Working",
-                text: "We offer a flexible working environment that empowers our team to do their best work — wherever and however that looks.",
+                icon: Globe2,
+                title: "Our Vision",
+                text: "Empowering every business to thrive in a digital world. Technology should be an enabler, not a barrier.",
+                gradient: "from-blue-500 to-cyan-500"
               },
               {
-                title: "A Culture of Collaboration",
-                text: "Ideas are shared openly, challenges are tackled together, and wins are celebrated as a team.",
+                icon: Rocket,
+                title: "Our Purpose",
+                text: "To simplify technology, grow talent, and drive transformation — one business at a time.",
+                gradient: "from-purple-500 to-pink-500"
               },
               {
-                title: "Always Learning, Always Growing",
-                text: "From knowledge-sharing sessions to professional development, we invest in our people’s growth at every stage.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="rounded-3xl border border-[#00B4FF]/10 bg-[#07122e]/80 p-6"
-              >
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+                icon: Gem,
+                title: "Our Values",
+                text: "Client success, agility, inclusivity, continuous learning, excellence, and empowering people.",
+                gradient: "from-emerald-500 to-teal-500"
+              }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="group relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-8 hover:border-[#00B4FF]/30 transition-all duration-300">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-[#00B4FF]/20 to-[#0D47A1]/20 mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-8 h-8 text-[#00B4FF]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{item.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
-      {/* Why TechTrade Section */}
-      <div className="relative z-10 mt-16 max-w-7xl mx-auto">
-        <div id="why-techtrade" className="rounded-[2rem] border border-[#00B4FF]/15 bg-[#07122e]/90 p-8 shadow-[0_0_45px_rgba(0,180,255,0.14)]">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Why TechTrade
-              </h2>
-              <p className="mt-3 text-gray-300 max-w-3xl">
-                Choosing the right SAP and IT partner is one of the most
-                important decisions a business can make.
-              </p>
-            </div>
-            {/* <a
-              href="https://www.techtradeitsolutions.com"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#0D47A1] to-[#00B4FF] px-6 py-3 text-sm font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-0.5"
-            >
-              Start the conversation
-            </a> */}
+      </section>
+
+      {/* ========== LEADERSHIP & CULTURE SECTION ========== */}
+      <section className="relative py-28 px-6 md:px-16 overflow-hidden bg-gradient-to-b from-[#050814] to-[#0A0F2A]">
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#00B4FF]/5 to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#00B4FF] text-sm font-semibold mb-4">
+              Leadership & Culture
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              The Team Behind TechTrade
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experienced leaders and a culture that empowers everyone to do their best work.
+            </p>
           </div>
-          <WhoWeAreAndOffer />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* Leadership Team */}
+            <div id="leadership" className="space-y-6">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1 h-8 bg-gradient-to-b from-[#00B4FF] to-[#7C3AED] rounded-full" />
+                  <h3 className="text-2xl font-bold text-white">Leadership Team</h3>
+                </div>
+                <div className="space-y-6">
+                  {[
+                    {
+                      name: "Akbar Khan",
+                      role: "Director of Technology",
+                      description: "Akbar leads TechTrade's technology vision and SAP practice, bringing deep technical expertise and a passion for building solutions that genuinely work."
+                    },
+                    {
+                      name: "Amer Rashid",
+                      role: "Director",
+                      description: "Amer oversees strategic direction, client relationships, and business growth, connecting the right talent to the right opportunities."
+                    }
+                  ].map((leader, index) => (
+                    <div key={index} className="p-6 rounded-xl border border-white/10 bg-[#0A0F2A]/50 hover:border-[#00B4FF]/20 transition-all">
+                      <h4 className="text-xl font-bold text-white mb-1">{leader.name}</h4>
+                      <p className="text-[#00B4FF] text-sm font-semibold mb-3">{leader.role}</p>
+                      <p className="text-gray-400 text-sm leading-relaxed">{leader.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Culture */}
+            <div id="culture" className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-1 h-8 bg-gradient-to-b from-[#7C3AED] to-[#00B4FF] rounded-full" />
+                <h3 className="text-2xl font-bold text-white">Life at TechTrade</h3>
+              </div>
+              <p className="text-gray-300 mb-8">
+                A flexible, collaborative, and human-first culture where people feel trusted,
+                inspired, and empowered to build the future of technology.
+              </p>
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "Flexible & Comfortable Working",
+                    text: "We empower our team to do their best work — wherever and however that looks."
+                  },
+                  {
+                    title: "A Culture of Collaboration",
+                    text: "Ideas are shared openly, challenges are tackled together, and wins are celebrated as a team."
+                  },
+                  {
+                    title: "Always Learning, Always Growing",
+                    text: "We invest in our people's growth at every stage through knowledge-sharing and development."
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-4 p-4 rounded-xl border border-white/10 bg-[#0A0F2A]/30">
+                    <CheckCircle2 className="w-5 h-5 text-[#00B4FF] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-white mb-1">{item.title}</h4>
+                      <p className="text-gray-400 text-sm">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== WHY TECHTRADE SECTION ========== */}
+      <section id="why-techtrade" className="relative py-28 px-6 md:px-16 overflow-hidden bg-[#050814]">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#00B4FF]/5 via-transparent to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#00B4FF] text-sm font-semibold mb-4">
+              Why Choose Us
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Why TechTrade?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Choosing the right SAP and IT partner is one of the most important decisions
+              a business can make. Here's why clients trust us.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "SAP Specialists",
-                text: "Our consultants don’t just know SAP in theory — they’ve lived it, implemented it, and optimised it across industries.",
+                text: "Our consultants have lived it, implemented it, and optimised it across industries."
               },
               {
                 title: "Practical Training",
-                text: "Our trainers work inside the systems they teach, delivering learning that is relevant and immediately useful.",
+                text: "Our trainers work inside the systems they teach, delivering learning that is immediately relevant."
               },
               {
                 title: "End-to-End Support",
-                text: "From strategy and design to go-live and beyond, we’re with you at every stage of your journey.",
+                text: "From strategy and design to go-live and beyond, we're with you at every stage."
               },
               {
                 title: "People-First Approach",
-                text: "We never lose sight of the humans behind every system. Technology only works when people do.",
+                text: "We never lose sight of the humans behind every system. Technology only works when people do."
               },
               {
                 title: "UK-Based, Globally Minded",
-                text: "Rooted in the UK with a global perspective, we understand local challenges and international opportunities.",
+                text: "Rooted in the UK with a global perspective, we understand local challenges and international opportunities."
               },
               {
                 title: "No Jargon, Just Results",
-                text: "We communicate clearly, work transparently, and focus on outcomes that matter to your business.",
-              },
+                text: "We communicate clearly, work transparently, and focus on outcomes that matter to your business."
+              }
             ].map((item, index) => (
-              <div
-                key={index}
-                className="rounded-3xl border border-[#00B4FF]/10 bg-white/5 p-6"
-              >
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {item.text}
-                </p>
+              <div key={index} className="group flex gap-4 p-6 rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-[#00B4FF]/30 hover:bg-white/10 transition-all duration-300">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#00B4FF]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Zap className="w-5 h-5 text-[#00B4FF]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.text}</p>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Final CTA */}
+          {/* <div className="mt-16 text-center">
+            <div className="inline-flex flex-col sm:flex-row gap-4">
+              <button className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#00B4FF] to-[#0D47A1] text-white font-semibold text-lg shadow-lg shadow-[#00B4FF]/20 hover:shadow-[#00B4FF]/40 transition-all duration-300 hover:-translate-y-1">
+                Start the conversation
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 bg-white/5 text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300">
+                <ChevronRight className="w-5 h-5" />
+                Learn more about us
+              </button>
+            </div>
+          </div> */}
         </div>
-      </div>
-
-
-
-      {/* Decorative Divider */}
-      <div className="relative z-10 mt-20 max-w-7xl mx-auto h-[2px] bg-gradient-to-r from-transparent via-[#00B4FF]/40 to-transparent" />
-    </section>
+      </section>
+    </>
   );
 };
 

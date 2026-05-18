@@ -67,24 +67,41 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    /* ================= SCROLL LOCK WHEN MENU OPEN ================= */
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [menuOpen]);
+
     // Dynamic text color based on background
     const textColor = isLightBg ? "text-gray-800" : "text-white";
     const hoverColor = "hover:text-[#00B4FF]";
     const mobileTextColor = isLightBg ? "text-gray-800" : "text-white";
     const mobileBgColor = isLightBg
-        ? "bg-white/70 backdrop-blur-2xl"
-        : "bg-black/50 backdrop-blur-2xl";
+        ? "bg-white"
+        : "bg-[#060910]"; // Deep dark solid background for better readability
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
-                ? isLightBg
-                    ? "bg-white/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
-                    : "bg-black/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
-                : isLightBg
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+                menuOpen
+                    ? isLightBg
+                        ? "bg-white shadow-xl"
+                        : "bg-[#060910] shadow-xl"
+                    : isScrolled
+                    ? isLightBg
+                        ? "bg-white/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+                        : "bg-black/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
+                    : isLightBg
                     ? "bg-white/20 backdrop-blur-[20px]"
                     : "bg-black/20 backdrop-blur-[20px]"
-                } border-b ${isLightBg ? "border-white/50" : "border-white/20"}`}
+            } border-b ${isLightBg ? "border-white/50" : "border-white/20"}`}
         >
             {/* Top Accent Line */}
             <div className="h-[0px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />
@@ -208,7 +225,7 @@ const Navbar = () => {
 
             {/* ================= MOBILE MENU ================= */}
             {menuOpen && (
-                <div className={`md:hidden absolute top-full left-0 w-full ${mobileBgColor} border-t border-white/20 py-6 flex flex-col items-center space-y-6 shadow-xl backdrop-blur-2xl`}>
+                <div className={`md:hidden absolute top-full left-0 w-full h-[calc(100vh-100%)] ${mobileBgColor} border-t border-white/10 py-10 flex flex-col items-center space-y-8 shadow-2xl overflow-y-auto`}>
                     <span
                         onClick={() => handleScroll("home")}
                         className={`text-lg cursor-pointer ${mobileTextColor}`}
@@ -232,7 +249,7 @@ const Navbar = () => {
                         </span>
 
                         {servicesOpen && (
-                            <div className="mt-4 w-[85%] bg-white/90 backdrop-blur-xl rounded-xl border border-white/30 overflow-hidden">
+                            <div className={`mt-4 w-[85%] ${isLightBg ? "bg-gray-50" : "bg-white/5"} rounded-xl border ${isLightBg ? "border-gray-200" : "border-white/10"} overflow-hidden transition-all duration-300`}>
                                 {servicesList.map((service) => (
                                     <Link
                                         key={service.path}
@@ -241,7 +258,7 @@ const Navbar = () => {
                                             setMenuOpen(false);
                                             setServicesOpen(false);
                                         }}
-                                        className="block w-full px-5 py-3 text-sm text-gray-700 border-b last:border-b-0 hover:bg-[#00B4FF]/10 hover:text-[#00B4FF] transition text-center"
+                                        className={`block w-full px-5 py-4 text-sm ${isLightBg ? "text-gray-700 border-gray-100" : "text-gray-300 border-white/5"} border-b last:border-b-0 hover:bg-[#00B4FF]/10 hover:text-[#00B4FF] transition text-center`}
                                     >
                                         {service.label}
                                     </Link>
@@ -286,14 +303,14 @@ const Navbar = () => {
                         </span>
 
                         {aboutOpen && (
-                            <div className="mt-4 w-[85%] bg-white/90 backdrop-blur-xl rounded-xl border border-white/30 overflow-hidden">
+                            <div className={`mt-4 w-[85%] ${isLightBg ? "bg-gray-50" : "bg-white/5"} rounded-xl border ${isLightBg ? "border-gray-200" : "border-white/10"} overflow-hidden transition-all duration-300`}>
                                 {aboutList.map((item) => (
                                     <div
                                         key={item.id}
                                         onClick={() => {
                                             handleScroll(item.id, "/about");
                                         }}
-                                        className="block w-full px-5 py-3 text-sm text-gray-700 border-b last:border-b-0 hover:bg-[#00B4FF]/10 hover:text-[#00B4FF] transition text-center cursor-pointer"
+                                        className={`block w-full px-5 py-4 text-sm ${isLightBg ? "text-gray-700 border-gray-100" : "text-gray-300 border-white/5"} border-b last:border-b-0 hover:bg-[#00B4FF]/10 hover:text-[#00B4FF] transition text-center cursor-pointer`}
                                     >
                                         {item.label}
                                     </div>
