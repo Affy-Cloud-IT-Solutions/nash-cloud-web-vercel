@@ -249,12 +249,6 @@ const InternalProduct = () => {
                                             </span>
                                         ))}
                                     </div>
-
-                                    {/* CTA Link */}
-                                    <button className="group/btn inline-flex items-center gap-2 text-[#00B4FF] hover:text-white transition-colors duration-300">
-                                        <span className="text-sm font-medium">Learn More</span>
-                                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                                    </button>
                                 </div>
                             </div>
 

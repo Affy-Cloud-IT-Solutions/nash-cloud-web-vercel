@@ -246,7 +246,7 @@ const ContactUs = () => {
             </div>
 
             {/* Collaboration Line */}
-            <div className="mt-13 flex flex-col items-center justify-center text-center">
+            {/* <div className="mt-13 flex flex-col items-center justify-center text-center">
                 <p className="text-xs md:text-sm text-gray-400 tracking-wide">
                     A strategic collaboration with{" "}
                     <a
@@ -259,7 +259,7 @@ const ContactUs = () => {
                     </a>
                 </p>
                 <div className="mt-3 h-[1px] w-40 bg-gradient-to-r from-transparent via-[#00B4FF]/50 to-transparent"></div>
-            </div>
+            </div> */}
         </section>
     );
 };

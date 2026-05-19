@@ -34,14 +34,14 @@ const services = [
         features: ["Cloud Solutions", "AI Integration", "Automation", "Modernization"],
         link: "/digital-transformation"
     },
-    {
+    /* {
         title: "QA Engineering",
         description:
             "Ensure reliability, performance, and security across applications with comprehensive testing and quality assurance.",
         icon: <Shield className="w-6 h-6" />,
         features: ["Test Automation", "Performance", "Security", "Continuous QA"],
         link: "/qa-engineering"
-    },
+    }, */
     {
         title: "Resourcing",
         description:
@@ -59,7 +59,7 @@ const services = [
         link: "/opportunities"
     },
     {
-        title: "Bespoke Products",
+        title: "In-House Bespoke Products",
         description:
             "Innovative in-house digital products designed to streamline operations, enhance productivity, and support scalable business growth.",
         icon: <Boxes className="w-5 h-5" />,

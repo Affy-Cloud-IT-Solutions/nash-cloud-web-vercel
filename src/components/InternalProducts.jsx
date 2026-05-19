@@ -14,7 +14,7 @@ const InternalProducts = () => {
     ];
 
     return (
-        <section className="relative py-24 px-4 overflow-hidden bg-[#020817]">
+        <section className="relative py-14 px-4 overflow-hidden bg-[#020817]">
             {/* Premium Dark Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse" />

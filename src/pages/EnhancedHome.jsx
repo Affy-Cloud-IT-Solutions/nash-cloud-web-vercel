@@ -113,7 +113,7 @@ const EnhancedHome = () => {
                 }
             `}</style>
 
-            <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#05050A] pt-20" id="home">
+            <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#05050A] pt-10" id="home">
 
                 {/* ===== BREATHTAKING PREMIUM BACKGROUND ===== */}
                 <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -254,7 +254,7 @@ const EnhancedHome = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight"
+                            className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 tracking-tight"
                         >
                             <span className="bg-gradient-to-r from-white via-[#00B4FF] to-[#7C3AED] bg-clip-text text-transparent animate-gradient">
                                 Transform Your Business

@@ -92,7 +92,7 @@ const Hero = () => {
             Powered by
             <span className="relative inline-block ml-4">
               <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500">
-                Our Life's Work
+                Zoho
               </span>
               <motion.div
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"
@@ -106,7 +106,8 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-10">
             A unique and powerful software suite to transform the way you work.
             Designed for businesses of all sizes, built by a company that values
-            your privacy and delivers exceptional results.
+            your privacy and delivers exceptional results. <strong className="text-blue-600">Zoho</strong> —
+            empowering businesses worldwide with cloud-based excellence.
           </p>
         </motion.div>
 

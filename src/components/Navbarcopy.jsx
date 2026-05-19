@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import logo from "../assets/TechTradeLogo.png";
 
@@ -7,7 +7,7 @@ import logo from "../assets/TechTradeLogo.png";
 const servicesList = [
     { label: "Digital Transformation", path: "/digital-transformation" },
     // { label: "QA Engineering", path: "/qa-engineering" },
-    { label: "In-House Bespoke Products", path: "/internal-product" },
+    { label: "Bespoke Products", path: "/internal-product" },
 ];
 
 /* ================= ABOUT LIST ================= */
@@ -26,7 +26,6 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isLightBg, setIsLightBg] = useState(true);
     const navigate = useNavigate();
-    const location = useLocation();
 
     /* ================= LANDING PAGE NAVIGATION ================= */
     const handleScroll = (id, path = "/") => {
@@ -38,85 +37,19 @@ const Navbar = () => {
 
     /* ================= SCROLL EFFECT & BACKGROUND DETECTION ================= */
     useEffect(() => {
-        const getActualBgColor = (element) => {
-            let el = element;
-            const ignoredTags = ['SPAN', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'P', 'A', 'BUTTON', 'SVG', 'PATH', 'IMG', 'I', 'LABEL', 'INPUT', 'TEXTAREA'];
-            while (el) {
-                if (ignoredTags.includes(el.tagName)) {
-                    el = el.parentElement;
-                    continue;
-                }
-
-                const style = window.getComputedStyle(el);
-                if (style.display === 'inline' || style.display === 'inline-block' || style.backgroundClip === 'text' || style.webkitBackgroundClip === 'text') {
-                    el = el.parentElement;
-                    continue;
-                }
-
-                const rect = el.getBoundingClientRect();
-                if (rect.width < 80 || rect.height < 80) {
-                    el = el.parentElement;
-                    continue;
-                }
-
-                // 1. Check background-color
-                const bg = style.backgroundColor;
-                if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
-                    const rgba = bg.match(/[\d.]+/g);
-                    if (rgba) {
-                        const alpha = rgba.length === 4 ? parseFloat(rgba[3]) : 1.0;
-                        if (alpha >= 0.2) {
-                            return bg;
-                        }
-                    }
-                }
-
-                // 2. Check background-image gradient
-                const bgImg = style.backgroundImage;
-                if (bgImg && bgImg !== "none" && (bgImg.includes("gradient") || bgImg.includes("rgb"))) {
-                    const rgbMatches = bgImg.match(/rgba?\([^)]+\)/g);
-                    if (rgbMatches && rgbMatches.length > 0) {
-                        let rSum = 0, gSum = 0, bSum = 0, aSum = 0, count = 0;
-                        rgbMatches.forEach(rgbStr => {
-                            const vals = rgbStr.match(/[\d.]+/g);
-                            if (vals && vals.length >= 3) {
-                                rSum += parseInt(vals[0]);
-                                gSum += parseInt(vals[1]);
-                                bSum += parseInt(vals[2]);
-                                aSum += vals.length === 4 ? parseFloat(vals[3]) : 1.0;
-                                count++;
-                            }
-                        });
-                        if (count > 0) {
-                            const avgAlpha = aSum / count;
-                            if (avgAlpha >= 0.2) {
-                                return `rgb(${Math.round(rSum / count)}, ${Math.round(gSum / count)}, ${Math.round(bSum / count)})`;
-                            }
-                        }
-                    }
-                }
-                el = el.parentElement;
-            }
-            return "rgb(255, 255, 255)"; // Default to white
-        };
-
         const onScroll = () => {
             setIsScrolled(window.scrollY > 20);
 
             // Detect background color at navbar position
             const navbarRect = document.querySelector('header')?.getBoundingClientRect();
             if (navbarRect) {
-                const elements = document.elementsFromPoint(
+                const elementAtTop = document.elementsFromPoint(
                     window.innerWidth / 2,
                     navbarRect.bottom + 5
-                );
-
-                // Find the first element that is not the header itself or inside it
-                const headerEl = document.querySelector('header');
-                const elementAtTop = elements.find(el => el !== headerEl && !headerEl?.contains(el));
+                )[0];
 
                 if (elementAtTop) {
-                    const bgColor = getActualBgColor(elementAtTop);
+                    const bgColor = window.getComputedStyle(elementAtTop).backgroundColor;
                     // Extract RGB values
                     const rgb = bgColor.match(/\d+/g);
                     if (rgb) {
@@ -129,15 +62,10 @@ const Navbar = () => {
         };
 
         window.addEventListener("scroll", onScroll);
+        onScroll(); // Initial check
 
-        // Initial check with a tiny delay to ensure route elements have mounted
-        const timer = setTimeout(onScroll, 100);
-
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-            clearTimeout(timer);
-        };
-    }, [location]);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     /* ================= SCROLL LOCK WHEN MENU OPEN ================= */
     useEffect(() => {
@@ -161,16 +89,17 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${menuOpen
-                ? isLightBg
-                    ? "bg-white shadow-xl border-b border-white/50"
-                    : "bg-[#060910] shadow-xl border-b border-white/20"
-                : isScrolled
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+                menuOpen
+                    ? isLightBg
+                        ? "bg-white shadow-xl border-b border-white/50"
+                        : "bg-[#060910] shadow-xl border-b border-white/20"
+                    : isScrolled
                     ? isLightBg
                         ? "bg-white/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.1)] border-b border-white/50"
                         : "bg-black/30 backdrop-blur-[20px] shadow-[0_8px_32px_rgba(0,0,0,0.2)] border-b border-white/20"
                     : "bg-transparent border-b border-transparent"
-                }`}
+            }`}
         >
             {/* Top Accent Line */}
             <div className="h-[0px] bg-gradient-to-r from-[#00B4FF] via-[#0D47A1] to-[#00B4FF]" />

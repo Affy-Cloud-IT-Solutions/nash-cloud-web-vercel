@@ -44,12 +44,12 @@ const OpportunitiesAndTrainingPage = () => {
             bg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
             items: ["Machine Learning", "AWS/Azure", "Automation", "Data Analytics"]
         },
-        {
+        /* {
             title: "QA Engineering",
             icon: <Code className="w-6 h-6" />,
             bg: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
             items: ["Test Automation", "Performance", "Security", "DevOps"]
-        },
+        }, */
         {
             title: "Career Pathways",
             icon: <TrendingUp className="w-6 h-6" />,

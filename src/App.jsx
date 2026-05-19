@@ -15,7 +15,7 @@ import ResourceAndConsultingPage from "./pages/ResourceAndConsultingPage";
 import InternalProductPage from "./pages/InternalProductPage";
 import OpportunitiesAndTrainingPage from "./pages/OpportunitiesAndTrainingPage";
 import DigitalTransformationServicesPage from "./pages/DigitalTransformationServicesPage";
-import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
+// import QAEngineeringServicesPage from "./pages/QAEngineeringServicesPage";
 import OurApps from "./components/OurApps";
 import LandingPage from "./pages/LandingPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -43,7 +43,7 @@ const App = () => {
         <Route path="/resourcing" element={<ResourceAndConsultingPage />} />
         <Route path="/it-solutions" element={<ITSolutionsPage />} />
         <Route path="/digital-transformation" element={<DigitalTransformationServicesPage />} />
-        <Route path="/qa-engineering" element={<QAEngineeringServicesPage />} />
+        {/* <Route path="/qa-engineering" element={<QAEngineeringServicesPage />} /> */}
         {/* <Route path="/our-apps" element={<OurApps />} /> */}
         <Route path="/odoo-services" element={<OdooLandingPage />} />
         <Route path="/zoho-services" element={<ZohoLandingPage />} />
