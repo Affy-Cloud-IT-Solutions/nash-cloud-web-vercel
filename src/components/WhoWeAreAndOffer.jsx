@@ -246,9 +246,9 @@ const WhoWeAreAndOffer = () => {
                 </motion.div>
 
                 {/* Carousel Section */}
-                <div className="relative">
+                <div className="relative hidden md:block">
                     {/* Auto-play Controls */}
-                    <div className="absolute -top-16 right-0 flex items-center gap-3 z-20">
+                    <div className="absolute -top-16 right-0 hidden md:flex items-center gap-3 z-20">
                         <button
                             onClick={() => setIsAutoPlaying(!isAutoPlaying)}
                             className="p-2 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:bg-slate-700/50 transition-all"
@@ -258,7 +258,7 @@ const WhoWeAreAndOffer = () => {
                     </div>
 
                     {/* Main Carousel */}
-                    <div className="relative overflow-hidden rounded-3xl min-h-[600px]">
+                    <div className="relative overflow-hidden rounded-3xl min-h-[780px] sm:min-h-[650px] md:min-h-[600px]">
                         <AnimatePresence initial={false} custom={direction} mode="wait">
                             <motion.div
                                 key={currentSlide}
@@ -285,7 +285,7 @@ const WhoWeAreAndOffer = () => {
                                     </div>
 
                                     {/* Content */}
-                                    <div className="relative h-full flex items-center p-8 md:p-12">
+                                    <div className="relative h-full flex items-center px-12 sm:px-16 py-10 md:p-12">
                                         <div className="max-w-2xl">
                                             {/* Slide Indicator */}
                                             <div className="flex gap-2 mb-6">
@@ -323,7 +323,7 @@ const WhoWeAreAndOffer = () => {
                                             </p>
 
                                             {/* Key Points */}
-                                            <div className="grid grid-cols-2 gap-3 mb-8">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                                                 {currentSlideData.keyPoints.map((point, idx) => {
                                                     const Icon = point.icon;
                                                     return (
@@ -350,7 +350,7 @@ const WhoWeAreAndOffer = () => {
                                         </div>
 
                                         {/* Floating Badges */}
-                                        <div className="absolute bottom-8 right-8 flex flex-col gap-3">
+                                        <div className="absolute bottom-8 right-8 hidden lg:flex flex-col gap-3">
                                             {currentSlideData.badges.map((badge, idx) => {
                                                 const Icon = badge.icon;
                                                 return (
@@ -381,19 +381,19 @@ const WhoWeAreAndOffer = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:bg-slate-700/50 transition-all z-20"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:bg-slate-700/50 transition-all z-20 hidden md:block"
                     >
                         <ChevronLeft className="w-6 h-6 text-white" />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:bg-slate-700/50 transition-all z-20"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:bg-slate-700/50 transition-all z-20 hidden md:block"
                     >
                         <ChevronRight className="w-6 h-6 text-white" />
                     </button>
 
                     {/* Slide Dots */}
-                    <div className="flex justify-center gap-2 mt-6">
+                    <div className="hidden md:flex justify-center gap-2 mt-6">
                         {slides.map((_, idx) => (
                             <button
                                 key={idx}

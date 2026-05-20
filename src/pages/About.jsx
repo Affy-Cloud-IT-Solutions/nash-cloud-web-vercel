@@ -444,7 +444,7 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Why TechTrade?
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
               Choosing the right SAP and IT partner is one of the most important decisions
               a business can make. Here's why clients trust us.
             </p>

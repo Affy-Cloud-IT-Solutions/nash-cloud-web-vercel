@@ -6,32 +6,32 @@ import {
 } from "lucide-react";
 
 const ODOO = "#0D47A1";
-const CTA  = "#00B4FF";
+const CTA = "#00B4FF";
 
 const contactInfo = [
-  { icon: Phone,  label: "India",       value: "+91 9131395883",                              href: "tel:+919131395883" },
-  { icon: Phone,  label: "UK",          value: "+44 7768460741",                              href: "tel:+447768460741" },
-  { icon: Mail,   label: "Mustafa Hasan", value: "mustafa.hasan@affyclouditsolutions.com",    href: "mailto:mustafa.hasan@affyclouditsolutions.com" },
-  { icon: Mail,   label: "General",     value: "info@affyclouditsolutions.com",               href: "mailto:info@affyclouditsolutions.com" },
-  { icon: MapPin, label: "Delivery",    value: "India · UK · Remote Global",                  href: null },
+  { icon: Phone, label: "India", value: "+91 9131395883", href: "tel:+919131395883" },
+  { icon: Phone, label: "UK", value: "+44 7768460741", href: "tel:+447768460741" },
+  { icon: Mail, label: "Akbar Khan", value: "akbar.khan@techtradeitsolutions.com", href: "mailto:akbar.khan@techtradeitsolutions.com" },
+  { icon: Mail, label: "General", value: "info@@techtradeitsolutions.com", href: "mailto:info@@techtradeitsolutions.com" },
+  { icon: MapPin, label: "Delivery", value: "India · UK · Remote Global", href: null },
 ];
 
 const moduleOptions = [
-  { id: "crm",           icon: Users,        label: "CRM",          color: ODOO },
-  { id: "sales",         icon: TrendingUp,   label: "Sales",        color: CTA  },
-  { id: "accounting",    icon: Calculator,   label: "Accounting",   color: ODOO },
-  { id: "inventory",     icon: Package,      label: "Inventory",    color: CTA  },
-  { id: "hr",            icon: UserCog,      label: "HR & Payroll", color: ODOO },
-  { id: "manufacturing", icon: Factory,      label: "Manufacturing",color: CTA  },
-  { id: "marketing",     icon: Megaphone,    label: "Marketing",    color: ODOO },
-  { id: "ecommerce",     icon: ShoppingCart, label: "eCommerce",    color: CTA  },
+  { id: "crm", icon: Users, label: "CRM", color: ODOO },
+  { id: "sales", icon: TrendingUp, label: "Sales", color: CTA },
+  { id: "accounting", icon: Calculator, label: "Accounting", color: ODOO },
+  { id: "inventory", icon: Package, label: "Inventory", color: CTA },
+  { id: "hr", icon: UserCog, label: "HR & Payroll", color: ODOO },
+  { id: "manufacturing", icon: Factory, label: "Manufacturing", color: CTA },
+  { id: "marketing", icon: Megaphone, label: "Marketing", color: ODOO },
+  { id: "ecommerce", icon: ShoppingCart, label: "eCommerce", color: CTA },
 ];
 
 export default function ContactSection() {
-  const [form,            setForm]           = useState({ name: "", email: "", company: "", message: "" });
-  const [selectedModules, setSelectedModules]= useState([]);
-  const [submitted,       setSubmitted]      = useState(false);
-  const [focused,         setFocused]        = useState("");
+  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [selectedModules, setSelectedModules] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
+  const [focused, setFocused] = useState("");
 
   const toggle = (id) =>
     setSelectedModules((p) => p.includes(id) ? p.filter((m) => m !== id) : [...p, id]);
@@ -39,10 +39,10 @@ export default function ContactSection() {
   const handleChange = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
   const inputStyle = (name) => ({
-    borderColor:  focused === name ? ODOO : "#ede8eb",
-    boxShadow:    focused === name ? "0 0 0 3px rgba(13, 71, 161,0.1)" : "none",
-    outline:      "none",
-    transition:   "border-color 0.2s, box-shadow 0.2s",
+    borderColor: focused === name ? ODOO : "#ede8eb",
+    boxShadow: focused === name ? "0 0 0 3px rgba(13, 71, 161,0.1)" : "none",
+    outline: "none",
+    transition: "border-color 0.2s, box-shadow 0.2s",
   });
 
   return (
@@ -161,7 +161,7 @@ export default function ContactSection() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      { name: "name",  label: "Full Name",  placeholder: "John Smith",       type: "text",  required: true },
+                      { name: "name", label: "Full Name", placeholder: "John Smith", type: "text", required: true },
                       { name: "email", label: "Work Email", placeholder: "john@company.com", type: "email", required: true },
                     ].map((f) => (
                       <div key={f.name}>
@@ -210,8 +210,8 @@ export default function ContactSection() {
                             onClick={() => toggle(mod.id)}
                             className="flex flex-col items-center gap-1 p-2.5 sm:p-3 rounded-xl border text-center transition-all focus:outline-none"
                             style={{
-                              background:   on ? `${mod.color}08` : "#faf8f9",
-                              borderColor:  on ? `${mod.color}40` : "#ede8eb",
+                              background: on ? `${mod.color}08` : "#faf8f9",
+                              borderColor: on ? `${mod.color}40` : "#ede8eb",
                             }}
                           >
                             <mod.icon size={16} style={{ color: on ? mod.color : "#c4b8c0" }} />

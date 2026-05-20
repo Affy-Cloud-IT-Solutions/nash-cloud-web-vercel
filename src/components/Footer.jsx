@@ -42,9 +42,9 @@ const Footer = () => {
                             <li>
                                 <button onClick={() => handleScroll("home")} className="hover:text-[#0D47A1] text-left cursor-pointer">Home</button>
                             </li>
-                            <li>
-                                <button onClick={() => handleScroll("sap")} className="hover:text-[#0D47A1] text-left cursor-pointer">Services</button>
-                            </li>
+                            {/* <li>
+                                <Link to="/sap-services" className="hover:text-[#0D47A1] text-left cursor-pointer transition-colors duration-200">Services</Link>
+                            </li> */}
                             {/* <li>
                                 <button onClick={() => handleScroll("opportunities")} className="hover:text-[#0D47A1] text-left cursor-pointer">Interns Programme</button>
                             </li> */}
@@ -53,6 +53,9 @@ const Footer = () => {
                             </li>
                             <li>
                                 <Link to="/compliance" className="hover:text-[#0D47A1] text-left cursor-pointer transition-colors duration-200">Compliance</Link>
+                            </li>
+                            <li>
+                                <button onClick={() => handleScroll("contact")} className="hover:text-[#0D47A1] text-left cursor-pointer">Contact Us</button>
                             </li>
                         </ul>
                     </div>

@@ -20,10 +20,10 @@ import zohoLogo from "../assets/ZOHOLogo.png";
 import focusLogo from "../assets/focus-logo.png";
 
 const platforms = [
-    { name: "SAP", color: "from-blue-400 to-blue-600", logo: sapLogo },
-    { name: "Odoo", color: "from-indigo-400 to-indigo-600", logo: odooLogo },
-    { name: "Zoho", color: "from-yellow-400 to-orange-500", logo: zohoLogo },
-    { name: "Focus Softnet", color: "from-red-400 to-red-600", logo: focusLogo },
+    { name: "SAP", color: "from-blue-400 to-blue-600", logo: sapLogo, widthClass: "w-20 sm:w-28" },
+    { name: "Odoo", color: "from-indigo-400 to-indigo-600", logo: odooLogo, widthClass: "w-24 sm:w-32" },
+    { name: "Zoho", color: "from-yellow-400 to-orange-500", logo: zohoLogo, widthClass: "w-24 sm:w-32" },
+    { name: "Focus Softnet", color: "from-red-400 to-red-600", logo: focusLogo, widthClass: "w-44 sm:w-64" },
 ];
 
 const EnhancedHome = () => {
@@ -292,10 +292,10 @@ const EnhancedHome = () => {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
-                            className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-gradient-to-r from-slate-800/30 to-slate-900/30 backdrop-blur-xl border border-slate-700/50 mb-8"
+                            className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-slate-800/30 to-slate-900/30 backdrop-blur-xl border border-slate-700/50 mb-8"
                         >
-                            <span className="text-slate-300 font-medium">Enterprise Expertise in</span>
-                            <div className="relative w-64 h-9 overflow-hidden">
+                            <span className="text-slate-300 font-medium text-sm sm:text-base">Enterprise Expertise in</span>
+                            <div className={`relative ${platforms[currentPlatform].widthClass} h-8 sm:h-9 overflow-hidden transition-all duration-500 ease-in-out`}>
                                 <AnimatePresence mode="wait">
                                     <motion.div
                                         key={currentPlatform}
@@ -303,16 +303,16 @@ const EnhancedHome = () => {
                                         animate={{ y: 0, opacity: 1 }}
                                         exit={{ y: -30, opacity: 0 }}
                                         transition={{ duration: 0.4, type: "spring" }}
-                                        className="absolute inset-0 flex items-center gap-3"
+                                        className="absolute inset-0 flex items-center justify-center sm:justify-start gap-2 sm:gap-3"
                                     >
-                                        <div className="w-8 h-8 rounded-full bg-white p-0.5 shadow-md flex items-center justify-center overflow-hidden shrink-0 border border-white/10">
+                                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white p-0.5 shadow-md flex items-center justify-center overflow-hidden shrink-0 border border-white/10">
                                             <img
                                                 src={platforms[currentPlatform].logo}
                                                 alt={platforms[currentPlatform].name}
                                                 className="w-full h-full object-contain"
                                             />
                                         </div>
-                                        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${platforms[currentPlatform].color} font-bold text-xl md:text-2xl`}>
+                                        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${platforms[currentPlatform].color} font-bold text-lg sm:text-xl md:text-2xl whitespace-nowrap`}>
                                             {platforms[currentPlatform].name}
                                         </span>
                                     </motion.div>

@@ -26,7 +26,7 @@ import { motion } from "framer-motion";
 
 const products = [
     {
-        title: "Worklynx",
+        title: "Worklynx (HRMS)",
         description: "A smart productivity platform built to streamline organizational workflows, automate manual processes, and enhance team collaboration with intuitive task management and performance insights.",
         icon: <Cpu className="w-10 h-10" />,
         img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1600&q=80",
