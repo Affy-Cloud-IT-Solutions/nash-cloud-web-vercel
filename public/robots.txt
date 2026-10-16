@@ -1,0 +1,9 @@
+# Robots.txt for Tech Trade Consulting
+User-agent: *
+Allow: /
+
+# Disallow sensitive or system directories if any
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://techtradeitsolutions.com/sitemap.xml

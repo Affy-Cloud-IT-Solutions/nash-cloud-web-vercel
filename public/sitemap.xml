@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://techtradeitsolutions.com/</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- SAP Services -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/sap-services</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://techtradeitsolutions.com/#/sap-landing</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- IT Solutions & Custom Software Development -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/it-solutions</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- IT Resourcing & Staffing -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/resourcing</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Training & Opportunities -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/opportunities</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Digital Transformation -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/digital-transformation</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ERP Specialized Landings -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/odoo-services</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://techtradeitsolutions.com/#/zoho-services</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://techtradeitsolutions.com/#/focus-services</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- Products & About -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/internal-product</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://techtradeitsolutions.com/#/about</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Compliance & Policies -->
+    <url>
+        <loc>https://techtradeitsolutions.com/#/privacy-policy</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://techtradeitsolutions.com/#/terms-and-conditions</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://techtradeitsolutions.com/#/cookies-policy</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://techtradeitsolutions.com/#/compliance</loc>
+        <lastmod>2026-10-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>
