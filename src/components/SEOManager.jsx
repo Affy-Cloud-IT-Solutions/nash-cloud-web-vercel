@@ -72,7 +72,7 @@ const seoConfig = {
     description: "Explore enterprise software and proprietary tools engineered by Tech Trade Consulting to drive operational excellence and business intelligence.",
     keywords: "enterprise software development, custom software, digital solutions",
     canonical: "https://techtradeitsolutions.com/#/internal-product",
-    schemaType: "Product",
+    schemaType: "Service",
     schemaName: "Enterprise Software Solutions"
   },
   "/odoo-services": {
