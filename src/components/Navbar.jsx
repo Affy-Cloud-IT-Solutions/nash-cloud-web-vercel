@@ -234,6 +234,15 @@ const Navbar = () => {
                         Resourcing
                     </li>
 
+                    <li>
+                        <Link
+                            to="/blogs"
+                            className={`cursor-pointer transition-colors duration-300 ${hoverColor}`}
+                        >
+                            Blogs
+                        </Link>
+                    </li>
+
                     {/* ABOUT US DROPDOWN - Now matches other menu items */}
                     <li className="relative group cursor-pointer">
                         <span
@@ -354,6 +363,19 @@ const Navbar = () => {
                         className={`text-lg cursor-pointer ${mobileTextColor}`}
                     >
                         Resourcing
+                    </span>
+
+                    <span>
+                        <Link
+                            to="/blogs"
+                            onClick={() => {
+                                setMenuOpen(false);
+                                setServicesOpen(false);
+                            }}
+                            className={`text-lg cursor-pointer ${mobileTextColor}`}
+                        >
+                            Blogs
+                        </Link>
                     </span>
 
                     {/* MOBILE ABOUT US */}

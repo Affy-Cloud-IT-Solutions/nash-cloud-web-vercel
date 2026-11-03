@@ -27,6 +27,8 @@ import OdooLandingPage from "./pages/OdooLandingPage";
 import ZohoLandingPage from "./pages/ZohoLandingPage";
 import FocusLandingPage from "./pages/FocusLandingPage";
 import SapLandingPage from "./pages/SapLandingPage";
+import BlogListPage from "./pages/BlogListPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
 
 const App = () => {
   return (
@@ -51,6 +53,9 @@ const App = () => {
         <Route path="/zoho-services" element={<ZohoLandingPage />} />
         <Route path="/focus-services" element={<FocusLandingPage />} />
         <Route path="/sap-landing" element={<SapLandingPage />} />
+        <Route path="/blogs" element={<BlogListPage />} />
+        <Route path="/blogs/:slug" element={<BlogDetailPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

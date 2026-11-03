@@ -98,6 +98,14 @@ const seoConfig = {
     canonical: "https://techtradeitsolutions.com/#/focus-services",
     schemaType: "Service",
     schemaName: "Focus ERP Services"
+  },
+  "/blogs": {
+    title: "Tech Trade Blogs & Insights | SAP, Cloud & AI Articles",
+    description: "Read the latest articles, technology trends, SAP insights, digital transformation strategies, and software development updates from Tech Trade Consulting.",
+    keywords: "tech blogs, SAP blog, IT consulting insights, cloud computing articles, AI development trends, software engineering blog",
+    canonical: "https://techtradeitsolutions.com/#/blogs",
+    schemaType: "Blog",
+    schemaName: "Tech Trade IT Solutions Blog"
   }
 };
 
@@ -118,7 +126,7 @@ const updateTag = (selector, attribute, value) => {
       document.head.appendChild(element);
     }
   }
-  if (element) {
+  if (element && value) {
     element.setAttribute(attribute, value);
   }
 };
@@ -127,6 +135,11 @@ const SEOManager = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // If on a single blog route, allow BlogDetailPage to handle its dedicated dynamic SEO
+    if (pathname.startsWith("/blogs/") || pathname.startsWith("/blog/")) {
+      return;
+    }
+
     const meta = seoConfig[pathname] || seoConfig["/"];
 
     // 1. Update Document Title

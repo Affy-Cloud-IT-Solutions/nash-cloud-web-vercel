@@ -52,6 +52,9 @@ const Footer = () => {
                                 <button onClick={() => handleScroll("resource")} className="hover:text-[#0D47A1] text-left cursor-pointer">Resourcing</button>
                             </li>
                             <li>
+                                <Link to="/blogs" className="hover:text-[#0D47A1] text-left cursor-pointer transition-colors duration-200">Blogs &amp; Insights</Link>
+                            </li>
+                            <li>
                                 <Link to="/compliance" className="hover:text-[#0D47A1] text-left cursor-pointer transition-colors duration-200">Compliance</Link>
                             </li>
                             <li>
