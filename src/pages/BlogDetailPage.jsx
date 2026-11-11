@@ -358,23 +358,23 @@ const BlogDetailPage = () => {
             </div>
 
             {/* TOP HERO 2-COLUMN SECTION: LEFT IMAGE, RIGHT SHORT DESCRIPTION */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-12">
               {/* LEFT: FEATURED IMAGE */}
               <div className="lg:col-span-5">
                 {coverImage ? (
-                  <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-[#0a1428] h-full min-h-[300px] max-h-[440px] flex items-center justify-center group">
+                  <div className="relative w-full rounded-3xl overflow-hidden border border-white/15 shadow-2xl bg-[#0a1428] group">
                     <img
                       src={coverImage}
                       alt={blog.title}
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                      className="w-full h-auto max-h-[460px] object-contain block group-hover:scale-[1.02] transition-transform duration-500"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                         e.currentTarget.nextElementSibling?.classList.remove("hidden");
                       }}
                     />
                     {/* Fallback Graphic */}
-                    <div className="hidden w-full h-full min-h-[300px] bg-gradient-to-br from-[#0D47A1]/40 via-[#0a1428] to-[#00B4FF]/20 flex-col items-center justify-center p-6 text-center">
+                    <div className="hidden w-full h-64 bg-gradient-to-br from-[#0D47A1]/40 via-[#0a1428] to-[#00B4FF]/20 flex-col items-center justify-center p-6 text-center">
                       <Sparkles className="w-10 h-10 text-[#00B4FF] mb-2" />
                       <span className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
                         TechTrade Insights
@@ -382,7 +382,7 @@ const BlogDetailPage = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="w-full h-full min-h-[300px] rounded-3xl border border-white/15 bg-gradient-to-br from-[#0D47A1]/40 via-[#0a1428] to-[#00B4FF]/20 flex flex-col items-center justify-center p-6 text-center shadow-xl">
+                  <div className="w-full h-64 rounded-3xl border border-white/15 bg-gradient-to-br from-[#0D47A1]/40 via-[#0a1428] to-[#00B4FF]/20 flex flex-col items-center justify-center p-6 text-center shadow-xl">
                     <Sparkles className="w-10 h-10 text-[#00B4FF] mb-2" />
                     <span className="text-xs uppercase tracking-wider text-gray-400 font-semibold">
                       TechTrade Insights
@@ -392,9 +392,9 @@ const BlogDetailPage = () => {
               </div>
 
               {/* RIGHT: SHORT DESCRIPTION LEAD CARD */}
-              <div className="lg:col-span-7 flex flex-col justify-between">
+              <div className="lg:col-span-7 flex flex-col justify-center">
                 {blog.short_description ? (
-                  <div className="h-full p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 border-l-4 border-l-[#00B4FF] shadow-xl backdrop-blur-sm flex flex-col justify-center">
+                  <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 border-l-4 border-l-[#00B4FF] shadow-xl backdrop-blur-sm flex flex-col justify-center">
                     <span className="text-xs font-semibold text-[#00B4FF] uppercase tracking-wider mb-3">
                       Executive Summary
                     </span>
@@ -403,7 +403,7 @@ const BlogDetailPage = () => {
                     </p>
                   </div>
                 ) : (
-                  <div className="h-full p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 shadow-xl backdrop-blur-sm flex flex-col justify-center">
+                  <div className="p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 shadow-xl backdrop-blur-sm flex flex-col justify-center">
                     <p className="text-gray-300 text-base leading-relaxed">
                       {blog.meta_description || "Explore key insights and strategies from Tech Trade IT Solutions."}
                     </p>
